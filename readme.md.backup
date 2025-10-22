@@ -1,0 +1,1637 @@
+# ClaudeCodeLab Blog & Changelog - Specyfikacja Projektu
+
+> **Status:** 🔴 Projekt do implementacji
+> **Czas realizacji:** 3-5 godzin
+> **Poziom:** Intermediate
+
+Profesjonalna aplikacja do publikowania blogpostów, changeloga kursu oraz stron promocyjnych. Zaprojektowana jako demonstracja workflow z Claude Code - od specyfikacji przez implementację do wdrożenia.
+
+---
+
+## 📋 Spis treści
+
+1. [Executive Summary](#executive-summary)
+2. [Wymagania funkcjonalne](#wymagania-funkcjonalne)
+3. [Stack technologiczny](#stack-technologiczny)
+4. [Architektura projektu](#architektura-projektu)
+5. [Implementacja krok po kroku](#implementacja-krok-po-kroku)
+6. [Specyfikacja komponentów](#specyfikacja-komponentów)
+7. [Konfiguracje](#konfiguracje)
+8. [Content Collections Schema](#content-collections-schema)
+9. [SEO & Analytics](#seo--analytics)
+10. [Deployment](#deployment)
+11. [Quality Assurance](#quality-assurance)
+12. [Checklist implementacji](#checklist-implementacji)
+
+---
+
+## Executive Summary
+
+### Cel projektu
+Stworzenie lekkiej, SEO-first aplikacji blogowej z systemem changeloga, zoptymalizowanej pod konwersje (sprzedaż kursu online).
+
+### Kluczowe założenia
+- **Zero bazy danych** - wszystkie treści jako pliki Markdown/MDX w repo
+- **Static Site Generation** - build time rendering dla maksymalnej wydajności
+- **SEO-first** - sitemap, RSS, Open Graph, strukturalne dane
+- **Conversion-optimized** - sticky CTA, dedykowane landing pages
+- **Developer-friendly** - CLI scripts do tworzenia contentu
+
+### Główne funkcjonalności
+| Feature | Priority | Complexity |
+|---------|----------|------------|
+| Blog z MDX support | P0 | Medium |
+| Changelog system | P0 | Low |
+| SEO (sitemap, RSS, OG) | P0 | Low |
+| Sticky CTA | P0 | Low |
+| Landing pages (bonus, kup) | P0 | Medium |
+| Analytics tracking | P1 | Low |
+| CLI scaffolding scripts | P1 | Low |
+| 48h countdown timer | P2 | Medium |
+
+---
+
+## Wymagania funkcjonalne
+
+### FR-1: System blogowy
+**Must have:**
+- Lista postów z sortowaniem po dacie publikacji
+- Pojedyncza strona posta z full MDX support
+- Frontmatter: title, description, publishDate, updatedDate, heroImage, tags[], draft
+- Filtrowanie postów draft (nie pokazuj na produkcji)
+- URL slugs: `/blog/[slug]`
+
+**Should have:**
+- Paginacja (jeśli >10 postów)
+- Filtrowanie po tagach
+- Related posts
+
+### FR-2: System changeloga
+**Must have:**
+- Lista zmian z kolorowym oznaczeniem typu (feat/fix/docs/perf/other)
+- Sortowanie chronologiczne (najnowsze first)
+- Frontmatter: title, date (ISO 8601), type, highlights[]
+- URL: `/changelog`
+
+### FR-3: Landing pages
+**Must have:**
+- `/bonus-planowanie` - embed wideo + CTA
+- `/kup` - przekierowanie do checkoutu z kuponem
+- Sticky CTA na wszystkich stronach (bottom-right)
+
+### FR-4: SEO & Feeds
+**Must have:**
+- Sitemap.xml auto-generation
+- RSS feed dla bloga
+- Open Graph meta tags
+- Twitter Card meta tags
+- Canonical URLs
+
+### FR-5: Analytics
+**Should have:**
+- Google Analytics 4 tracking
+- Twitter/X Pixel
+- Custom events: page_view, cta_click, video_watch
+
+---
+
+## Stack technologiczny
+
+### Core Framework
+```json
+{
+  "astro": "^4.0.0",
+  "typescript": "^5.3.0"
+}
+```
+
+### Astro Integrations
+```json
+{
+  "@astrojs/mdx": "^2.0.0",
+  "@astrojs/sitemap": "^3.0.0",
+  "@astrojs/rss": "^4.0.0",
+  "@astrojs/tailwind": "^5.0.0"
+}
+```
+
+### Styling
+```json
+{
+  "tailwindcss": "^3.4.0",
+  "@tailwindcss/typography": "^0.5.10"
+}
+```
+
+### Development
+```json
+{
+  "@types/node": "^20.10.0"
+}
+```
+
+**Dlaczego ten stack?**
+- **Astro** - najszybszy framework dla content-heavy sites (Lighthouse 100)
+- **MDX** - komponenty React/Vue/Svelte w Markdown
+- **Tailwind** - utility-first, minimal CSS bundle
+- **TypeScript** - type safety dla Content Collections
+
+---
+
+## Architektura projektu
+
+### Struktura katalogów (target)
+```
+bonus/
+├── src/
+│   ├── content/
+│   │   ├── blog/                    # MDX posts
+│   │   │   └── example-post.mdx
+│   │   ├── changelog/               # MDX changelog entries
+│   │   │   └── 2025-10-22-planning-bonus.mdx
+│   │   └── config.ts                # Content Collections schemas
+│   ├── layouts/
+│   │   └── BaseLayout.astro         # Master layout (SEO, CTA)
+│   ├── components/
+│   │   ├── BlogCard.astro           # Blog post card
+│   │   ├── ChangelogEntry.astro     # Changelog item
+│   │   ├── StickyCTA.astro          # Floating CTA button
+│   │   └── VideoEmbed.astro         # YouTube/Vimeo embed
+│   ├── pages/
+│   │   ├── index.astro              # Homepage
+│   │   ├── blog/
+│   │   │   ├── index.astro          # Blog listing
+│   │   │   └── [...slug].astro      # Blog post dynamic route
+│   │   ├── changelog.astro          # Changelog listing
+│   │   ├── bonus-planowanie.astro   # Bonus landing page
+│   │   ├── kup.astro                # Purchase redirect page
+│   │   └── rss.xml.js               # RSS feed endpoint
+│   └── styles/
+│       └── global.css               # Tailwind directives
+├── public/
+│   ├── og-image.jpg                 # Default OG image
+│   └── analytics.js                 # GA4 + X Pixel (optional)
+├── scripts/
+│   ├── new-post.mjs                 # CLI: create blog post
+│   └── new-changelog.mjs            # CLI: create changelog entry
+├── astro.config.mjs                 # Astro configuration
+├── tailwind.config.mjs              # Tailwind configuration
+├── tsconfig.json                    # TypeScript configuration
+├── package.json
+└── README.md
+```
+
+### Data Flow
+```
+┌─────────────┐
+│  MDX Files  │
+│  (content/) │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────┐
+│ Content Collections │  ← Type-safe schemas
+│  (src/content/      │
+│       config.ts)    │
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────┐
+│  Astro      │  ← getCollection() API
+│  Pages      │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  Static     │  ← Build output
+│  HTML + CSS │
+└─────────────┘
+```
+
+---
+
+## Implementacja krok po kroku
+
+### Krok 1: Inicjalizacja projektu
+
+```bash
+# Utwórz projekt Astro z blog template
+npm create astro@latest . -- --template blog --typescript strict --git
+
+# Zainstaluj dependencies
+npm install
+
+# Dodaj integracje
+npx astro add tailwind
+npx astro add mdx
+npx astro add sitemap
+
+# Zainstaluj dodatkowe pakiety
+npm install -D @astrojs/rss @tailwindcss/typography
+```
+
+**Expected output:**
+```
+✔ Created Astro project
+✔ Installed dependencies
+✔ Added integrations: tailwind, mdx, sitemap
+```
+
+### Krok 2: Konfiguracja Astro
+
+Utwórz/zmodyfikuj `astro.config.mjs`:
+
+```javascript
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
+
+export default defineConfig({
+  site: 'https://claudecodelab.com', // ZMIEŃ NA SWOJĄ DOMENĘ
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind({
+      applyBaseStyles: false, // Używamy własnego global.css
+    }),
+  ],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark',
+      wrap: true,
+    },
+  },
+  output: 'static',
+  build: {
+    inlineStylesheets: 'auto',
+  },
+});
+```
+
+### Krok 3: Konfiguracja Tailwind
+
+Utwórz `tailwind.config.mjs`:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#fef2f2',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+        },
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: theme('colors.gray.700'),
+            a: {
+              color: theme('colors.primary.600'),
+              '&:hover': {
+                color: theme('colors.primary.700'),
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.primary.400'),
+              '&:hover': {
+                color: theme('colors.primary.300'),
+              },
+            },
+            h1: { color: theme('colors.gray.100') },
+            h2: { color: theme('colors.gray.100') },
+            h3: { color: theme('colors.gray.100') },
+            h4: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.gray.100') },
+            code: { color: theme('colors.gray.100') },
+          },
+        },
+      }),
+    },
+  },
+  plugins: [require('@tailwindcss/typography')],
+};
+```
+
+### Krok 4: Global Styles
+
+Utwórz `src/styles/global.css`:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: 250 250 250;
+    --color-text: 23 23 23;
+  }
+
+  .dark {
+    --color-bg: 23 23 23;
+    --color-text: 250 250 250;
+  }
+
+  body {
+    @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] transition-colors;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg
+           hover:bg-primary-700 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100
+           font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600
+           transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md
+           border border-gray-200 dark:border-gray-700
+           transition-all duration-200 hover:shadow-lg;
+  }
+}
+```
+
+---
+
+## Content Collections Schema
+
+### Pełny plik `src/content/config.ts`
+
+```typescript
+import { defineCollection, z } from 'astro:content';
+
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    heroImage: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+    author: z.string().default('ClaudeCodeLab'),
+  }),
+});
+
+const changelog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    type: z.enum(['feat', 'fix', 'docs', 'perf', 'other']),
+    highlights: z.array(z.string()),
+    version: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, changelog };
+```
+
+**Type safety:** TypeScript wygeneruje typy dla frontmatter automatycznie.
+
+---
+
+## Specyfikacja komponentów
+
+### 1. BaseLayout.astro
+
+```astro
+---
+import StickyCTA from '../components/StickyCTA.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  publishDate?: Date;
+  type?: 'website' | 'article';
+}
+
+const {
+  title,
+  description = 'ClaudeCodeLab - Naucz się programować z Claude Code',
+  image = '/og-image.jpg',
+  publishDate,
+  type = 'website',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="pl" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:site_name" content="ClaudeCodeLab" />
+    <meta property="og:locale" content="pl_PL" />
+    {publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="/rss.xml" />
+  </head>
+  <body>
+    <!-- Top banner (optional) -->
+    <div class="bg-primary-600 text-white text-center py-2 text-sm">
+      🎁 <strong>Nowy odcinek bonusowy:</strong> Planowanie z Claude Code
+      <a href="/bonus-planowanie" class="underline font-semibold ml-1">Zobacz teraz »</a>
+    </div>
+
+    <!-- Main navigation -->
+    <nav class="border-b border-gray-200 dark:border-gray-800">
+      <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">ClaudeCodeLab</a>
+        <div class="flex gap-6">
+          <a href="/blog" class="hover:text-primary-600 transition-colors">Blog</a>
+          <a href="/changelog" class="hover:text-primary-600 transition-colors">Changelog</a>
+          <a href="/kup" class="btn-primary px-4 py-2 text-sm">Kup kurs</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
+      <div class="max-w-4xl mx-auto px-4 py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+        <p>&copy; {new Date().getFullYear()} ClaudeCodeLab. Wszystkie prawa zastrzeżone.</p>
+        <p class="mt-2">
+          <a href="/blog" class="hover:text-primary-600">Blog</a> ·
+          <a href="/changelog" class="hover:text-primary-600 ml-2">Changelog</a> ·
+          <a href="/kup" class="hover:text-primary-600 ml-2">Kup kurs</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <StickyCTA />
+
+    <!-- Analytics (optional) -->
+    <!-- <script src="/analytics.js" defer></script> -->
+  </body>
+</html>
+```
+
+### 2. StickyCTA.astro
+
+```astro
+---
+// Sticky floating CTA button
+---
+
+<div class="fixed bottom-6 right-6 z-50">
+  <a
+    href="/kup"
+    class="block px-8 py-4 bg-primary-600 text-white font-bold rounded-full
+           shadow-2xl hover:bg-primary-700 hover:scale-105
+           transition-all duration-300 animate-pulse"
+  >
+    🚀 Kup kurs teraz
+  </a>
+</div>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
+```
+
+### 3. BlogCard.astro
+
+```astro
+---
+interface Props {
+  title: string;
+  description?: string;
+  publishDate: Date;
+  slug: string;
+  tags: string[];
+}
+
+const { title, description, publishDate, slug, tags } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(publishDate);
+---
+
+<article class="card p-6 hover:scale-[1.02] transition-transform">
+  <a href={`/blog/${slug}`} class="block">
+    <h2 class="text-2xl font-bold mb-2 hover:text-primary-600 transition-colors">
+      {title}
+    </h2>
+    <time class="text-sm text-gray-600 dark:text-gray-400 block mb-3">
+      {formattedDate}
+    </time>
+    {description && (
+      <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+        {description}
+      </p>
+    )}
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span class="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700
+                       text-gray-700 dark:text-gray-300 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </a>
+</article>
+```
+
+### 4. ChangelogEntry.astro
+
+```astro
+---
+interface Props {
+  title: string;
+  date: Date;
+  type: 'feat' | 'fix' | 'docs' | 'perf' | 'other';
+  highlights: string[];
+  version?: string;
+}
+
+const { title, date, type, highlights, version } = Astro.props;
+
+const typeConfig = {
+  feat: { label: 'Feature', color: 'bg-green-500' },
+  fix: { label: 'Fix', color: 'bg-red-500' },
+  docs: { label: 'Docs', color: 'bg-blue-500' },
+  perf: { label: 'Performance', color: 'bg-yellow-500' },
+  other: { label: 'Other', color: 'bg-gray-500' },
+};
+
+const config = typeConfig[type];
+
+const formattedDate = new Intl.DateTimeFormat('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(date);
+---
+
+<article class="card p-6 mb-6">
+  <div class="flex items-start gap-4">
+    <span class={`${config.color} text-white text-xs font-bold px-3 py-1 rounded-full uppercase`}>
+      {config.label}
+    </span>
+    {version && (
+      <span class="text-sm font-mono bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded">
+        v{version}
+      </span>
+    )}
+  </div>
+
+  <h3 class="text-xl font-bold mt-4 mb-2">{title}</h3>
+  <time class="text-sm text-gray-600 dark:text-gray-400 block mb-4">
+    {formattedDate}
+  </time>
+
+  {highlights.length > 0 && (
+    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+      {highlights.map((highlight) => (
+        <li>{highlight}</li>
+      ))}
+    </ul>
+  )}
+</article>
+```
+
+### 5. VideoEmbed.astro
+
+```astro
+---
+interface Props {
+  videoId: string;
+  platform?: 'youtube' | 'vimeo';
+  title?: string;
+}
+
+const { videoId, platform = 'youtube', title = 'Video' } = Astro.props;
+
+const embedUrl = platform === 'youtube'
+  ? `https://www.youtube.com/embed/${videoId}`
+  : `https://player.vimeo.com/video/${videoId}`;
+---
+
+<div class="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
+  <iframe
+    src={embedUrl}
+    title={title}
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+    class="w-full h-full"
+  ></iframe>
+</div>
+```
+
+---
+
+## Implementacja stron
+
+### 1. src/pages/blog/index.astro
+
+```astro
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Blog - ClaudeCodeLab"
+  description="Artykuły, tutoriale i porady dotyczące programowania z Claude Code"
+>
+  <h1 class="text-4xl font-bold mb-8">Blog</h1>
+
+  {sortedPosts.length === 0 ? (
+    <p class="text-gray-600 dark:text-gray-400">
+      Brak postów. Wkrótce się pojawią!
+    </p>
+  ) : (
+    <div class="grid gap-6">
+      {sortedPosts.map((post) => (
+        <BlogCard
+          title={post.data.title}
+          description={post.data.description}
+          publishDate={post.data.publishDate}
+          slug={post.slug}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  )}
+</BaseLayout>
+```
+
+### 2. src/pages/blog/[...slug].astro
+
+```astro
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Intl.DateTimeFormat('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(post.data.publishDate);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.heroImage}
+  publishDate={post.data.publishDate}
+  type="article"
+>
+  <article>
+    <header class="mb-8">
+      {post.data.heroImage && (
+        <img
+          src={post.data.heroImage}
+          alt={post.data.title}
+          class="w-full h-64 object-cover rounded-xl mb-6"
+        />
+      )}
+      <h1 class="text-4xl font-bold mb-3">{post.data.title}</h1>
+      <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+        <time>{formattedDate}</time>
+        {post.data.updatedDate && (
+          <span>
+            · Zaktualizowano {new Intl.DateTimeFormat('pl-PL').format(post.data.updatedDate)}
+          </span>
+        )}
+      </div>
+      {post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-4">
+          {post.data.tags.map((tag) => (
+            <span class="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="prose prose-lg dark:prose-dark max-w-none">
+      <Content />
+    </div>
+  </article>
+
+  <!-- Back to blog link -->
+  <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+    <a href="/blog" class="text-primary-600 hover:text-primary-700 font-medium">
+      ← Wróć do bloga
+    </a>
+  </div>
+</BaseLayout>
+```
+
+### 3. src/pages/changelog.astro
+
+```astro
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChangelogEntry from '../components/ChangelogEntry.astro';
+
+const allChanges = await getCollection('changelog');
+const sortedChanges = allChanges.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout
+  title="Changelog - ClaudeCodeLab"
+  description="Historia zmian i aktualizacji kursu ClaudeCodeLab"
+>
+  <h1 class="text-4xl font-bold mb-8">Changelog</h1>
+  <p class="text-gray-600 dark:text-gray-400 mb-12">
+    Wszystkie zmiany, nowe funkcje i ulepszenia kursu w jednym miejscu.
+  </p>
+
+  {sortedChanges.length === 0 ? (
+    <p class="text-gray-600 dark:text-gray-400">
+      Brak wpisów w changelogu.
+    </p>
+  ) : (
+    <div>
+      {sortedChanges.map((change) => (
+        <ChangelogEntry
+          title={change.data.title}
+          date={change.data.date}
+          type={change.data.type}
+          highlights={change.data.highlights}
+          version={change.data.version}
+        />
+      ))}
+    </div>
+  )}
+</BaseLayout>
+```
+
+### 4. src/pages/bonus-planowanie.astro
+
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+---
+
+<BaseLayout
+  title="Bonus: Planowanie z Claude Code - ClaudeCodeLab"
+  description="Darmowy odcinek bonusowy kursu - naucz się planować projekty z Claude Code"
+>
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">🎁 Odcinek bonusowy: Planowanie z Claude Code</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+      Dowiedz się, jak efektywnie planować sesje kodowania używając Claude Code
+    </p>
+
+    <!-- Video -->
+    <VideoEmbed
+      videoId="dQw4w9WgXcQ"
+      platform="youtube"
+      title="Planowanie z Claude Code"
+    />
+
+    <!-- Content -->
+    <div class="mt-12 prose prose-lg dark:prose-dark max-w-none">
+      <h2>Co zobaczysz w tym odcinku?</h2>
+      <ul>
+        <li>Jak przygotować brief przed sesją z Claude</li>
+        <li>Jak definiować zakres i cel projektu</li>
+        <li>Jak używać TodoWrite do strukturyzowania zadań</li>
+        <li>Jak iterować nad planem w trakcie implementacji</li>
+        <li>Najczęstsze błędy w planowaniu i jak ich unikać</li>
+      </ul>
+
+      <h2>Dla kogo jest ten odcinek?</h2>
+      <p>
+        Ten bonus jest idealny dla programistów, którzy chcą maksymalnie wykorzystać
+        potencjał Claude Code. Pokażę Ci workflow, który sam stosuję przy tworzeniu
+        aplikacji - od specyfikacji po deployment.
+      </p>
+
+      <h2>Co dalej?</h2>
+      <p>
+        Jeśli podobał Ci się ten odcinek, sprawdź pełny kurs <strong>ClaudeCodeLab</strong>.
+        Dostaniesz:
+      </p>
+      <ul>
+        <li>40+ godzin nagrań video (HD)</li>
+        <li>12 projektów od podstaw do wdrożenia</li>
+        <li>Dostęp do repozytorium z kodem</li>
+        <li>Certyfikat ukończenia</li>
+        <li><strong>Gwarancja 30 dni zwrotu pieniędzy</strong></li>
+      </ul>
+
+      <div class="not-prose mt-8 text-center">
+        <a href="/kup" class="btn-primary text-lg px-12 py-4 inline-block">
+          🚀 Kup kurs ze zniżką 30%
+        </a>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+          Użyj kodu <code class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">LISTA30</code> przy zakupie
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+```
+
+### 5. src/pages/kup.astro
+
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Przykładowy URL do checkoutu (podmień na właściwy)
+const checkoutUrl = 'https://checkout.example.com/claudecodelab?coupon=LISTA30';
+---
+
+<BaseLayout
+  title="Kup kurs ClaudeCodeLab - Specjalna zniżka 30%"
+  description="Dołącz do ClaudeCodeLab i naucz się programować z Claude Code. 30 dni gwarancji zwrotu pieniędzy."
+>
+  <div class="max-w-2xl mx-auto text-center">
+    <h1 class="text-5xl font-bold mb-6">Dołącz do ClaudeCodeLab</h1>
+    <p class="text-2xl text-gray-600 dark:text-gray-400 mb-12">
+      Naucz się programować z Claude Code i buduj aplikacje 10x szybciej
+    </p>
+
+    <!-- Pricing card -->
+    <div class="card p-8 mb-8">
+      <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Specjalna oferta</div>
+      <div class="text-5xl font-bold mb-4">
+        <span class="line-through text-gray-400">1499 zł</span>
+        <span class="text-primary-600 ml-4">1049 zł</span>
+      </div>
+      <div class="text-lg text-green-600 font-semibold mb-6">
+        Oszczędzasz 450 zł (30% zniżki)
+      </div>
+
+      <ul class="text-left space-y-3 mb-8">
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>40+ godzin materiałów video w HD</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>12 kompleksowych projektów (kod źródłowy)</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Dożywotni dostęp + wszystkie przyszłe aktualizacje</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Certyfikat ukończenia kursu</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span><strong>Gwarancja 30 dni zwrotu pieniędzy</strong></span>
+        </li>
+      </ul>
+
+      <a href={checkoutUrl} class="btn-primary text-lg px-12 py-4 inline-block w-full">
+        🚀 Kup teraz ze zniżką 30%
+      </a>
+
+      <p class="text-xs text-gray-600 dark:text-gray-400 mt-4">
+        Kupon <code class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">LISTA30</code>
+        zostanie automatycznie zastosowany
+      </p>
+    </div>
+
+    <!-- 48h countdown (optional - wymaga JavaScript) -->
+    <!--
+    <div id="countdown" class="text-center mb-8">
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Oferta kończy się za:</p>
+      <div class="text-3xl font-mono font-bold text-primary-600" id="timer">47:59:59</div>
+    </div>
+    <script>
+      // Implementacja licznika 48h
+      // TODO: Dodaj logikę odliczania
+    </script>
+    -->
+
+    <!-- Money-back guarantee -->
+    <div class="mt-12 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
+      <h3 class="text-xl font-bold mb-2">💚 Gwarancja 30 dni zwrotu pieniędzy</h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Jeśli w ciągu 30 dni uznasz, że kurs nie jest dla Ciebie - po prostu napisz,
+        a my zwrócimy Ci 100% wpłaconej kwoty. Bez pytań.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+```
+
+### 6. src/pages/rss.xml.js
+
+```javascript
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
+
+export async function GET(context) {
+  const posts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true;
+  });
+
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  );
+
+  return rss({
+    title: 'ClaudeCodeLab Blog',
+    description: 'Artykuły, tutoriale i porady dotyczące programowania z Claude Code',
+    site: context.site,
+    items: sortedPosts.map((post) => ({
+      title: post.data.title,
+      description: post.data.description,
+      pubDate: post.data.publishDate,
+      link: `/blog/${post.slug}/`,
+      author: post.data.author || 'ClaudeCodeLab',
+    })),
+    customData: '<language>pl-PL</language>',
+    stylesheet: '/rss-styles.xsl', // Optional
+  });
+}
+```
+
+---
+
+## CLI Scripts
+
+### 1. scripts/new-post.mjs
+
+```javascript
+#!/usr/bin/env node
+
+import fs from 'fs/promises';
+import path from 'path';
+
+const args = process.argv.slice(2);
+const title = args[0];
+
+if (!title) {
+  console.error('❌ Błąd: Musisz podać tytuł posta');
+  console.log('Użycie: node scripts/new-post.mjs "Tytuł posta"');
+  process.exit(1);
+}
+
+// Generate slug from title
+const slug = title
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/(^-|-$)/g, '');
+
+const date = new Date().toISOString().split('T')[0];
+const filename = `${date}-${slug}.mdx`;
+const filepath = path.join(process.cwd(), 'src', 'content', 'blog', filename);
+
+const template = `---
+title: "${title}"
+description: ""
+publishDate: "${date}"
+tags: []
+draft: true
+---
+
+Treść posta...
+
+## Nagłówek H2
+
+Paragraf z **bold** i *italic*.
+
+\`\`\`typescript
+// Przykład kodu
+const hello = "world";
+\`\`\`
+
+## Podsumowanie
+
+[Zobacz bonus »](/bonus-planowanie)
+`;
+
+try {
+  // Ensure directory exists
+  await fs.mkdir(path.dirname(filepath), { recursive: true });
+
+  // Check if file already exists
+  try {
+    await fs.access(filepath);
+    console.error(`❌ Plik już istnieje: ${filename}`);
+    process.exit(1);
+  } catch {
+    // File doesn't exist, proceed
+  }
+
+  await fs.writeFile(filepath, template, 'utf-8');
+  console.log(`✅ Utworzono nowy post: ${filename}`);
+  console.log(`📝 Edytuj plik: src/content/blog/${filename}`);
+} catch (error) {
+  console.error('❌ Błąd podczas tworzenia pliku:', error.message);
+  process.exit(1);
+}
+```
+
+### 2. scripts/new-changelog.mjs
+
+```javascript
+#!/usr/bin/env node
+
+import fs from 'fs/promises';
+import path from 'path';
+
+const args = process.argv.slice(2);
+const title = args[0];
+const type = args[1] || 'feat';
+
+if (!title) {
+  console.error('❌ Błąd: Musisz podać tytuł wpisu');
+  console.log('Użycie: node scripts/new-changelog.mjs "Tytuł" [type]');
+  console.log('Typy: feat, fix, docs, perf, other');
+  process.exit(1);
+}
+
+const validTypes = ['feat', 'fix', 'docs', 'perf', 'other'];
+if (!validTypes.includes(type)) {
+  console.error(`❌ Błąd: Nieprawidłowy typ "${type}"`);
+  console.log(`Dostępne typy: ${validTypes.join(', ')}`);
+  process.exit(1);
+}
+
+const now = new Date();
+const date = now.toISOString().split('T')[0];
+const timestamp = now.toISOString();
+
+// Generate filename
+const slug = title
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/(^-|-$)/g, '');
+
+const filename = `${date}-${slug}.mdx`;
+const filepath = path.join(process.cwd(), 'src', 'content', 'changelog', filename);
+
+const template = `---
+title: "${title}"
+date: "${timestamp}"
+type: "${type}"
+highlights:
+  - Pierwsza zmiana
+  - Druga zmiana
+  - Trzecia zmiana
+version: ""
+---
+
+Opcjonalny opis zmian...
+`;
+
+try {
+  await fs.mkdir(path.dirname(filepath), { recursive: true });
+
+  try {
+    await fs.access(filepath);
+    console.error(`❌ Plik już istnieje: ${filename}`);
+    process.exit(1);
+  } catch {
+    // File doesn't exist, proceed
+  }
+
+  await fs.writeFile(filepath, template, 'utf-8');
+  console.log(`✅ Utworzono nowy wpis changelog: ${filename}`);
+  console.log(`📝 Edytuj plik: src/content/changelog/${filename}`);
+} catch (error) {
+  console.error('❌ Błąd podczas tworzenia pliku:', error.message);
+  process.exit(1);
+}
+```
+
+### Aktualizacja package.json scripts
+
+```json
+{
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "new:post": "node scripts/new-post.mjs",
+    "new:changelog": "node scripts/new-changelog.mjs"
+  }
+}
+```
+
+---
+
+## SEO & Analytics
+
+### Analytics (opcjonalnie)
+
+Utwórz `public/analytics.js`:
+
+```javascript
+// Google Analytics 4
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX'); // ZMIEŃ NA SWÓJ ID
+
+// Twitter/X Pixel (opcjonalnie)
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','XXXXXXXXX'); // ZMIEŃ NA SWÓJ ID
+
+// Custom events
+function trackCTAClick(location) {
+  gtag('event', 'cta_click', {
+    event_category: 'engagement',
+    event_label: location,
+  });
+  twq('event', 'tw-xxxxxx-xxxxxx', {}); // Custom conversion event
+}
+
+// Auto-track pageviews
+gtag('event', 'page_view', {
+  page_path: window.location.pathname,
+});
+```
+
+Dodaj do `BaseLayout.astro` (przed `</body>`):
+
+```html
+<!-- Analytics -->
+<script is:inline src="/analytics.js"></script>
+```
+
+### robots.txt
+
+Utwórz `public/robots.txt`:
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://claudecodelab.com/sitemap-index.xml
+```
+
+---
+
+## Deployment
+
+### Vercel (Rekomendowane)
+
+#### Metoda 1: CLI
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Build project
+npm run build
+
+# Deploy
+vercel --prod
+```
+
+#### Metoda 2: Git Integration
+
+1. Push repo do GitHub
+2. Importuj projekt w Vercel dashboard
+3. Vercel auto-wykryje Astro i skonfiguruje build
+
+**Build Configuration:**
+- Framework Preset: `Astro`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: `npm install`
+
+**Environment Variables:**
+```
+SITE=https://yourdomain.com
+```
+
+#### Vercel Cache Configuration
+
+Utwórz `vercel.json`:
+
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|avif|gif|svg|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Netlify
+
+**netlify.toml:**
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
+
+[build.environment]
+  NODE_VERSION = "20"
+```
+
+Deploy:
+```bash
+npm install -g netlify-cli
+netlify deploy --prod
+```
+
+### GitHub Pages
+
+```bash
+npm install -D gh-pages
+
+# Add to package.json scripts:
+"deploy": "npm run build && gh-pages -d dist"
+
+# Deploy
+npm run deploy
+```
+
+**Uwaga:** Ustaw `base` w `astro.config.mjs`:
+
+```javascript
+export default defineConfig({
+  site: 'https://username.github.io',
+  base: '/repo-name',
+  // ...
+});
+```
+
+---
+
+## Quality Assurance
+
+### Lighthouse Targets
+
+Minimum scores dla produkcji:
+
+| Metric | Target | Critical |
+|--------|--------|----------|
+| Performance | 95+ | 90+ |
+| Accessibility | 100 | 95+ |
+| Best Practices | 100 | 95+ |
+| SEO | 100 | 95+ |
+
+### Testing Checklist
+
+**Pre-deployment:**
+- [ ] `npm run build` succeeds bez errors
+- [ ] Wszystkie linki wewnętrzne działają
+- [ ] RSS feed `/rss.xml` jest valid XML
+- [ ] Sitemap `/sitemap-index.xml` generuje się poprawnie
+- [ ] OG images są dostępne i poprawne (test: https://www.opengraph.xyz/)
+- [ ] Twitter Card preview działa (test: https://cards-dev.twitter.com/validator)
+- [ ] Responsywność: mobile (375px), tablet (768px), desktop (1920px)
+- [ ] Dark mode działa poprawnie
+- [ ] Video embeds ładują się lazy
+- [ ] Forms (jeśli są) wysyłają poprawnie
+- [ ] Analytics tracking działa (test: Google Tag Assistant)
+
+**Accessibility:**
+- [ ] Wszystkie obrazy mają alt text
+- [ ] Kontrast kolorów ≥ 4.5:1 (tekst), ≥ 3:1 (UI)
+- [ ] Nawigacja keyboard-only działa
+- [ ] Screen reader test (NVDA/VoiceOver)
+- [ ] Skip to content link (opcjonalnie)
+
+**Performance:**
+- [ ] Images zoptymalizowane (WebP/AVIF)
+- [ ] CSS/JS minified
+- [ ] No render-blocking resources
+- [ ] Fonts preloaded (jeśli custom)
+
+---
+
+## Checklist implementacji
+
+### Faza 1: Setup (30-45 min)
+- [ ] Inicjalizacja projektu Astro
+- [ ] Instalacja dependencies
+- [ ] Konfiguracja Astro (config.mjs)
+- [ ] Konfiguracja Tailwind (config.mjs + global.css)
+- [ ] TypeScript config (tsconfig.json)
+- [ ] Git init + .gitignore
+
+### Faza 2: Content Collections (15 min)
+- [ ] Schema definitions (src/content/config.ts)
+- [ ] Przykładowy post bloga
+- [ ] Przykładowy wpis changelog
+- [ ] Test: `npm run build` (sprawdź czy schema validation działa)
+
+### Faza 3: Layouts & Components (45 min)
+- [ ] BaseLayout.astro (SEO meta, nav, footer)
+- [ ] StickyCTA.astro
+- [ ] BlogCard.astro
+- [ ] ChangelogEntry.astro
+- [ ] VideoEmbed.astro
+
+### Faza 4: Pages (60 min)
+- [ ] /blog (index.astro)
+- [ ] /blog/[...slug] (dynamic route)
+- [ ] /changelog (changelog.astro)
+- [ ] /bonus-planowanie (landing page)
+- [ ] /kup (purchase page)
+- [ ] /rss.xml (RSS feed)
+- [ ] Homepage (index.astro) - opcjonalnie
+
+### Faza 5: CLI Scripts (20 min)
+- [ ] scripts/new-post.mjs
+- [ ] scripts/new-changelog.mjs
+- [ ] package.json scripts update
+- [ ] Test: `npm run new:post "Test"` → sprawdź czy plik się tworzy
+
+### Faza 6: SEO & Analytics (20 min)
+- [ ] robots.txt
+- [ ] public/og-image.jpg (default)
+- [ ] public/analytics.js (Google Analytics 4 + Twitter Pixel)
+- [ ] Test: RSS feed w czytnikach (Feedly, Inoreader)
+- [ ] Test: OG preview (opengraph.xyz)
+
+### Faza 7: Content (30 min)
+- [ ] Pierwszy prawdziwy post bloga
+- [ ] Pierwszy wpis changelog
+- [ ] Podmiana placeholder tekstów (CTA, hero, footer)
+- [ ] Podmiana VIDEO_ID w /bonus-planowanie
+- [ ] Podmiana checkout URL w /kup
+
+### Faza 8: Testing & QA (30 min)
+- [ ] Build test: `npm run build`
+- [ ] Preview: `npm run preview`
+- [ ] Test wszystkich linków
+- [ ] Test responsywności (mobile, tablet, desktop)
+- [ ] Test dark mode
+- [ ] Lighthouse audit (wszystkie strony)
+- [ ] Accessibility audit (WAVE/axe DevTools)
+
+### Faza 9: Deployment (15-30 min)
+- [ ] Push to GitHub
+- [ ] Deploy na Vercel/Netlify
+- [ ] Konfiguracja domeny (jeśli custom)
+- [ ] SSL certificate (auto via Vercel/Netlify)
+- [ ] Test produkcyjny (wszystkie URL-e)
+- [ ] Setup analytics (verify tracking)
+
+### Faza 10: Post-launch (opcjonalnie)
+- [ ] Google Search Console setup
+- [ ] Submit sitemap do GSC
+- [ ] Setup monitoring (Uptime Robot / Better Uptime)
+- [ ] Backup strategy (git + automated builds)
+
+---
+
+## Troubleshooting
+
+### Problem: Build fails z błędem Content Collections
+
+**Symptom:**
+```
+Error: Invalid frontmatter in src/content/blog/post.mdx
+```
+
+**Fix:**
+1. Sprawdź schema w `src/content/config.ts`
+2. Verify frontmatter types (dates muszą być ISO strings)
+3. Sprawdź czy wszystkie required fields są present
+4. Usuń trailing commas w YAML
+
+### Problem: 404 na /blog/[slug]
+
+**Symptom:** Strona posta pokazuje 404
+
+**Fix:**
+1. Sprawdź czy plik istnieje w `src/content/blog/`
+2. Verify slug - usuń polskie znaki, spacje
+3. Check `getStaticPaths()` w `[...slug].astro`
+4. Restart dev server
+
+### Problem: Sitemap nie generuje się
+
+**Symptom:** Brak `/sitemap-index.xml`
+
+**Fix:**
+1. Verify `site` jest ustawiony w `astro.config.mjs`
+2. Check @astrojs/sitemap w integrations
+3. Build project: `npm run build`
+4. Check `dist/sitemap-index.xml`
+
+### Problem: Dark mode nie działa
+
+**Fix:**
+1. Sprawdź `class="dark"` na `<html>`
+2. Verify Tailwind config: `darkMode: 'class'`
+3. Check CSS variables w `global.css`
+4. Hard refresh (Ctrl+Shift+R)
+
+### Problem: Video embed nie ładuje się
+
+**Fix:**
+1. Verify VIDEO_ID format (YouTube: 11 chars, Vimeo: numbers)
+2. Check embed URL w network tab
+3. Test: podmień na known working video ID
+4. Verify `loading="lazy"` compatibility
+
+---
+
+## Rozszerzenia (future roadmap)
+
+### P1 (Quick wins)
+- [ ] Search functionality (Pagefind/Algolia)
+- [ ] Related posts recommendation
+- [ ] Social share buttons
+- [ ] Reading time estimate
+- [ ] Code syntax highlighting themes
+
+### P2 (Medium effort)
+- [ ] Newsletter signup (ConvertKit/Mailchimp)
+- [ ] Comments system (Giscus/Disqus)
+- [ ] Dynamic OG image generation (@vercel/og)
+- [ ] 48h countdown timer (JS implementation)
+- [ ] Course progress tracker
+
+### P3 (Advanced)
+- [ ] Full-text search index
+- [ ] Multi-language support (i18n)
+- [ ] A/B testing for CTA
+- [ ] PDF export for posts
+- [ ] Interactive code playgrounds
+
+---
+
+## Licencja i kontakt
+
+**Kod:** MIT License
+**Treści:** CC BY-NC-ND 4.0 (lub wg preferencji autora)
+
+**Pull Requests:** Mile widziane dla:
+- Bug fixes
+- Performance improvements
+- Accessibility enhancements
+- Documentation updates
+
+**Nie mile widziane:**
+- Breaking changes bez dyskusji
+- Style changes (prefer consistency)
+
+---
+
+## Podsumowanie
+
+Ten dokument zawiera **kompletną specyfikację** projektu blog/changelog dla ClaudeCodeLab. Każda sekcja zawiera:
+
+✅ Konkretne przykłady kodu
+✅ Konfiguracje gotowe do copy-paste
+✅ Actionable checklists
+✅ Troubleshooting guides
+✅ Best practices & performance targets
+
+**Estymacja czasu implementacji:** 3-5 godzin dla doświadczonego developera.
+
+**Następny krok:** Zacznij od Fazy 1 w [Checkliście implementacji](#checklist-implementacji).
+
+---
+
+**Powodzenia! 🚀**
