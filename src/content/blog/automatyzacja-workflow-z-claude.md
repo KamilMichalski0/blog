@@ -2,6 +2,7 @@
 title: "Automatyzacja Workflow Programistycznego z Claude Code"
 description: "Odkryj jak wykorzystać Claude Code do automatyzacji codziennych zadań, CI/CD pipelines i zwiększenia produktywności zespołu."
 pubDate: "2025-01-20"
+heroImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop"
 tags: ["Automatyzacja", "DevOps", "CI/CD", "Produktywność", "Claude Code"]
 draft: false
 author: "ClaudeCodeLab"

@@ -12,7 +12,7 @@
   :root {
     /* Modern Color Palette - Sophisticated Blues & Purples */
     --color-bg: 249 250 251; /* Warm gray-50 instead of harsh white */
-    --color-text: 31 41 55; /* Softer gray-800 instead of slate-900 */
+    --color-text: 0 0 0; /* Pure black for light mode readability */
     --color-accent: 99 102 241;
     --color-accent-dark: 79 70 229;
     --color-accent-light: 129 140 248;

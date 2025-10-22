@@ -58,7 +58,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
       </div>
     ) : (
       <!-- Alternative header if no hero image -->
-      <div class="relative bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-hidden">
+      <div class="relative overflow-hidden" style="background: var(--gradient-hero);">
         <!-- Pattern overlay -->
         <div class="absolute inset-0 opacity-10">
           <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
@@ -94,7 +94,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
       <div class="prose max-w-4xl mx-auto px-6">
         <!-- Description/Lead -->
         {description && (
-          <p class="text-xl md:text-2xl text-black dark:text-gray-400 font-medium leading-relaxed mb-12 border-l-4 border-indigo-500 pl-6">
+          <p class="text-xl md:text-2xl text-black dark:text-gray-400 font-medium leading-relaxed mb-12 border-l-4 pl-6" style="border-color: rgb(var(--color-accent));">
             {description}
           </p>
         )}
@@ -156,7 +156,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
           <!-- Navigation to other posts -->
           <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
             <div class="flex flex-col sm:flex-row justify-between gap-4">
-              <a href="/blog" class="group inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300">
+              <a href="/blog" class="group inline-flex items-center text-[rgb(var(--color-accent))] font-semibold hover:text-[rgb(var(--color-accent-dark))]">
                 <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
@@ -195,7 +195,12 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
   }
 
   .prose-content :global(a) {
-    @apply text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 underline decoration-2 underline-offset-2;
+    @apply underline decoration-2 underline-offset-2;
+    color: rgb(var(--color-accent));
+  }
+
+  .prose-content :global(a:hover) {
+    color: rgb(var(--color-accent-dark));
   }
 
   .prose-content :global(ul),
@@ -213,11 +218,14 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
 
   .prose-content :global(ul li::before) {
     content: "•";
-    @apply absolute -left-4 text-indigo-600 dark:text-indigo-400 font-bold;
+    @apply absolute -left-4 font-bold;
+    color: rgb(var(--color-accent));
   }
 
   .prose-content :global(blockquote) {
-    @apply border-l-4 border-indigo-500 bg-gradient-to-r from-indigo-50 to-transparent dark:from-indigo-950 pl-6 py-4 my-8 rounded-r-lg;
+    @apply border-l-4 pl-6 py-4 my-8 rounded-r-lg;
+    border-color: rgb(var(--color-accent));
+    background: var(--gradient-subtle);
   }
 
   .prose-content :global(blockquote p) {
@@ -225,7 +233,8 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
   }
 
   .prose-content :global(code) {
-    @apply px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm font-mono text-indigo-600 dark:text-indigo-400;
+    @apply px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm font-mono;
+    color: rgb(var(--color-accent));
   }
 
   .prose-content :global(pre) {
