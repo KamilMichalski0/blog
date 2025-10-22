@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  type: 'feat' | 'fix' | 'docs' | 'perf' | 'other';
+  highlights: string[];
+  version?: string;
+}
+
+const { title, date, type, highlights, version } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const typeStyles = {
+  feat: 'badge-success',
+  fix: 'badge-danger',
+  docs: 'badge-primary',
+  perf: 'badge-warning',
+  other: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
+};
+
+const typeLabels = {
+  feat: 'Feature',
+  fix: 'Fix',
+  docs: 'Documentation',
+  perf: 'Performance',
+  other: 'Other',
+};
+---
+
+<div class="border-l-4 border-blue-500 pl-6 py-4">
+  <div class="flex items-center justify-between mb-2">
+    <div class="flex items-center gap-3">
+      {version && (
+        <span class="text-lg font-semibold text-gray-900 dark:text-white">
+          v{version}
+        </span>
+      )}
+      <span class={`badge ${typeStyles[type]}`}>
+        {typeLabels[type]}
+      </span>
+    </div>
+    <time class="text-sm text-gray-500 dark:text-gray-400">
+      {formattedDate}
+    </time>
+  </div>
+
+  <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+    {title}
+  </h3>
+
+  {highlights.length > 0 && (
+    <ul class="space-y-1">
+      {highlights.map(highlight => (
+        <li class="flex items-start">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-600 dark:text-gray-400">{highlight}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>

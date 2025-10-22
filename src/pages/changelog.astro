@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ChangelogItem from '@/components/ChangelogItem.astro';
+import { getCollection } from 'astro:content';
+
+const changelogEntries = (await getCollection('changelog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Changelog - ClaudeCodeLab"
+  description="Track all updates, features, and improvements to ClaudeCodeLab"
+>
+  <div class="container-content py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        Changelog
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Stay updated with the latest features, improvements, and fixes to ClaudeCodeLab.
+      </p>
+    </header>
+
+    <div class="max-w-4xl mx-auto">
+      {changelogEntries.length > 0 ? (
+        <div class="space-y-8">
+          {changelogEntries.map((entry) => (
+            <article class="card p-6">
+              <ChangelogItem
+                title={entry.data.title}
+                date={entry.data.date}
+                type={entry.data.type}
+                highlights={entry.data.highlights}
+                version={entry.data.version}
+              />
+
+              {entry.body && (
+                <div class="mt-6 prose prose-lg dark:prose-invert max-w-none">
+                  <div set:html={entry.body} />
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-gray-600 dark:text-gray-400">
+            No changelog entries yet. Check back soon!
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>
