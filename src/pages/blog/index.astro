@@ -31,11 +31,11 @@ const otherPosts = posts.slice(1);
           AI-Powered Programming Tutorials
         </div>
 
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-black dark:text-white mb-6">
           Learn by <span class="gradient-text">Building</span>
         </h1>
 
-        <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-black dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
           Dive into practical tutorials and guides that teach you to build real-world applications with modern technologies.
         </p>
 
@@ -64,7 +64,7 @@ const otherPosts = posts.slice(1);
           <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
           </svg>
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Featured Tutorial</h2>
+          <h2 class="text-3xl font-bold text-black dark:text-white">Featured Tutorial</h2>
         </div>
 
         <a href={`/blog/${featuredPost.id}`} class="group block">
@@ -106,12 +106,12 @@ const otherPosts = posts.slice(1);
                   </span>
                 </div>
 
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {featuredPost.data.title}
                 </h3>
 
                 {featuredPost.data.description && (
-                  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                  <p class="text-lg text-black dark:text-gray-300 mb-6 leading-relaxed">
                     {featuredPost.data.description}
                   </p>
                 )}
@@ -144,10 +144,10 @@ const otherPosts = posts.slice(1);
   <section class="section bg-gray-50 dark:bg-gray-900">
     <div class="container-content">
       <div class="flex items-center justify-between mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white">
           All <span class="gradient-text">Tutorials</span>
         </h2>
-        <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium">
+        <div class="flex items-center gap-2 text-black dark:text-gray-300 font-medium">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
           </svg>
@@ -173,7 +173,7 @@ const otherPosts = posts.slice(1);
         </div>
       ) : (
         <div class="text-center py-12">
-          <p class="text-gray-700 dark:text-gray-300 text-lg">
+          <p class="text-black dark:text-gray-300 text-lg">
             No more posts available. Check back soon for new content!
           </p>
         </div>

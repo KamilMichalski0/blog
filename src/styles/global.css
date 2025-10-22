@@ -360,6 +360,32 @@
     @apply rounded-xl shadow-2xl my-12;
   }
 
+  /* Blog post content styles - HIGH SPECIFICITY */
+  .prose-content,
+  .prose-content p,
+  .prose-content h1,
+  .prose-content h2,
+  .prose-content h3,
+  .prose-content h4,
+  .prose-content h5,
+  .prose-content h6 {
+    color: #000000 !important;
+  }
+
+  .dark .prose-content,
+  .dark .prose-content p {
+    color: rgb(229, 231, 235) !important;
+  }
+
+  .dark .prose-content h1,
+  .dark .prose-content h2,
+  .dark .prose-content h3,
+  .dark .prose-content h4,
+  .dark .prose-content h5,
+  .dark .prose-content h6 {
+    color: #ffffff !important;
+  }
+
   /* Drop cap for first paragraph */
   .prose > p:first-of-type::first-letter {
     @apply float-left text-6xl font-bold mr-3 mt-1;
