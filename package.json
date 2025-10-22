@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "new:post": "node scripts/new-blog-post.mjs",
+    "new:changelog": "node scripts/new-changelog.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
