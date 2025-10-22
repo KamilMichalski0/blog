@@ -17,7 +17,7 @@ const otherPosts = posts.slice(1);
   description="Learn programming with AI-powered tutorials, cutting-edge development techniques, and expert guidance from Claude Code."
 >
   <!-- Hero Section -->
-  <section class="relative bg-white dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950 overflow-hidden">
+  <section class="relative bg-white dark:bg-gray-950 overflow-hidden">
     <!-- Decorative elements - more subtle in light mode -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-100/30 to-transparent dark:from-purple-900 rounded-full blur-3xl -mr-48 -mt-48"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-100/30 to-transparent dark:from-indigo-900 rounded-full blur-3xl -ml-48 -mb-48"></div>
@@ -58,7 +58,7 @@ const otherPosts = posts.slice(1);
 
   <!-- Featured Post -->
   {featuredPost && (
-    <section class="section">
+    <section class="section bg-white dark:bg-gray-950">
       <div class="container-content">
         <div class="flex items-center gap-3 mb-8">
           <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
@@ -89,7 +89,7 @@ const otherPosts = posts.slice(1);
                 </div>
               )}
 
-              <div class="p-8 md:p-12 flex flex-col justify-center bg-white dark:bg-gray-900">
+              <div class="p-8 md:p-12 flex flex-col justify-center bg-white dark:bg-gray-800">
                 <div class="flex items-center gap-3 mb-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
                   <time class="flex items-center">
                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ const otherPosts = posts.slice(1);
   )}
 
   <!-- All Posts Grid -->
-  <section class="section bg-gray-50 dark:from-gray-950 dark:to-gray-900">
+  <section class="section bg-gray-50 dark:bg-gray-900">
     <div class="container-content">
       <div class="flex items-center justify-between mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
@@ -182,7 +182,7 @@ const otherPosts = posts.slice(1);
   </section>
 
   <!-- Newsletter CTA -->
-  <section class="section">
+  <section class="section bg-white dark:bg-gray-950">
     <div class="container-content">
       <div class="card bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-hidden relative">
         <!-- Pattern overlay -->

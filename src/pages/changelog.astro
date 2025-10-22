@@ -12,14 +12,14 @@ const changelogEntries = (await getCollection('changelog'))
   description="Track all updates, features, and improvements to ClaudeCodeLab"
 >
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950 overflow-hidden">
+  <section class="relative bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200 to-transparent dark:from-purple-900 rounded-full blur-3xl opacity-20 -mr-48 -mt-48"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-indigo-200 to-transparent dark:from-indigo-900 rounded-full blur-3xl opacity-20 -ml-48 -mb-48"></div>
 
     <div class="relative container-content py-16 md:py-24">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-semibold text-sm mb-6">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-semibold text-sm mb-6 border border-indigo-200 dark:border-indigo-800">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
           </svg>
@@ -112,7 +112,7 @@ const changelogEntries = (await getCollection('changelog'))
   </section>
 
   <!-- Subscribe CTA -->
-  <section class="section">
+  <section class="section bg-white dark:bg-gray-950">
     <div class="container-content">
       <div class="max-w-4xl mx-auto">
         <div class="card bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-hidden relative">

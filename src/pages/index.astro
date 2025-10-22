@@ -86,7 +86,7 @@ const changelogEntries = (await getCollection('changelog'))
   </section>
 
   <!-- Features Section -->
-  <section class="section bg-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+  <section class="section bg-white dark:bg-gray-950">
     <div class="container-content">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -157,7 +157,7 @@ const changelogEntries = (await getCollection('changelog'))
 
   <!-- Recent Blog Posts -->
   {blogPosts.length > 0 && (
-    <section class="section">
+    <section class="section bg-white dark:bg-gray-950">
       <div class="container-content">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
           <div>
@@ -196,7 +196,7 @@ const changelogEntries = (await getCollection('changelog'))
 
   <!-- Recent Changelog -->
   {changelogEntries.length > 0 && (
-    <section class="section bg-gray-50 dark:from-gray-950 dark:to-gray-900">
+    <section class="section bg-gray-50 dark:bg-gray-900">
       <div class="container-content">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
           <div>
@@ -217,7 +217,7 @@ const changelogEntries = (await getCollection('changelog'))
         <div class="space-y-6">
           {changelogEntries.map((entry, index) => (
             <div class="fade-in" style={`animation-delay: ${index * 150}ms`}>
-              <div class="card p-6">
+              <div class="card p-6 bg-white dark:bg-gray-800">
                 <ChangelogItem
                   title={entry.data.title}
                   date={entry.data.date}
