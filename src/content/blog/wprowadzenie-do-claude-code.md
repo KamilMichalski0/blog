@@ -2,7 +2,6 @@
 title: "Wprowadzenie do Claude Code: Rewolucja w Programowaniu z AI"
 description: "Odkryj, jak Claude Code zmienia sposób, w jaki programiści tworzą aplikacje, automatyzują zadania i rozwiązują problemy techniczne."
 pubDate: "2025-01-15"
-heroImage: "/blog-placeholder-1.jpg"
 tags: ["Claude Code", "AI", "Programowanie", "Tutorial"]
 draft: false
 author: "ClaudeCodeLab"

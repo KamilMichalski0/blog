@@ -1,8 +1,8 @@
-/* Tailwind Directives - Must be first */
-@import 'tailwindcss';
-
-/* Modern Font Imports */
+/* Modern Font Imports - Must be before Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind Directives */
+@import 'tailwindcss';
 
 /* Design System Tokens */
 @layer base {
