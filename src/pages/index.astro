@@ -15,70 +15,141 @@ const changelogEntries = (await getCollection('changelog'))
 ---
 
 <BaseLayout title="ClaudeCodeLab - Learn Programming with AI">
-  <!-- Hero Section -->
-  <section class="section bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-    <div class="container-content">
-      <div class="text-center max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          Welcome to <span class="text-blue-600 dark:text-blue-400">ClaudeCodeLab</span>
+  <!-- Hero Section with Animated Gradient -->
+  <section class="relative overflow-hidden">
+    <!-- Animated gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 animate-gradient"></div>
+
+    <!-- Glass overlay for better text contrast -->
+    <div class="absolute inset-0 backdrop-blur-3xl bg-white/30 dark:bg-black/40"></div>
+
+    <!-- Content -->
+    <div class="relative container-content py-24 md:py-32 lg:py-40">
+      <div class="text-center max-w-5xl mx-auto fade-in">
+        <div class="mb-6">
+          <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-white/90 dark:bg-gray-900/90 text-indigo-600 dark:text-indigo-400 shadow-lg backdrop-blur-sm">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            AI-Powered Learning Platform
+          </span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 leading-tight">
+          Master Programming with
+          <span class="block mt-2 bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
+            Claude Code
+          </span>
         </h1>
-        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-          Learn programming with AI-powered tutorials, explore cutting-edge development techniques,
-          and stay updated with our latest features and improvements.
+
+        <p class="text-xl md:text-2xl text-white/90 dark:text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+          Unlock your coding potential with AI-powered tutorials, cutting-edge development techniques,
+          and hands-on guidance from Claude AI.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/blog" class="btn-primary">
-            Explore Blog
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/blog" class="btn-primary text-lg px-8 py-4 shadow-2xl hover:shadow-indigo-500/50 group">
+            Start Learning
+            <svg class="w-5 h-5 ml-2 inline-block transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
-          <a href="/changelog" class="btn-secondary">
-            View Changelog
+          <a href="/changelog" class="btn-secondary text-lg px-8 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900">
+            View Updates
           </a>
         </div>
+
+        <!-- Stats or social proof -->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+            <div class="text-sm md:text-base text-white/80">Tutorials</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">10K+</div>
+            <div class="text-sm md:text-base text-white/80">Lines of Code</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
+            <div class="text-sm md:text-base text-white/80">AI-Powered</div>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+        <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="currentColor" class="text-white dark:text-gray-950"/>
+      </svg>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="section">
+  <section class="section bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
     <div class="container-content">
-      <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-        Why Choose ClaudeCodeLab?
-      </h2>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Why Choose <span class="gradient-text">ClaudeCodeLab</span>?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Everything you need to accelerate your programming journey
+        </p>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-            </svg>
+        <!-- Feature 1 -->
+        <div class="group">
+          <div class="card text-center p-8 h-full hover:scale-105">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform"></div>
+              <div class="relative w-full h-full bg-gradient-to-br from-blue-500 to-indigo-700 rounded-2xl flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">AI-Powered Learning</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Learn programming concepts with Claude AI's guidance, making complex topics intuitive and accessible.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">AI-Powered Learning</h3>
-          <p class="text-gray-600 dark:text-gray-400">
-            Learn programming concepts with the help of Claude AI, making complex topics easier to understand.
-          </p>
         </div>
 
-        <div class="text-center">
-          <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+        <!-- Feature 2 -->
+        <div class="group">
+          <div class="card text-center p-8 h-full hover:scale-105">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+              <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform"></div>
+              <div class="relative w-full h-full bg-gradient-to-br from-green-500 to-emerald-700 rounded-2xl flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Lightning Fast</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Built with Astro for optimal performance. Experience instant page loads and buttery-smooth navigation.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Lightning Fast</h3>
-          <p class="text-gray-600 dark:text-gray-400">
-            Built with Astro for optimal performance, ensuring fast load times and smooth navigation.
-          </p>
         </div>
 
-        <div class="text-center">
-          <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-            </svg>
+        <!-- Feature 3 -->
+        <div class="group">
+          <div class="card text-center p-8 h-full hover:scale-105">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+              <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform"></div>
+              <div class="relative w-full h-full bg-gradient-to-br from-purple-500 to-pink-700 rounded-2xl flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Always Improving</h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Regular updates and new features. Track every improvement in our detailed changelog.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Always Improving</h3>
-          <p class="text-gray-600 dark:text-gray-400">
-            Regular updates and new features documented in our comprehensive changelog.
-          </p>
         </div>
       </div>
     </div>
@@ -86,27 +157,37 @@ const changelogEntries = (await getCollection('changelog'))
 
   <!-- Recent Blog Posts -->
   {blogPosts.length > 0 && (
-    <section class="section bg-gray-50 dark:bg-gray-900">
+    <section class="section">
       <div class="container-content">
-        <div class="flex justify-between items-center mb-8">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-            Latest Blog Posts
-          </h2>
-          <a href="/blog" class="text-blue-600 dark:text-blue-400 hover:underline">
-            View all posts →
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+              Latest <span class="gradient-text">Tutorials</span>
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">
+              Fresh content to level up your coding skills
+            </p>
+          </div>
+          <a href="/blog" class="group inline-flex items-center text-lg font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
+            View all posts
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
-            <BlogCard
-              title={post.data.title}
-              description={post.data.description}
-              pubDate={post.data.pubDate}
-              heroImage={post.data.heroImage}
-              href={`/blog/${post.id}`}
-              tags={post.data.tags}
-              draft={post.data.draft}
-            />
+        <div class="grid md:grid-cols-3 gap-8">
+          {blogPosts.map((post, index) => (
+            <div class="fade-in" style={`animation-delay: ${index * 100}ms`}>
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                heroImage={post.data.heroImage}
+                href={`/blog/${post.id}`}
+                tags={post.data.tags}
+                draft={post.data.draft}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -115,46 +196,96 @@ const changelogEntries = (await getCollection('changelog'))
 
   <!-- Recent Changelog -->
   {changelogEntries.length > 0 && (
-    <section class="section">
+    <section class="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div class="container-content">
-        <div class="flex justify-between items-center mb-8">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-            Recent Updates
-          </h2>
-          <a href="/changelog" class="text-blue-600 dark:text-blue-400 hover:underline">
-            View full changelog →
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+              Recent <span class="gradient-text">Updates</span>
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">
+              See what's new and improved
+            </p>
+          </div>
+          <a href="/changelog" class="group inline-flex items-center text-lg font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
+            Full changelog
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
         <div class="space-y-6">
-          {changelogEntries.map((entry) => (
-            <ChangelogItem
-              title={entry.data.title}
-              date={entry.data.date}
-              type={entry.data.type}
-              highlights={entry.data.highlights}
-              version={entry.data.version}
-            />
+          {changelogEntries.map((entry, index) => (
+            <div class="fade-in" style={`animation-delay: ${index * 150}ms`}>
+              <div class="card p-6">
+                <ChangelogItem
+                  title={entry.data.title}
+                  date={entry.data.date}
+                  type={entry.data.type}
+                  highlights={entry.data.highlights}
+                  version={entry.data.version}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </section>
   )}
 
-  <!-- CTA Section -->
-  <section class="section bg-gradient-to-r from-blue-600 to-indigo-700">
-    <div class="container-content text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">
-        Ready to Start Learning?
-      </h2>
-      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-        Dive into our collection of programming tutorials and resources powered by Claude AI.
-      </p>
-      <a href="/blog" class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200">
-        Get Started
-        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
+  <!-- CTA Section with stunning gradient -->
+  <section class="relative overflow-hidden">
+    <!-- Animated gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 animate-gradient"></div>
+
+    <!-- Pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative container-content section text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+          Ready to Level Up Your Coding Skills?
+        </h2>
+        <p class="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
+          Join thousands of developers learning programming with AI-powered tutorials and real-world projects.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/blog" class="group inline-flex items-center px-8 py-4 bg-white text-indigo-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105">
+            Get Started Now
+            <svg class="w-6 h-6 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          <a href="/changelog" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            See What's New
+          </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/80">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-semibold">Free Forever</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-semibold">No Sign-up Required</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-semibold">Updated Weekly</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
