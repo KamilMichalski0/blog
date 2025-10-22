@@ -368,12 +368,18 @@
   .prose-content h3,
   .prose-content h4,
   .prose-content h5,
-  .prose-content h6 {
+  .prose-content h6,
+  .prose-content li,
+  .prose-content ul li,
+  .prose-content ol li {
     color: #000000 !important;
   }
 
   .dark .prose-content,
-  .dark .prose-content p {
+  .dark .prose-content p,
+  .dark .prose-content li,
+  .dark .prose-content ul li,
+  .dark .prose-content ol li {
     color: rgb(229, 231, 235) !important;
   }
 
