@@ -20,7 +20,7 @@ Jako programiści spędzamy zbyt wiele czasu na powtarzalnych zadaniach: pisaniu
 Poproś Claude Code:
 > "Wygeneruj kompleksowe unit testy dla tej funkcji z edge cases"
 
-\`\`\`typescript
+```typescript
 // Twoja funkcja
 function calculateDiscount(price: number, discountPercent: number): number {
   if (price < 0 || discountPercent < 0 || discountPercent > 100) {
@@ -51,13 +51,13 @@ describe('calculateDiscount', () => {
     expect(calculateDiscount(99.99, 10)).toBeCloseTo(89.991);
   });
 });
-\`\`\`
+```
 
 #### Integration Tests
 
 Claude Code może też tworzyć testy integracyjne:
 
-\`\`\`typescript
+```typescript
 describe('User API Integration', () => {
   let app: Express;
   let testUser: User;
@@ -81,13 +81,13 @@ describe('User API Integration', () => {
     expect(response.body.name).toBe('Test User');
 
     const getResponse = await request(app)
-      .get(\`/api/users/\${response.body.id}\`)
+      .get(`/api/users/${response.body.id}`)
       .expect(200);
 
     expect(getResponse.body).toEqual(response.body);
   });
 });
-\`\`\`
+```
 
 ### 2. Automatyczne Code Review
 
@@ -96,7 +96,7 @@ describe('User API Integration', () => {
 Poproś Claude Code o:
 > "Skonfiguruj GitHub Action, który używa AI do code review każdego PR"
 
-\`\`\`yaml
+```yaml
 # .github/workflows/code-review.yml
 name: AI Code Review
 
@@ -113,19 +113,19 @@ jobs:
       - name: Run AI Code Review
         uses: your-org/claude-code-review@v1
         with:
-          github-token: \${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           focus-areas: |
             - Security vulnerabilities
             - Performance issues
             - Best practices
             - Code duplication
-\`\`\`
+```
 
 #### Pre-commit Hooks
 
 Automatyzacja na poziomie commitów:
 
-\`\`\`javascript
+```javascript
 // .husky/pre-commit
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -136,13 +136,13 @@ npm run type-check
 
 # Claude Code może sprawdzić commit message
 node scripts/check-commit-message.js
-\`\`\`
+```
 
 ### 3. Dokumentacja Automatyczna
 
 #### JSDoc / TSDoc Generation
 
-\`\`\`typescript
+```typescript
 /**
  * Calculates the final price after applying discount
  *
@@ -152,17 +152,17 @@ node scripts/check-commit-message.js
  * @throws {Error} When price is negative or discount is not in valid range
  *
  * @example
- * \`\`\`typescript
+ * ```typescript
  * calculateDiscount(100, 20) // returns 80
  * calculateDiscount(50, 50) // returns 25
- * \`\`\`
+ * ```
  *
  * @see {@link https://docs.example.com/pricing | Pricing Documentation}
  */
 function calculateDiscount(price: number, discountPercent: number): number {
   // Implementation
 }
-\`\`\`
+```
 
 #### README Generation
 
@@ -173,7 +173,7 @@ Poproś Claude Code:
 
 #### Multi-stage Build
 
-\`\`\`yaml
+```yaml
 # .github/workflows/deploy.yml
 name: Build and Deploy
 
@@ -210,12 +210,12 @@ jobs:
       - uses: actions/download-artifact@v3
       - run: npm run deploy
         env:
-          DEPLOY_KEY: \${{ secrets.DEPLOY_KEY }}
-\`\`\`
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+```
 
 #### Docker Multi-stage Build
 
-\`\`\`dockerfile
+```dockerfile
 # Build stage
 FROM node:20-alpine AS builder
 WORKDIR /app
@@ -232,13 +232,13 @@ COPY --from=builder /app/package*.json ./
 RUN npm ci --only=production
 EXPOSE 3000
 CMD ["node", "dist/server.js"]
-\`\`\`
+```
 
 ### 5. Monitoring i Alerting
 
 #### Error Tracking Setup
 
-\`\`\`typescript
+```typescript
 // src/lib/monitoring.ts
 import * as Sentry from '@sentry/node';
 
@@ -273,13 +273,13 @@ export function withErrorHandler<T>(
     throw error;
   });
 }
-\`\`\`
+```
 
 ## Skrypty Automatyzacji
 
 ### Daily Maintenance Script
 
-\`\`\`bash
+```bash
 #!/bin/bash
 # scripts/daily-maintenance.sh
 
@@ -303,11 +303,11 @@ echo "💾 Backup database..."
 npm run db:backup
 
 echo "✅ Maintenance complete!"
-\`\`\`
+```
 
 ### Code Quality Report
 
-\`\`\`javascript
+```javascript
 // scripts/quality-report.js
 import { ESLint } from 'eslint';
 import { exec } from 'child_process';
@@ -338,7 +338,7 @@ async function generateQualityReport() {
 }
 
 generateQualityReport().catch(console.error);
-\`\`\`
+```
 
 ## Narzędzia Wspomagające
 
@@ -350,7 +350,7 @@ Kombinacja obu narzędzi:
 
 ### 2. Playwright dla E2E
 
-\`\`\`typescript
+```typescript
 import { test, expect } from '@playwright/test';
 
 test('complete user journey', async ({ page }) => {
@@ -375,11 +375,11 @@ test('complete user journey', async ({ page }) => {
   await expect(page).toHaveURL(/\/order\/\d+/);
   await expect(page.locator('text=Order confirmed')).toBeVisible();
 });
-\`\`\`
+```
 
 ### 3. Lighthouse CI
 
-\`\`\`javascript
+```javascript
 // lighthouserc.js
 export default {
   ci: {
@@ -400,7 +400,7 @@ export default {
     },
   },
 };
-\`\`\`
+```
 
 ## Mierzenie Sukcesu
 
@@ -413,7 +413,7 @@ export default {
 
 ### Dashboard
 
-\`\`\`typescript
+```typescript
 // Przykład dashboardu metryk
 interface Metrics {
   deploymentsToday: number;
@@ -435,7 +435,7 @@ async function fetchMetrics(): Promise<Metrics> {
     buildTime: 3.2,
   };
 }
-\`\`\`
+```
 
 ## Podsumowanie
 

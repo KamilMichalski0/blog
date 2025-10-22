@@ -13,7 +13,11 @@ export default defineConfig({
     sitemap(),
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss({
+        config: './tailwind.config.ts',
+      }),
+    ],
   },
   markdown: {
     shikiConfig: {

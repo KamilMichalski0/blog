@@ -30,18 +30,18 @@ Poproś Claude Code:
 
 Claude Code wygeneruje:
 
-\`\`\`bash
+```bash
 npm create astro@latest my-blog -- --template minimal --typescript strict
 cd my-blog
 npx astro add tailwind
-\`\`\`
+```
 
 ### Krok 2: Konfiguracja Content Collections
 
 Poproś o:
 > "Skonfiguruj content collections dla postów blogowych z polami: title, description, pubDate, heroImage, tags"
 
-\`\`\`typescript
+```typescript
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
@@ -58,14 +58,14 @@ const blog = defineCollection({
 });
 
 export const collections = { blog };
-\`\`\`
+```
 
 ### Krok 3: Layout z Dark Mode
 
 Zapytaj Claude Code:
 > "Stwórz base layout z nawigacją, dark mode toggle i responsywnym designem"
 
-\`\`\`astro
+```astro
 ---
 // src/layouts/BaseLayout.astro
 import { ViewTransitions } from 'astro:transitions';
@@ -108,14 +108,14 @@ const { title, description } = Astro.props;
     </footer>
   </body>
 </html>
-\`\`\`
+```
 
 ### Krok 4: Blog Post Component
 
 Poproś:
 > "Stwórz komponent BlogCard z hover effects, image optimization i responsive layout"
 
-\`\`\`astro
+```astro
 ---
 // src/components/BlogCard.astro
 interface Props {
@@ -170,14 +170,14 @@ const { title, description, pubDate, heroImage, href, tags } = Astro.props;
     </div>
   </div>
 </article>
-\`\`\`
+```
 
 ### Krok 5: Dynamic Blog Routes
 
 Zapytaj:
 > "Stwórz dynamic routes dla postów blogowych z static site generation"
 
-\`\`\`astro
+```astro
 ---
 // src/pages/blog/[...slug].astro
 import { type CollectionEntry, getCollection } from 'astro:content';
@@ -200,7 +200,7 @@ const { Content } = await post.render();
 <BlogPost {...post.data}>
   <Content />
 </BlogPost>
-\`\`\`
+```
 
 ## Optymalizacje Performance
 
@@ -208,7 +208,7 @@ const { Content } = await post.render();
 
 Claude Code może pomóc skonfigurować automatyczną optymalizację obrazów:
 
-\`\`\`javascript
+```javascript
 // astro.config.mjs
 export default defineConfig({
   image: {
@@ -217,40 +217,40 @@ export default defineConfig({
     },
   },
 });
-\`\`\`
+```
 
 ### 2. View Transitions
 
 Dodaj płynne przejścia między stronami:
 
-\`\`\`astro
+```astro
 <ViewTransitions />
-\`\`\`
+```
 
 ### 3. Partial Hydration
 
 Użyj komponentów interaktywnych tylko tam, gdzie potrzeba:
 
-\`\`\`astro
+```astro
 <SearchComponent client:only="react" />
 <CommentSection client:visible />
-\`\`\`
+```
 
 ## Deployment na Vercel/Netlify
 
 Claude Code pomoże też z deploymentem:
 
-\`\`\`bash
+```bash
 # Poproś: "Przygotuj projekt do deployu na Vercel"
 npm run build
 # Wszystko gotowe! Build w folderze dist/
-\`\`\`
+```
 
 ## Najlepsze Praktyki
 
 ### 1. Struktura Projektu
 
-\`\`\`
+```
 src/
 ├── components/     # Reusable components
 ├── content/        # Content collections
@@ -258,20 +258,20 @@ src/
 ├── layouts/        # Page layouts
 ├── pages/          # Routes
 └── styles/         # Global styles
-\`\`\`
+```
 
 ### 2. TypeScript Strict Mode
 
 Włącz strict mode dla bezpieczeństwa typów:
 
-\`\`\`json
+```json
 {
   "compilerOptions": {
     "strict": true,
     "strictNullChecks": true
   }
 }
-\`\`\`
+```
 
 ### 3. SEO i Accessibility
 

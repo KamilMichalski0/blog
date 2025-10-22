@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test:*)",
+      "Bash(node --version:*)",
+      "Bash(npm:*)",
+      "Bash(git --version:*)",
+      "Bash(git config:*)",
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "Bash(npx astro add:*)",
+      "Bash(curl:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx astro check:*)",
+      "Bash(xmllint --format -)",
+      "Bash(chmod:*)",
+      "Bash(timeout 15 npm run build:*)",
+      "Bash(pkill:*)",
+      "Bash(git log:*)",
+      "Bash(lsof:*)",
+      "Bash(pgrep:*)",
+      "Bash(grep:*)",
+      "Bash(for file in /mnt/c/data/projekty/bonus/src/content/blog/*.md)",
+      "Bash(do sed -i 's/\\\\```/```/g' \"$file\")",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

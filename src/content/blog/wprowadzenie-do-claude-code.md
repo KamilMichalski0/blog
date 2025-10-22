@@ -42,7 +42,7 @@ Claude Code wspiera:
 
 Zobaczmy, jak Claude Code może pomóc w stworzeniu komponentu React:
 
-\`\`\`typescript
+```typescript
 // Poproś Claude Code o:
 // "Stwórz komponent React z dark mode toggle"
 
@@ -77,7 +77,7 @@ export function DarkModeToggle() {
     </button>
   );
 }
-\`\`\`
+```
 
 ## Najlepsze Praktyki
 
