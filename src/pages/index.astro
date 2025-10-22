@@ -86,13 +86,13 @@ const changelogEntries = (await getCollection('changelog'))
   </section>
 
   <!-- Features Section -->
-  <section class="section bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+  <section class="section bg-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
     <div class="container-content">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Why Choose <span class="gradient-text">ClaudeCodeLab</span>?
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
           Everything you need to accelerate your programming journey
         </p>
       </div>
@@ -110,7 +110,7 @@ const changelogEntries = (await getCollection('changelog'))
               </div>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">AI-Powered Learning</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               Learn programming concepts with Claude AI's guidance, making complex topics intuitive and accessible.
             </p>
           </div>
@@ -128,7 +128,7 @@ const changelogEntries = (await getCollection('changelog'))
               </div>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Lightning Fast</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               Built with Astro for optimal performance. Experience instant page loads and buttery-smooth navigation.
             </p>
           </div>
@@ -146,7 +146,7 @@ const changelogEntries = (await getCollection('changelog'))
               </div>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Always Improving</h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               Regular updates and new features. Track every improvement in our detailed changelog.
             </p>
           </div>
@@ -164,7 +164,7 @@ const changelogEntries = (await getCollection('changelog'))
             <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
               Latest <span class="gradient-text">Tutorials</span>
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400">
+            <p class="text-lg text-gray-700 dark:text-gray-300">
               Fresh content to level up your coding skills
             </p>
           </div>
@@ -196,14 +196,14 @@ const changelogEntries = (await getCollection('changelog'))
 
   <!-- Recent Changelog -->
   {changelogEntries.length > 0 && (
-    <section class="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+    <section class="section bg-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div class="container-content">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
           <div>
             <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
               Recent <span class="gradient-text">Updates</span>
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400">
+            <p class="text-lg text-gray-700 dark:text-gray-300">
               See what's new and improved
             </p>
           </div>
