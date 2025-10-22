@@ -1,15 +1,18 @@
 /* Modern Font Imports - Must be before Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-/* Tailwind Directives */
+/* Tailwind CSS v4 */
 @import 'tailwindcss';
+
+/* Tailwind v4 dark mode configuration - selector based on .dark class */
+@variant dark (&:where(.dark, .dark *));
 
 /* Design System Tokens */
 @layer base {
   :root {
     /* Modern Color Palette - Sophisticated Blues & Purples */
-    --color-bg: 255 255 255;
-    --color-text: 15 23 42;
+    --color-bg: 249 250 251; /* Warm gray-50 instead of harsh white */
+    --color-text: 31 41 55; /* Softer gray-800 instead of slate-900 */
     --color-accent: 99 102 241;
     --color-accent-dark: 79 70 229;
     --color-accent-light: 129 140 248;
