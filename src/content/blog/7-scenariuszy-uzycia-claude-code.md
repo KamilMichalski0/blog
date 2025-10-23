@@ -2,7 +2,7 @@
 title: '7 Najczęstszych Scenariuszy Użycia Claude Code w Codziennej Pracy'
 description: 'Odkryj praktyczne zastosowania Claude Code - od naprawy bugów, przez refactoring, po automatyzację testów. Przykłady z prawdziwych projektów.'
 pubDate: 'Jul 15 2022'
-heroImage: '/blog-placeholder-2.jpg'
+heroImage: '/scenariusze-hero.jpg'
 tags: ['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']
 ---
 

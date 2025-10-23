@@ -2,7 +2,7 @@
 title: 'Zaawansowane Techniki Claude Code - Extended Thinking i Plan Mode'
 description: 'Poznaj zaawansowane funkcje Claude Code: Plan Mode do bezpiecznego planowania, Extended Thinking dla złożonych zadań i Unix pipelines.'
 pubDate: 'Jul 22 2022'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '/zaawansowane-hero.jpg'
 tags: ['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']
 ---
 
