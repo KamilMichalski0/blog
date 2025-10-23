@@ -2,7 +2,7 @@
 title: 'Hooks i Event-Driven Automation w Claude Code - Kompletny Przewodnik'
 description: 'Automatyzuj workflow przez event hooks w Claude Code. Pre/Post tool hooks, validation, logging, notifications i integration z external tools.'
 pubDate: 'Oct 24 2024'
-heroImage: '/hooks-automation.jpg'
+heroImage: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&q=80'
 tags: ['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']
 ---
 

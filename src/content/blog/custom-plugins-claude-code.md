@@ -2,7 +2,7 @@
 title: 'Tworzenie Custom Plugins dla Claude Code - Kompletny Przewodnik'
 description: 'Naucz się budować własne pluginy Claude Code z custom commands, agents, skills i hooks. Dystrybuuj je przez marketplace dla całego zespołu.'
 pubDate: 'Oct 24 2024'
-heroImage: '/plugins-modular.jpg'
+heroImage: 'https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=1200&q=80'
 tags: ['Claude Code', 'Plugins', 'Extensibility', 'Zaawansowane']
 ---
 
