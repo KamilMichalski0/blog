@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = 'ClaudeCodeLab - Learn programming with Claude Code',
+  description = 'ClaudeCodeLab - Naucz się programowania z Claude Code',
   image = '/og-image.jpg',
   publishDate,
   type = 'website',
@@ -22,7 +22,7 @@ const socialImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +41,7 @@ const socialImageURL = new URL(image, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:site_name" content="ClaudeCodeLab" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="pl_PL" />
     {publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
 
     <!-- Twitter Card -->
@@ -82,7 +82,7 @@ const socialImageURL = new URL(image, Astro.site);
             <div class="hidden md:block ml-10">
               <div class="flex items-baseline space-x-4">
                 <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  Home
+                  Start
                 </a>
                 <a href="/blog" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   Blog
@@ -91,7 +91,7 @@ const socialImageURL = new URL(image, Astro.site);
                   Changelog
                 </a>
                 <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  About
+                  O Nas
                 </a>
               </div>
             </div>
@@ -133,7 +133,7 @@ const socialImageURL = new URL(image, Astro.site);
         <div id="mobile-menu" class="hidden md:hidden">
           <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-              Home
+              Start
             </a>
             <a href="/blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
               Blog
@@ -142,7 +142,7 @@ const socialImageURL = new URL(image, Astro.site);
               Changelog
             </a>
             <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-              About
+              O Nas
             </a>
           </div>
         </div>
@@ -161,45 +161,45 @@ const socialImageURL = new URL(image, Astro.site);
           <div>
             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">ClaudeCodeLab</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              Learn programming with AI-powered tutorials and resources.
+              Naucz się programowania dzięki tutorialom opartym na AI.
             </p>
           </div>
 
           <div>
             <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
-              Navigation
+              Nawigacja
             </h4>
             <ul class="space-y-2">
-              <li><a href="/" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Home</a></li>
+              <li><a href="/" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Start</a></li>
               <li><a href="/blog" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Blog</a></li>
               <li><a href="/changelog" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Changelog</a></li>
-              <li><a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About</a></li>
+              <li><a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">O Nas</a></li>
             </ul>
           </div>
 
           <div>
             <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
-              Resources
+              Zasoby
             </h4>
             <ul class="space-y-2">
-              <li><a href="/rss.xml" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">RSS Feed</a></li>
-              <li><a href="/sitemap-index.xml" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Sitemap</a></li>
+              <li><a href="/rss.xml" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Kanał RSS</a></li>
+              <li><a href="/sitemap-index.xml" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Mapa Strony</a></li>
             </ul>
           </div>
 
           <div>
             <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
-              Connect
+              Kontakt
             </h4>
             <p class="text-gray-600 dark:text-gray-400">
-              Built with Astro and Claude Code
+              Stworzone z Astro i Claude Code
             </p>
           </div>
         </div>
 
         <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
           <p class="text-center text-gray-600 dark:text-gray-400">
-            © 2024 ClaudeCodeLab. All rights reserved.
+            © 2024 ClaudeCodeLab. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>
@@ -211,7 +211,7 @@ const socialImageURL = new URL(image, Astro.site);
         href="/blog"
         class="btn-primary shadow-lg flex items-center space-x-2"
       >
-        <span>Start Learning</span>
+        <span>Zacznij Naukę</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>

@@ -9,7 +9,7 @@ interface Props {
 
 const { title, date, type, highlights, version } = Astro.props;
 
-const formattedDate = new Date(date).toLocaleDateString('en-US', {
+const formattedDate = new Date(date).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -18,35 +18,35 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 const typeConfig = {
   feat: {
     style: 'badge-success',
-    label: 'Feature',
+    label: 'Funkcja',
     icon: 'M12 4v16m8-8H4',
     color: 'border-green-500 dark:border-green-400',
     bgGradient: 'from-green-500/10 to-transparent',
   },
   fix: {
     style: 'badge-danger',
-    label: 'Bug Fix',
+    label: 'Poprawka',
     icon: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
     color: 'border-red-500 dark:border-red-400',
     bgGradient: 'from-red-500/10 to-transparent',
   },
   docs: {
     style: 'badge-primary',
-    label: 'Documentation',
+    label: 'Dokumentacja',
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     color: 'border-blue-500 dark:border-blue-400',
     bgGradient: 'from-blue-500/10 to-transparent',
   },
   perf: {
     style: 'badge-warning',
-    label: 'Performance',
+    label: 'Wydajność',
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     color: 'border-yellow-500 dark:border-yellow-400',
     bgGradient: 'from-yellow-500/10 to-transparent',
   },
   other: {
     style: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
-    label: 'Other',
+    label: 'Inne',
     icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
     color: 'border-gray-400 dark:border-gray-600',
     bgGradient: 'from-gray-500/10 to-transparent',

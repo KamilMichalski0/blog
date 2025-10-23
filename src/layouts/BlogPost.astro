@@ -6,13 +6,13 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
-const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+const formattedDate = new Date(pubDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
 
-const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateString('en-US', {
+const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -50,7 +50,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                5 min read
+                5 min czytania
               </span>
             </div>
           </div>
@@ -81,7 +81,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                5 min read
+                5 min czytania
               </span>
             </div>
           </div>
@@ -106,7 +106,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span class="text-blue-900 dark:text-blue-100">
-              Last updated on <strong>{formattedUpdatedDate}</strong>
+              Ostatnia aktualizacja: <strong>{formattedUpdatedDate}</strong>
             </span>
           </div>
         )}
@@ -126,10 +126,10 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div class="flex-1">
                 <h3 class="text-xl font-bold text-black dark:text-white mb-2">
-                  Enjoyed this tutorial?
+                  Podobał Ci się ten tutorial?
                 </h3>
                 <p class="text-black dark:text-gray-300">
-                  Share it with your friends and colleagues who might find it useful!
+                  Podziel się nim ze znajomymi i kolegami, którym może się przydać!
                 </p>
               </div>
 
@@ -160,7 +160,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
                 <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
-                Back to all tutorials
+                Wróć do wszystkich tutoriali
               </a>
             </div>
           </div>

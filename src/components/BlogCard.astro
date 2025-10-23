@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description, pubDate, heroImage, href, tags = [], draft = false } = Astro.props;
 
-const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+const formattedDate = new Date(pubDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -37,7 +37,7 @@ const readingTime = description ? Math.ceil(description.split(' ').length / 200)
 
           {draft && (
             <div class="absolute top-4 right-4">
-              <span class="badge badge-warning shadow-lg">Draft</span>
+              <span class="badge badge-warning shadow-lg">Szkic</span>
             </div>
           )}
         </div>
@@ -51,7 +51,7 @@ const readingTime = description ? Math.ceil(description.split(' ').length / 200)
           </div>
           {draft && (
             <div class="absolute top-4 right-4">
-              <span class="badge badge-warning shadow-lg">Draft</span>
+              <span class="badge badge-warning shadow-lg">Szkic</span>
             </div>
           )}
         </div>
@@ -69,7 +69,7 @@ const readingTime = description ? Math.ceil(description.split(' ').length / 200)
             <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            {readingTime} min read
+            {readingTime} min czytania
           </span>
         </div>
 
@@ -105,7 +105,7 @@ const readingTime = description ? Math.ceil(description.split(' ').length / 200)
           )}
 
           <div class="flex items-center font-semibold group-hover:gap-2 transition-all" style="color: rgb(var(--color-accent));">
-            Read more
+            Czytaj więcej
             <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>

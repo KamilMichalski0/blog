@@ -1,5 +1,5 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// Umieść tutaj wszystkie globalne dane.
+// Możesz importować te dane z dowolnego miejsca w witrynie używając słowa kluczowego `import`.
 
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'ClaudeCodeLab';
+export const SITE_DESCRIPTION = 'Naucz się programowania z pomocą sztucznej inteligencji Claude Code';
