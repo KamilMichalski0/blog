@@ -21,17 +21,24 @@ Plan Mode to tryb "read-only", w którym Claude analizuje kod i planuje zmiany *
 
 ### Uruchomienie Plan Mode
 
-```bash
-# Rozpocznij sesję w trybie planowania
-claude --plan
-```
-
-Lub w trakcie sesji:
+Plan Mode aktywujesz przez naciśnięcie **Shift+Tab dwa razy** w trakcie sesji Claude Code.
 
 ```bash
+# 1. Uruchom Claude Code
 claude
-> /plan
+
+# 2. Naciśnij Shift+Tab dwa razy
+# Claude przełączy się w Plan Mode
 ```
+
+W Plan Mode Claude ma dostęp tylko do narzędzi read-only:
+- ✅ Read, Glob, Grep (czytanie i wyszukiwanie)
+- ✅ Task, TodoRead/TodoWrite (research i planowanie)
+- ❌ Edit, Write, Bash (edycja i wykonywanie)
+
+### Wyjście z Plan Mode
+
+Aby wyjść z Plan Mode i wrócić do normalnego trybu, naciśnij **Shift+Tab** ponownie.
 
 ### Przykład: Planning Dużego Refactoringu
 
@@ -100,19 +107,13 @@ Zacznij od izolowanych modułów (np. Settings page).
 Szacowany czas: 7-9 dni roboczych"
 ```
 
-### Wyjście z Plan Mode i Wykonanie
+### Wykonanie Planu
 
-Po zatwierdzeniu planu:
+Po przejrzeniu planu w Plan Mode:
 
-```
-> /execute
-```
-
-Lub zakończ planowanie i przełącz się na normalny tryb:
-
-```
-> /exit-plan
-```
+1. Naciśnij **Shift+Tab** aby wyjść z Plan Mode
+2. Potwierdź wykonanie planu w normalnym trybie
+3. Claude wykona zaplanowane zmiany z możliwością zatwierdzania każdego kroku
 
 ## Extended Thinking - Dla Złożonych Problemów
 
