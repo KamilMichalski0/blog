@@ -6,7 +6,7 @@ heroImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&
 tags: ['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']
 ---
 
-Claude Code nie jest tylko narzędziem do generowania kodu - to kompleksowy asystent programisty, który może znacząco usprawnić Twój codziennyworkflow. W tym artykule przedstawię 7 najczęstszych scenariuszy, w których Claude Code okazuje się nieoceniony.
+Claude Code nie jest tylko narzędziem do generowania kodu - to kompleksowy asystent programisty, który może znacząco usprawnić Twój codzienny workflow. W tym artykule przedstawię 7 najczęstszych scenariuszy, w których Claude Code okazuje się nieoceniony.
 
 ## 1. Szybkie Zrozumienie Nowego Projektu
 
@@ -121,11 +121,12 @@ Masz stary kod do zmodernizowania, ale boisz się coś zepsuć.
 
 ### Rozwiązanie: Plan Mode
 
-```bash
-claude --plan
-```
+Uruchom Claude i aktywuj Plan Mode (naciśnij **Shift+Tab dwa razy**). W trybie plan Claude analizuje bez wprowadzania zmian:
 
-W trybie plan Claude analizuje bez wprowadzania zmian:
+```bash
+claude
+# Następnie naciśnij Shift+Tab dwa razy
+```
 
 ```
 > Zrefaktoruj utils.js aby używał ES2024 features, zachowując tę samą funkcjonalność
@@ -319,20 +320,27 @@ async function createUser(userData) {
 }
 ```
 
-## Bonus: Integracja z Unix Pipeline
+## Bonus: Automatyzacja z Hooks
 
-Claude Code działa doskonale w pipelines:
+Claude Code oferuje system hooks do automatyzacji workflow:
 
-```bash
-# Code review poprzez pipe
-git diff | claude "Review this diff for potential issues"
-
-# Automatyczny linting
-claude "Fix all eslint errors in src/" | tee lint-report.txt
-
-# Generowanie release notes
-git log --since="2 weeks ago" | claude "Generate release notes"
+```json
+// .claude/settings.json
+{
+  "hooks": {
+    "pre-commit": {
+      "command": "npm run lint",
+      "blocking": true
+    },
+    "post-commit": {
+      "command": "echo 'Commit created successfully'",
+      "blocking": false
+    }
+  }
+}
 ```
+
+Więcej o automatyzacji z hooks w dedykowanym artykule!
 
 ## Podsumowanie
 

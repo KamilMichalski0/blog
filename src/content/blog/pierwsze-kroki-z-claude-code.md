@@ -37,21 +37,15 @@ npm install -g @anthropic-ai/claude-code
 
 Flaga `-g` instaluje narzędzie globalnie, dzięki czemu będzie dostępne w każdym katalogu.
 
-### Metoda 2: Homebrew (macOS/Linux)
+### Metoda 2: Pobierz z Oficjalnej Strony
 
-Dla użytkowników Homebrew:
+Możesz również pobrać instalator bezpośrednio ze strony:
 
-```bash
-brew install --cask claude-code
+```
+https://claude.ai/download
 ```
 
-### Metoda 3: Instalator Shell
-
-Uniwersalna metoda dla systemów Unix:
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
+Wybierz wersję dla swojego systemu operacyjnego (macOS, Linux, Windows).
 
 ## Weryfikacja Instalacji
 
@@ -124,10 +118,10 @@ Claude pokaże proponowane zmiany i poprosi o zatwierdzenie przed edycją plikó
 | Komenda | Funkcja |
 |---------|----------|
 | `claude` | Uruchom tryb interaktywny |
-| `claude "zadanie"` | Wykonaj pojedyncze polecenie |
 | `/help` | Wyświetl dostępne komendy |
 | `/clear` | Zresetuj historię konwersacji |
 | `/exit` | Zakończ sesję |
+| `Shift+Tab` (2x) | Aktywuj Plan Mode (tylko odczyt) |
 
 ## Dobre Praktyki
 

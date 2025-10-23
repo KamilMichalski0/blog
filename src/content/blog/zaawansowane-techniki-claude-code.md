@@ -43,9 +43,13 @@ Aby wyjść z Plan Mode i wrócić do normalnego trybu, naciśnij **Shift+Tab** 
 ### Przykład: Planning Dużego Refactoringu
 
 ```bash
-claude --plan
+# Uruchom Claude Code
+claude
+
+# Naciśnij Shift+Tab dwa razy aby aktywować Plan Mode
 ```
 
+Teraz poproś o analizę:
 ```
 > Przeanalizuj aplikację i zaplanuj refactoring z Redux na Zustand
 
@@ -119,51 +123,54 @@ Po przejrzeniu planu w Plan Mode:
 
 ### Czym Jest Extended Thinking?
 
-Extended Thinking to tryb, w którym Claude poświęca więcej czasu na przemyślenie problemu przed udzieleniem odpowiedzi. Idealny dla:
+Extended Thinking to funkcja, w której Claude **głęboko przemyśla problem przed rozpoczęciem działania**, pokazując swój proces myślowy. Jest zasilany przez Claude 3.7 Sonnet i idealny dla:
 
 - Decyzji architektonicznych
 - Rozwiązywania złożonych bugów
-- Optymalizacji wydajności
-- Design patterns selection
+- Planowania refactoringu
+- Wyboru design patterns
 
 ### Aktywacja Extended Thinking
 
+Po prostu poproś Claude aby "pomyślał" w swoim promptcie:
+
 ```bash
-claude --extended-thinking
+claude
+
+> Pomyśl głęboko o tym problemie i zaplanuj refactoring z Redux na Zustand
 ```
 
-Lub w sesji:
-
-```
-> /think
-```
+Możesz kontrolować intensywność myślenia:
+- **"think"** - 4,000 tokenów budżetu myślenia
+- **"think hard"** lub **"megathink"** - 10,000 tokenów
+- **"ultrathink"** lub **"think harder"** - 32,000 tokenów (najdłuższe)
 
 ### Przykład: Wybór Architektury
 
 ```
-> /think
+> Think deeply: Muszę zdecydować między monorepo a multi-repo
+  dla systemu mikroservisów (5 serwisów, 3 zespoły, CI/CD już jest)
 
-Muszę zdecydować: monorepo czy multi-repo dla naszego systemu
-mikroser wisów (5 serwisów, 3 zespoły, CI/CD już jest)
+[Claude pokazuje swój proces myślowy...]
 
-[Claude aktywuje Extended Thinking...]
+<thinking>
+Analizuję problem z różnych perspektyw...
 
-"Analizuję problem z różnych perspektyw...
-
-🤔 Rozważam strukturę teamów:
+Rozważam strukturę teamów:
 - 3 zespoły: Frontend, Backend API, DevOps
 - Czy zespoły są autonomiczne czy współdzielą kod?
 - Historia: czy były problemy z dependency hell?
 
-🤔 Analizuję deployment patterns:
+Analizuję deployment patterns:
 - CI/CD już istnieje - czy wspiera monorepo?
 - Jak często deploye? Daily? Weekly?
 - Potrzeba atomic deploys cross-service?
 
-🤔 Techniczne rozważania:
+Techniczne rozważania:
 - Shared libraries - ile? Jaka częstotliwość zmian?
 - Build times - jak długie obecnie?
 - Code ownership - czy jasno zdefiniowane?
+</thinking>
 
 📊 REKOMENDACJA: Monorepo z Nx/Turborepo
 
@@ -223,7 +230,7 @@ monorepo/
 
 ⚡ KLUCZOWA ZASADA:
 Dodaj `turbo.json` z dependency graph - to zapewni:
-- Cache buildo w
+- Cache buildów
 - Selective testing
 - Parallel execution
 
@@ -304,68 +311,63 @@ git log --since="2 weeks ago" > commits.txt
 claude "/release-notes commits.txt"
 ```
 
-## Unix Pipelines Integration
+## Automatyzacja z Hooks
 
-Claude Code świetnie działa jako część Unix pipelines:
+Claude Code oferuje system **hooks** do automatyzacji workflow. Hooks to skrypty, które wykonują się w odpowiedzi na wydarzenia.
 
-### Code Review Pipeline
+### Przykład: Pre-commit Hook
 
-```bash
-#!/bin/bash
-# review-pipeline.sh
+Możesz skonfigurować hook, który automatycznie sprawdza kod przed commitem:
 
-# 1. Get diff
-git diff main...feature-branch > diff.txt
+1. Utwórz plik `.claude/hooks/pre-commit.sh`
+2. Skonfiguruj w `.claude/settings.json`:
 
-# 2. Claude review
-cat diff.txt | claude "Review this diff for issues" > review.md
-
-# 3. Check if critical issues found
-if grep -q "🔴 Critical" review.md; then
-  echo "❌ Critical issues found!"
-  cat review.md
-  exit 1
-fi
-
-echo "✅ Review passed"
+```json
+{
+  "hooks": {
+    "pre-commit": {
+      "command": "bash .claude/hooks/pre-commit.sh",
+      "blocking": true
+    }
+  }
+}
 ```
 
-### Automated Commit Messages
+### Automatyczne Code Review
 
-```bash
-# Smart commit with AI-generated message
-git add .
-git diff --staged | claude "Generate concise commit message" > /tmp/msg.txt
-git commit -F /tmp/msg.txt
+Użyj custom slash commands do automatyzacji code review:
+
+```markdown
+# .claude/commands/review-pr.md
+---
+name: review-pr
+description: Review current branch changes
+---
+
+Review all changes in the current branch compared to main.
+Focus on:
+- Security vulnerabilities
+- Performance issues
+- Best practices
 ```
 
-### Test Generation Pipeline
-
+Użycie:
 ```bash
-#!/bin/bash
-# generate-tests.sh
-
-for file in src/**/*.js; do
-  echo "Generating tests for $file..."
-  claude "Generate unit tests for $file" > "tests/${file%.js}.test.js"
-done
-```
-
-### Linting Fix Pipeline
-
-```bash
-# Fix all linting issues automatically
-npm run lint -- --format json | \
-  jq '.[] | .filePath' | \
-  xargs -I {} claude "Fix all ESLint issues in {}"
+claude
+> /review-pr
 ```
 
 ## Kombinacje Zaawansowanych Technik
 
 ### Plan Mode + Extended Thinking
 
-```bash
-claude --plan --extended-thinking
+Możesz łączyć Plan Mode z Extended Thinking:
+
+1. Naciśnij **Shift+Tab dwa razy** aby aktywować Plan Mode
+2. W swoim promptcie użyj słów kluczowych aktywujących myślenie: "think deeply", "ultrathink", itp.
+
+```
+> Think deeply and plan the migration from Redux to Zustand
 ```
 
 Najlepsze dla:
@@ -375,14 +377,16 @@ Najlepsze dla:
 
 ### Extended Thinking + Custom Commands
 
-```bash
+Custom slash commands mogą sugerować użycie Extended Thinking w swoim opisie:
+
+```markdown
 # W .claude/commands/architect.md
 ---
 name: architect
-extended-thinking: true
+description: Deep architectural analysis (uses extended thinking)
 ---
 
-Analyze system architecture and recommend:
+Think deeply about the system architecture and recommend:
 - Design patterns
 - Scalability improvements
 - Security enhancements
@@ -390,68 +394,76 @@ Analyze system architecture and recommend:
 
 ## Performance Tips
 
-### 1. Cache Pattern
+### 1. Używaj Pojedynczej Sesji
 
 Claude cachuje context w sesji - wykorzystaj to:
 
 ```bash
-# Źle - każde wywołanie parsuje cały projekt
-claude "Fix bug in auth.js"
-claude "Fix bug in user.js"
+# Źle - wielokrotne uruchomienia
+claude
+> Fix bug in auth.js
+# Zamknij
+claude
+> Fix bug in user.js
+# Zamknij
 
 # Dobrze - jedna sesja, shared context
 claude
 > Fix bug in auth.js
 > Fix bug in user.js
+> Continue with related tasks
 ```
 
-### 2. Incremental Changes
+### 2. Zmiany Etapowe
 
 ```bash
-# Zamiast dużych zmian:
-claude "Refactor entire app to TypeScript"
+# Zamiast dużych zmian na raz:
+claude
+> Refactor entire app to TypeScript
 
 # Lepiej etapowo:
 claude
 > Convert utils.js to TypeScript
-> Convert types.js to TypeScript
+# Po zakończeniu:
+> Now convert types.js to TypeScript
+# Po zakończeniu:
 > Continue with remaining files
 ```
 
-### 3. Scoped Requests
+### 3. Precyzyjne Zadania
 
 ```bash
-# Zbyt szerokie:
-claude "Find all bugs"
+# Zbyt szerokie zadanie:
+claude
+> Find all bugs
 
-# Precyzyjne:
-claude "Analyze auth middleware for security issues"
+# Precyzyjne i osiągalne:
+claude
+> Analyze the auth middleware in src/api/auth.js for security issues
 ```
 
-## Debugging Claude
+## Rozwiązywanie Problemów
 
-### Problem: Hallucinations
+### Problem: Nieprawidłowe Sugestie
+
+Jeśli Claude generuje nieprawidłowy kod:
+
+1. **Użyj Plan Mode** - Naciśnij Shift+Tab dwa razy, aby najpierw zaplanować zmiany bez ich wykonywania
+2. **Przejrzyj plan** i zatwierdź lub odrzuć
+3. **Wyjdź z Plan Mode** (Shift+Tab) i wykonaj zatwierdzone zmiany
+
+### Problem: Wolne Odpowiedzi
+
+Ogranicz zakres pracy Claude:
 
 ```bash
-# Włącz verbose mode
-claude --verbose
+claude
+> Analyze only the auth middleware in src/api/auth.js for security issues
 ```
 
-### Problem: Slow Responses
-
+Zamiast:
 ```bash
-# Ogranicz scope
-claude --files="src/api/**"
-```
-
-### Problem: Incorrect Changes
-
-```bash
-# Użyj Plan Mode pierwszy
-claude --plan
-> Plan refactoring
-> /review-plan
-> /execute
+> Find all bugs in the entire codebase  # Zbyt szerokie
 ```
 
 ## Podsumowanie
