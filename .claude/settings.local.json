@@ -23,7 +23,9 @@
       "Bash(grep:*)",
       "Bash(for file in /mnt/c/data/projekty/bonus/src/content/blog/*.md)",
       "Bash(do sed -i 's/\\\\```/```/g' \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)"
     ],
     "deny": [],
     "ask": []
