@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## 1. Instalacja i szkic projektu
 
-Z dokumentacji SDK wynika, że najwygodniej korzystać z wersji asynchronicznej. Zainstaluj pakiet:
+Z dokumentacji [SDK](https://openai.github.io/openai-agents-python/) wynika, że najwygodniej korzystać z wersji asynchronicznej. Zainstaluj pakiet:
 
 ```bash
 pip install openai-agents
@@ -134,6 +134,18 @@ async def main():
 
 asyncio.run(main())
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [OpenAI Agents SDK - Python](https://openai.github.io/openai-agents-python/)
+- [OpenAI Agents - Getting Started](https://platform.openai.com/docs/guides/agents)
+- [Pydantic Documentation](https://docs.pydantic.dev/)
+
+### Powiązane Artykuły
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
+- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy)
+- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje)
 
 ### Dobre praktyki z dokumentacji
 

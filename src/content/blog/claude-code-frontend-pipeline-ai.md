@@ -10,17 +10,17 @@ author: "ClaudeCodeLab"
 
 ## 1. Plan Mode jako pierwsza linia bezpieczeństwa
 
-Zaczynaj każdą sesję od przełączenia w Plan Mode (**Shift+Tab**). Agent pracuje wtedy tylko w trybie odczytu i może bezpiecznie ocenić zmiany:
+Zaczynaj każdą sesję od przełączenia w [Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) (**Shift+Tab**). Agent pracuje wtedy tylko w trybie odczytu i może bezpiecznie ocenić zmiany:
 
 ```
 Plan Mode: think deeply and review the components touched in the last commit.
 ```
 
-Extended Thinking (uruchamiane pojedynczym **Tab** razem ze zwrotem `think deeply`) pozwala zebrać pełen kontekst – np. listę komponentów, klas Tailwind i zależności, które wymagają testów E2E.
+[Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking) (uruchamiane pojedynczym **Tab** razem ze zwrotem `think deeply`) pozwala zebrać pełen kontekst – np. listę komponentów, klas Tailwind i zależności, które wymagają testów E2E.
 
 ## 2. Hook PostToolUse dla formatowania i kontroli jakości
 
-Po opuszczeniu Plan Mode dodaj do `.claude/settings.json` hook, który reaguje na każdą edycję:
+Po opuszczeniu Plan Mode dodaj do `.claude/settings.json` [hook](https://docs.anthropic.com/en/docs/claude-code/hooks), który reaguje na każdą edycję:
 
 ```json
 {
@@ -91,10 +91,23 @@ Aby uniknąć przypadkowych edycji, dodaj guardrail w hooku:
 Plan Mode: summarize the last build and test outputs from the hook logs.
 ```
 
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
+- [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
+- [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
+- [Astro Documentation](https://docs.astro.build/)
+
+### Powiązane Artykuły
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+
 ## 6. Co dalej?
 
-- Dodaj hook `SessionEnd`, który wyśle podsumowanie do Slacka albo zapisze log w repozytorium.  
-- Rozszerz pipeline o `npm run test -- --coverage`, aby raporty pokrycia były generowane automatycznie.  
+- Dodaj hook `SessionEnd`, który wyśle podsumowanie do Slacka albo zapisze log w repozytorium.
+- Rozszerz pipeline o `npm run test -- --coverage`, aby raporty pokrycia były generowane automatycznie.
 - Połącz te kroki z CI (np. GitHub Actions), aby każdy commit przechodził te same kontrole.
 
-Dzięki takiemu podejściu agent AI staje się integralną częścią pipeline’u frontendu: planuje, wykonuje, testuje i raportuje zmiany, a Ty wchodzisz do gry dopiero przy przeglądzie wyników.
+Dzięki takiemu podejściu agent AI staje się integralną częścią pipeline'u frontendu: planuje, wykonuje, testuje i raportuje zmiany, a Ty wchodzisz do gry dopiero przy przeglądzie wyników.

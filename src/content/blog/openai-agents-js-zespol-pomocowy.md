@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## 1. Przygotowanie środowiska
 
-Zainstaluj pakiet `@openai/agents` i utwórz plik TypeScript, w którym będziesz konfigurować system:
+Zainstaluj pakiet [`@openai/agents`](https://openai.github.io/openai-agents-js/) i utwórz plik TypeScript, w którym będziesz konfigurować system:
 
 ```bash
 npm install @openai/agents zod
@@ -133,6 +133,18 @@ const continued = await triage.run({
 ```
 
 W ten sposób tworzysz pełny zespół agentów: triage filtruje zgłoszenia i przekazuje je do wyspecjalizowanych partnerów, guardraile dbają o bezpieczeństwo, a approvals chronią wrażliwe operacje.
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [OpenAI Agents SDK - JavaScript](https://openai.github.io/openai-agents-js/)
+- [OpenAI Agents - Getting Started](https://platform.openai.com/docs/guides/agents)
+- [OpenAI Agents - Handoffs](https://openai.github.io/openai-agents-js/concepts/handoffs)
+- [OpenAI Agents - Guardrails](https://openai.github.io/openai-agents-js/concepts/guardrails)
+
+### Powiązane Artykuły
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
+- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje)
 
 ## 5. Dalsze rekomendacje
 

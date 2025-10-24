@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## 1. Czym jest Model Context Protocol?
 
-Model Context Protocol (MCP) umożliwia agentom dostęp do zewnętrznych systemów – od GitHuba po bazy danych – bez pisania własnych wrapperów. Dokumentacja SDK opisuje dwa najczęściej używane transporty:
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/) umożliwia agentom dostęp do zewnętrznych systemów – od GitHuba po bazy danych – bez pisania własnych wrapperów. Dokumentacja [SDK](https://openai.github.io/openai-agents-js/) opisuje dwa najczęściej używane transporty:
 
 - **`MCPServerStreamableHttp`** – dla usług udostępnianych przez HTTP (idealne dla GitHuba, Notion).  
 - **`MCPServerStdio`** – dla lokalnych procesów uruchamianych z CLI (np. Postgresowy serwer MCP).
@@ -92,3 +92,16 @@ Agent automatycznie wybierze odpowiednie narzędzia MCP (np. `list_pull_requests
 - **Monitoruj błędy** – obsługuj wyjątki w `try/catch`, aby informować użytkownika, gdy zewnętrzny serwer MCP jest niedostępny.
 
 Z tą konfiguracją agent AI zyskuje wgląd w realne systemy firmowe i może odpowiadać na bieżąco na pytania o deploye, zgłoszenia czy metryki – bez ręcznego kopiowania danych.
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [OpenAI Agents SDK - JavaScript](https://openai.github.io/openai-agents-js/)
+- [OpenAI Agents - MCP Integration](https://openai.github.io/openai-agents-js/concepts/mcp)
+- [MCP Servers Repository](https://github.com/modelcontextprotocol/servers)
+
+### Powiązane Artykuły
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
+- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy)

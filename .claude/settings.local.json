@@ -34,7 +34,17 @@
       "Bash(git rm:*)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(for file in /mnt/c/data/projekty/bonus/src/content/blog/*.md /mnt/c/data/projekty/bonus/src/content/blog/*.mdx)",
+      "Bash(do)",
+      "Bash(if ! grep -q \"## 📚 Dokumentacja i Zasoby\" \"$file\")",
+      "Bash(then)",
+      "Bash(basename:*)",
+      "Bash(fi)",
+      "Bash(then if ! grep -q \"## 📚 Dokumentacja i Zasoby\" \"$file\")",
+      "Bash(then basename \"$file\" fi fi done)",
+      "Bash(do if grep -q \"## 📚 Dokumentacja i Zasoby\" \"$file\")",
+      "Bash(then basename \"$file\" fi done)"
     ],
     "deny": [],
     "ask": []

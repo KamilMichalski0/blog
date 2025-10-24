@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## 1. Aktywacja Plan Mode i Extended Thinking
 
-Plan Mode w Claude Code pozwala analizować repozytorium bez zmian w plikach. Wystarczy w trakcie sesji nacisnąć **Shift+Tab**, aby przełączyć się w tryb tylko-do-odczytu; powrót następuje po ponownym naciśnięciu tej kombinacji. Teraz poproś agenta o głęboką analizę (Extended Thinking włącza się pojedynczym naciśnięciem **Tab** i słowami kluczowymi `think deeply`, `ultrathink`), np.:
+[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) w Claude Code pozwala analizować repozytorium bez zmian w plikach. Wystarczy w trakcie sesji nacisnąć **Shift+Tab**, aby przełączyć się w tryb tylko-do-odczytu; powrót następuje po ponownym naciśnięciu tej kombinacji. Teraz poproś agenta o głęboką analizę ([Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking) włącza się pojedynczym naciśnięciem **Tab** i słowami kluczowymi `think deeply`, `ultrathink`), np.:
 
 ```
 Think deeply and map the areas most coupled with our Redux store.
@@ -30,7 +30,7 @@ Plan Mode rozbije pracę na etapy (np. setup store’ów Zustand, migracja selek
 
 ## 3. Hooki automatyzujące kontrole jakości
 
-Gdy zaakceptujesz plan, wyjdź z Plan Mode i skonfiguruj hook `PostToolUse`, aby po każdej edycji plików agent uruchamiał testy oraz formatowanie:
+Gdy zaakceptujesz plan, wyjdź z Plan Mode i skonfiguruj [hook](https://docs.anthropic.com/en/docs/claude-code/hooks) `PostToolUse`, aby po każdej edycji plików agent uruchamiał testy oraz formatowanie:
 
 ```json
 {
@@ -98,6 +98,19 @@ Think deeply and prepare a migration summary, remaining TODOs, and documentation
 ```
 
 Otrzymasz listę działań pokontrolnych (aktualizacja README, usunięcie paczek, checklisty QA). Dzięki hookom masz już wyniki buildów i testów, które możesz dołączyć do raportu.
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
+- [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
+- [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
+
+### Powiązane Artykuły
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [AI w pipeline frontendu](/blog/claude-code-frontend-pipeline-ai)
 
 ## 6. Najlepsze praktyki
 
