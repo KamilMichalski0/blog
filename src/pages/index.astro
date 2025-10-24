@@ -183,6 +183,7 @@ const changelogEntries = (await getCollection('changelog'))
                 href={`/blog/${post.id}`}
                 tags={post.data.tags}
                 draft={post.data.draft}
+                readingTime={post.data.readingTime}
               />
             </div>
           ))}

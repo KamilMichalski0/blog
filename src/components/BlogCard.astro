@@ -7,18 +7,16 @@ interface Props {
   href: string;
   tags?: string[];
   draft?: boolean;
+  readingTime?: number;
 }
 
-const { title, description, pubDate, heroImage, href, tags = [], draft = false } = Astro.props;
+const { title, description, pubDate, heroImage, href, tags = [], draft = false, readingTime = 3 } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-
-// Calculate reading time (rough estimate: 200 words per minute)
-const readingTime = description ? Math.ceil(description.split(' ').length / 200) : 3;
 ---
 
 <article class="group h-full">
