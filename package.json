@@ -8,7 +8,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "new:post": "node scripts/new-blog-post.mjs",
-    "new:changelog": "node scripts/new-changelog.mjs"
+    "new:changelog": "node scripts/new-changelog.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:reading-time": "node scripts/calculate-reading-time.mjs",
+    "seo:alt-text": "node scripts/generate-alt-text.mjs",
+    "seo:download-images": "node scripts/download-images.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",

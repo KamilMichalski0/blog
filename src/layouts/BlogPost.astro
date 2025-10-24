@@ -1,10 +1,26 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+  url?: string;
+  relatedPosts?: CollectionEntry<'blog'>[];
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  heroImageAlt,
+  author = 'ClaudeCodeLab',
+  readingTime,
+  category,
+  url,
+  relatedPosts = []
+} = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
@@ -17,16 +33,53 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
   month: 'long',
   day: 'numeric',
 }) : null;
+
+// Schema.org structured data
+const currentUrl = url || Astro.url.pathname;
+const fullUrl = new URL(currentUrl, Astro.site).toString();
+const imageUrl = heroImage ? new URL(heroImage.startsWith('http') ? heroImage : heroImage, Astro.site).toString() : null;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description || title,
+  "image": imageUrl,
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate || pubDate).toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": new URL('/', Astro.site).toString()
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ClaudeCodeLab",
+    "url": new URL('/', Astro.site).toString(),
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/logo.png', Astro.site).toString()
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": fullUrl
+  }
+};
 ---
 
 <BaseLayout title={title} description={description} type="article" publishDate={pubDate}>
+  <!-- Schema.org JSON-LD -->
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
   <article class="relative">
     <!-- Hero Image -->
     {heroImage ? (
       <div class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-gray-900">
         <img
           src={heroImage}
-          alt={title}
+          alt={heroImageAlt || `${title} - ClaudeCodeLab`}
           class="w-full h-full object-cover"
         />
         <!-- Gradient overlay for better text readability -->
@@ -50,7 +103,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                5 min czytania
+                {readingTime || 5} min czytania
               </span>
             </div>
           </div>
@@ -81,7 +134,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                5 min czytania
+                {readingTime || 5} min czytania
               </span>
             </div>
           </div>
@@ -92,6 +145,9 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
     <!-- Article Content -->
     <div class="py-12 md:py-16 bg-gray-50 dark:bg-gray-950">
       <div class="prose max-w-4xl mx-auto px-6">
+        <!-- Breadcrumbs -->
+        <Breadcrumbs title={title} category={category} />
+
         <!-- Description/Lead -->
         {description && (
           <p class="text-xl md:text-2xl text-black dark:text-gray-400 font-medium leading-relaxed mb-12 border-l-4 pl-6" style="border-color: rgb(var(--color-accent));">
@@ -153,8 +209,40 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
             </div>
           </div>
 
-          <!-- Navigation to other posts -->
-          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <!-- Related Posts -->
+          {relatedPosts.length > 0 && (
+            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+              <h3 class="text-2xl font-bold text-black dark:text-white mb-6">
+                📚 Powiązane Artykuły
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedPosts.map((relatedPost) => (
+                  <a
+                    href={`/blog/${relatedPost.id}`}
+                    class="card p-4 hover:shadow-2xl transition-all duration-300 group"
+                  >
+                    <h4 class="font-semibold text-black dark:text-white mb-2 group-hover:text-[rgb(var(--color-accent))] transition-colors line-clamp-2">
+                      {relatedPost.data.title}
+                    </h4>
+                    {relatedPost.data.description && (
+                      <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                        {relatedPost.data.description}
+                      </p>
+                    )}
+                    <div class="mt-3 flex items-center text-sm text-[rgb(var(--color-accent))]">
+                      <span>Czytaj więcej</span>
+                      <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Navigation to all posts -->
+          <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
             <div class="flex flex-col sm:flex-row justify-between gap-4">
               <a href="/blog" class="group inline-flex items-center text-[rgb(var(--color-accent))] font-semibold hover:text-[rgb(var(--color-accent-dark))]">
                 <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

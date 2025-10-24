@@ -9,9 +9,14 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
+    heroImageAlt: z.string().default(''),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     author: z.string().default('ClaudeCodeLab'),
+    readingTime: z.number().optional(),
+    category: z.enum(['tutorial', 'guide', 'deep-dive', 'integration', 'reference']).optional(),
+    seoTitle: z.string().optional(),
+    keywords: z.array(z.string()).default([]),
   }),
 });
 

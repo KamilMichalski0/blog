@@ -1,12 +1,17 @@
 ---
 title: "Plan Mode + Extended Thinking: Strategia Migracji z Redux do Zustand"
-description: "Jak użyć trybu planowania Claude Code i rozszerzonego myślenia, aby bezpiecznie przenieść aplikację z Redux do Zustand według konkretnego harmonogramu."
-pubDate: "2025-10-21"
-heroImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
-tags: ["Claude Code", "Plan Mode", "Extended Thinking", "Refactoring"]
+description: Jak użyć trybu planowania Claude Code i rozszerzonego myślenia, aby bezpiecznie przenieść aplikację z Redux do Zustand według konkretnego harmonogramu.
+pubDate: 2025-10-21
+heroImage: /blog/heroes/plan-mode-extended-thinking-refaktoryzacja.jpg
+tags: ["Claude Code","Plan Mode","Extended Thinking","Refactoring"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 3
+heroImageAlt: "Przewodnik: Claude Code - Plan Mode Extended Thinking"
 ---
+
+
+
 
 ## Dlaczego łączyć Plan Mode z Extended Thinking?
 

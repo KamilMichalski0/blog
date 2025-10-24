@@ -1,12 +1,17 @@
 ---
-title: "Budowanie Nowoczesnych Aplikacji Astro z Pomocą Claude Code"
-description: "Przewodnik krok po kroku po tworzeniu szybkich, wydajnych stron i aplikacji webowych używając Astro i Claude Code jako współprogramisty."
-pubDate: "2025-01-18"
-heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-tags: ["Astro", "Claude Code", "Web Development", "Tutorial", "Performance"]
+title: Budowanie Nowoczesnych Aplikacji Astro z Pomocą Claude Code
+description: Przewodnik krok po kroku po tworzeniu szybkich, wydajnych stron i aplikacji webowych używając Astro i Claude Code jako współprogramisty.
+pubDate: 2025-01-18
+heroImage: /blog/heroes/budowanie-aplikacji-astro-z-claude.jpg
+tags: ["Astro","Claude Code","Web Development","Tutorial","Performance"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 3
+heroImageAlt: "Tutorial: Astro - Budowanie Nowoczesnych Aplikacji Astro"
 ---
+
+
+
 
 ## Dlaczego Astro + Claude Code?
 

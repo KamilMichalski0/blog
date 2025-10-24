@@ -1,12 +1,17 @@
 ---
-title: "OpenAI Agents JS jako router zadań dla Claude Code"
-description: "Pokazujemy, jak agent w TypeScripcie triage’uje zadania, wybiera właściwego specjalistę i przekazuje je do Claude Code przez asTool i hooki."
-pubDate: "2025-10-22"
-heroImage: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop"
-tags: ["OpenAI Agents", "Claude Code", "Automation", "TypeScript"]
+title: OpenAI Agents JS jako router zadań dla Claude Code
+description: Pokazujemy, jak agent w TypeScripcie triage’uje zadania, wybiera właściwego specjalistę i przekazuje je do Claude Code przez asTool i hooki.
+pubDate: 2025-10-22
+heroImage: /blog/heroes/openai-agents-js-router-claude.jpg
+tags: ["OpenAI Agents","Claude Code","Automation","TypeScript"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 2
+heroImageAlt: "Przewodnik: OpenAI Agents - OpenAI Agents jako router"
 ---
+
+
+
 
 ## 1. Architektura rozwiązania
 

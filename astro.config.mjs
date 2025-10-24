@@ -14,9 +14,7 @@ export default defineConfig({
   ],
   vite: {
     plugins: [
-      tailwindcss({
-        config: './tailwind.config.ts',
-      }),
+      tailwindcss(),
     ],
   },
   markdown: {

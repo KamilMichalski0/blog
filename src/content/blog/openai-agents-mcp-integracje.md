@@ -1,12 +1,17 @@
 ---
-title: "Integracja agentów z danymi firmowymi przez MCP w OpenAI Agents SDK"
+title: Integracja agentów z danymi firmowymi przez MCP w OpenAI Agents SDK
 description: "Praktyczny przewodnik po MCPServerStreamableHttp i MCPServerStdio: GitHub, Postgres i Notion jako źródła danych dla agentów AI."
-pubDate: "2025-10-21"
-heroImage: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop"
-tags: ["OpenAI Agents", "MCP", "Integracje", "TypeScript"]
+pubDate: 2025-10-21
+heroImage: /blog/heroes/openai-agents-mcp-integracje.jpg
+tags: ["OpenAI Agents","MCP","Integracje","TypeScript"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 2
+heroImageAlt: "Tutorial: OpenAI Agents - Integracja agentów danymi firmowymi"
 ---
+
+
+
 
 ## 1. Czym jest Model Context Protocol?
 

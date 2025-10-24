@@ -1,10 +1,15 @@
 ---
-title: '7 Najczęstszych Scenariuszy Użycia Claude Code w Codziennej Pracy'
-description: 'Odkryj praktyczne zastosowania Claude Code - od naprawy bugów, przez refactoring, po automatyzację testów. Przykłady z prawdziwych projektów.'
-pubDate: 'Jul 15 2022'
-heroImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80'
+title: 7 Najczęstszych Scenariuszy Użycia Claude Code w Codziennej Pracy
+description: Odkryj praktyczne zastosowania Claude Code - od naprawy bugów, przez refactoring, po automatyzację testów. Przykłady z prawdziwych projektów.
+pubDate: Jul 15 2022
+heroImage: /blog/heroes/7-scenariuszy-uzycia-claude-code.jpg
 tags: ['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']
+readingTime: 3
+heroImageAlt: [ - Najczęstszych Scenariuszy Użycia Claude
 ---
+
+
+
 
 Claude Code nie jest tylko narzędziem do generowania kodu - to kompleksowy asystent programisty, który może znacząco usprawnić Twój codzienny workflow. W tym artykule przedstawię 7 najczęstszych scenariuszy, w których Claude Code okazuje się nieoceniony.
 

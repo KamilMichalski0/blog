@@ -13,8 +13,21 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+// Calculate related posts based on tag overlap
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+	.filter(p => p.id !== post.id && !p.data.draft)
+	.map(p => ({
+		post: p,
+		score: post.data.tags.filter(tag => p.data.tags.includes(tag)).length
+	}))
+	.filter(item => item.score > 0)
+	.sort((a, b) => b.score - a.score)
+	.slice(0, 3)
+	.map(item => item.post);
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} relatedPosts={relatedPosts}>
 	<Content />
 </BlogPost>

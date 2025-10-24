@@ -1,10 +1,15 @@
 ---
-title: 'Hooks i Event-Driven Automation w Claude Code - Kompletny Przewodnik'
-description: 'Automatyzuj workflow przez event hooks w Claude Code. Pre/Post tool hooks, validation, logging, notifications i integration z external tools.'
-pubDate: 'Oct 24 2024'
-heroImage: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&q=80'
+title: Hooks i Event-Driven Automation w Claude Code - Kompletny Przewodnik
+description: Automatyzuj workflow przez event hooks w Claude Code. Pre/Post tool hooks, validation, logging, notifications i integration z external tools.
+pubDate: Oct 24 2024
+heroImage: /blog/heroes/hooks-event-automation.jpg
 tags: ['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']
+readingTime: 6
+heroImageAlt: [ - Hooks Event Driven Automation
 ---
+
+
+
 
 Hooks w Claude Code to system event-driven automation, który pozwala automatycznie wykonywać akcje w odpowiedzi na zdarzenia - używanie narzędzi, wysyłanie promptów, rozpoczynanie sesji i więcej. W tym przewodniku nauczysz się wykorzystywać hooks do budowania zaawansowanych workflow automation.
 

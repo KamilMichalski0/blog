@@ -1,0 +1,817 @@
+{
+  "generated": "2025-10-24T11:54:30.496Z",
+  "summary": {
+    "totalPosts": 28,
+    "publishedPosts": 27,
+    "draftPosts": 1,
+    "averageSeoScore": 88,
+    "criticalIssues": 0,
+    "postsNeedingWork": 24,
+    "issues": {
+      "shortDescriptions": 0,
+      "longTitles": 23,
+      "externalImages": 0,
+      "missingAltText": 0
+    }
+  },
+  "posts": [
+    {
+      "filename": "7-scenariuszy-uzycia-claude-code.md",
+      "slug": "7-scenariuszy-uzycia-claude-code",
+      "title": "7 Najczęstszych Scenariuszy Użycia Claude Code w Codziennej Pracy",
+      "titleLength": 65,
+      "description": "Odkryj praktyczne zastosowania Claude Code - od naprawy bugów, przez refactoring, po automatyzację testów. Przykłady z prawdziwych projektów.",
+      "descriptionLength": 141,
+      "tags": "['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/7-scenariuszy-uzycia-claude-code.jpg",
+      "heroImageAlt": "[ - Najczęstszych Scenariuszy Użycia Claude",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "Jul 15 2022",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (65 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (141 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "astro-view-transitions-claude.md",
+      "slug": "astro-view-transitions-claude",
+      "title": "View Transitions w Astro i Claude Code: AI, które pilnuje animacji",
+      "titleLength": 66,
+      "description": "Agent w Plan Mode analizuje layouty Astro, proponuje dyrektywy transition:animate i generuje fallback CSS dla przeglądarek bez wsparcia.",
+      "descriptionLength": 136,
+      "tags": [
+        "Astro",
+        "View Transitions",
+        "Claude Code",
+        "Automation"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/astro-view-transitions-claude.jpg",
+      "heroImageAlt": "Astro - View Transitions Astro Claude",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (66 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (136 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "automatyzacja-workflow-z-claude.md",
+      "slug": "automatyzacja-workflow-z-claude",
+      "title": "Automatyzacja Workflow Programistycznego z Claude Code",
+      "titleLength": 54,
+      "description": "Odkryj jak wykorzystać Claude Code do automatyzacji codziennych zadań, CI/CD pipelines i zwiększenia produktywności zespołu.",
+      "descriptionLength": 124,
+      "tags": [
+        "Automatyzacja",
+        "DevOps",
+        "CI/CD",
+        "Produktywność",
+        "Claude Code"
+      ],
+      "tagCount": 5,
+      "heroImage": "/blog/heroes/automatyzacja-workflow-z-claude.jpg",
+      "heroImageAlt": "Przewodnik: Automatyzacja - Automatyzacja Workflow Programistycznego Claude",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-01-20",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [],
+      "suggestions": [
+        "Title slightly long (54 chars, ideal 50)",
+        "Description could be longer (124 chars, ideal 150-160)"
+      ],
+      "seoScore": 94
+    },
+    {
+      "filename": "budowanie-aplikacji-astro-z-claude.md",
+      "slug": "budowanie-aplikacji-astro-z-claude",
+      "title": "Budowanie Nowoczesnych Aplikacji Astro z Pomocą Claude Code",
+      "titleLength": 59,
+      "description": "Przewodnik krok po kroku po tworzeniu szybkich, wydajnych stron i aplikacji webowych używając Astro i Claude Code jako współprogramisty.",
+      "descriptionLength": 136,
+      "tags": [
+        "Astro",
+        "Claude Code",
+        "Web Development",
+        "Tutorial",
+        "Performance"
+      ],
+      "tagCount": 5,
+      "heroImage": "/blog/heroes/budowanie-aplikacji-astro-z-claude.jpg",
+      "heroImageAlt": "Tutorial: Astro - Budowanie Nowoczesnych Aplikacji Astro",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "2025-01-18",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [],
+      "suggestions": [
+        "Title slightly long (59 chars, ideal 50)",
+        "Description could be longer (136 chars, ideal 150-160)"
+      ],
+      "seoScore": 94
+    },
+    {
+      "filename": "claude-code-frontend-pipeline-ai.md",
+      "slug": "claude-code-frontend-pipeline-ai",
+      "title": "AI w pipeline frontendu: Plan Mode + hook PostToolUse dla pełnej automatyzacji",
+      "titleLength": 78,
+      "description": "Jak skonfigurować Claude Code, by po zmianach komponentów AI planował zadania, formatował kod, uruchamiał astro check oraz wskazywał brakujące testy.",
+      "descriptionLength": 149,
+      "tags": [
+        "Claude Code",
+        "Automation",
+        "Frontend",
+        "Astro"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/claude-code-frontend-pipeline-ai.jpg",
+      "heroImageAlt": "Przewodnik: Claude Code - pipeline frontendu Plan Mode",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (78 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (149 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "claude-code-hooki-ci-light.md",
+      "slug": "claude-code-hooki-ci-light",
+      "title": "Hooki Claude Code jako CI light: lint, astro check, testy i Lighthouse",
+      "titleLength": 70,
+      "description": "Budujemy zestaw hooków PostToolUse i Stop, które po każdej zmianie formatują kod, uruchamiają testy, generują coverage oraz raport dostępności.",
+      "descriptionLength": 143,
+      "tags": [
+        "Claude Code",
+        "Automation",
+        "CI/CD",
+        "Frontend"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/claude-code-hooki-ci-light.jpg",
+      "heroImageAlt": "Claude Code - Hooki Claude Code jako",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (70 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (143 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "claude-code-plan-mode-analizy.md",
+      "slug": "claude-code-plan-mode-analizy",
+      "title": "Autonomiczne analizy kodu z Claude Code: Plan Mode, Extended Thinking i hooki",
+      "titleLength": 77,
+      "description": "Jak połączyć tryb tylko-do-odczytu, głębokie myślenie oraz hook PostToolUse, by agent AI zaplanował refaktoring, zrealizował go etapowo i zebrał metryki testów.",
+      "descriptionLength": 160,
+      "tags": [
+        "Claude Code",
+        "Plan Mode",
+        "Extended Thinking",
+        "Automation"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/claude-code-plan-mode-analizy.jpg",
+      "heroImageAlt": "Przewodnik: Claude Code - Autonomiczne analizy kodu Claude",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (77 chars, max 60)"
+      ],
+      "suggestions": [],
+      "seoScore": 92
+    },
+    {
+      "filename": "claude-code-plan-mode-mcp-audyt.md",
+      "slug": "claude-code-plan-mode-mcp-audyt",
+      "title": "Plan Mode + MCP: audyt infrastruktury DevOps prowadzony przez AI",
+      "titleLength": 64,
+      "description": "Claude Code analizuje repozytorium w trybie tylko-do-odczytu, a następnie wykorzystuje MCP do odpytywania GitHuba i Postgresa, aby stworzyć checklistę audytową.",
+      "descriptionLength": 160,
+      "tags": [
+        "Claude Code",
+        "Plan Mode",
+        "MCP",
+        "DevOps"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/claude-code-plan-mode-mcp-audyt.jpg",
+      "heroImageAlt": "Claude Code - Plan Mode audyt infrastruktury",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (64 chars, max 60)"
+      ],
+      "suggestions": [],
+      "seoScore": 92
+    },
+    {
+      "filename": "claude-code-power-user-workflow.md",
+      "slug": "claude-code-power-user-workflow",
+      "title": "Power-user workflow: Extended Thinking Megathink, Sessions i approvals",
+      "titleLength": 70,
+      "description": "Przewodnik dla zaawansowanych użytkowników Claude Code: jak łączyć najdłuższe tryby myślenia, zapisy stanu i mechanizm approvals w złożonych projektach.",
+      "descriptionLength": 152,
+      "tags": [
+        "Claude Code",
+        "Extended Thinking",
+        "Sessions",
+        "Automation"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/claude-code-power-user-workflow.jpg",
+      "heroImageAlt": "Tutorial: Claude Code - Power user workflow Extended",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (70 chars, max 60)"
+      ],
+      "suggestions": [],
+      "seoScore": 92
+    },
+    {
+      "filename": "custom-plugins-claude-code.md",
+      "slug": "custom-plugins-claude-code",
+      "title": "Tworzenie Custom Plugins dla Claude Code - Kompletny Przewodnik",
+      "titleLength": 63,
+      "description": "Naucz się budować własne pluginy Claude Code z custom commands, agents, skills i hooks. Dystrybuuj je przez marketplace dla całego zespołu.",
+      "descriptionLength": 139,
+      "tags": "['Claude Code', 'Plugins', 'Extensibility', 'Zaawansowane']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/custom-plugins-claude-code.jpg",
+      "heroImageAlt": "[ - Tworzenie Custom Plugins Claude",
+      "readingTime": "4",
+      "calculatedReadingTime": 4,
+      "pubDate": "Oct 24 2024",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (63 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (139 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "example-post.mdx",
+      "slug": "example-post",
+      "title": "Example Blog Post",
+      "titleLength": 17,
+      "description": "This is a test post to verify Content Collections schema",
+      "descriptionLength": 56,
+      "tags": [
+        "test",
+        "example"
+      ],
+      "tagCount": 2,
+      "readingTime": "1",
+      "calculatedReadingTime": 1,
+      "pubDate": "2024-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": true,
+      "issues": [],
+      "warnings": [
+        "Title too short (17 chars, min 30)",
+        "Description too short (56 chars, min 120)",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Few tags (2, ideal 5)"
+      ],
+      "seoScore": 73
+    },
+    {
+      "filename": "hooks-event-automation.md",
+      "slug": "hooks-event-automation",
+      "title": "Hooks i Event-Driven Automation w Claude Code - Kompletny Przewodnik",
+      "titleLength": 68,
+      "description": "Automatyzuj workflow przez event hooks w Claude Code. Pre/Post tool hooks, validation, logging, notifications i integration z external tools.",
+      "descriptionLength": 141,
+      "tags": "['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/hooks-event-automation.jpg",
+      "heroImageAlt": "[ - Hooks Event Driven Automation",
+      "readingTime": "6",
+      "calculatedReadingTime": 6,
+      "pubDate": "Oct 24 2024",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (68 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (141 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "integracja-claude-code-workflow.mdx",
+      "slug": "integracja-claude-code-workflow",
+      "title": "Automatyzacja Workflow Deweloperskiego - Kompletny Przewodnik",
+      "titleLength": 61,
+      "description": "Dowiedz się, jak zautomatyzować swój workflow z Git hooks, CI/CD, VS Code, Husky i innymi narzędziami. Zwiększ produktywność!",
+      "descriptionLength": 125,
+      "tags": "['Workflow', 'Automatyzacja', 'Git Hooks', 'CI/CD', 'DevOps']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/integracja-claude-code-workflow.jpg",
+      "heroImageAlt": "Przewodnik: [ - Automatyzacja Workflow Deweloperskiego Kompletny",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "Jun 01 2024",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (61 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (125 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "mcp-model-context-protocol.md",
+      "slug": "mcp-model-context-protocol",
+      "title": "MCP (Model Context Protocol) - Podłączanie Zewnętrznych Źródeł Danych do Claude Code",
+      "titleLength": 84,
+      "description": "Poznaj Model Context Protocol i dowiedz się, jak zintegrować Claude Code z GitHub, bazami danych, Notion, Stripe i setkami innych narzędzi.",
+      "descriptionLength": 139,
+      "tags": "['Claude Code', 'MCP', 'Integracja', 'API', 'Zaawansowane']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/mcp-model-context-protocol.jpg",
+      "heroImageAlt": "Przewodnik: [ - (Model Context Protocol) Podłączanie",
+      "readingTime": "4",
+      "calculatedReadingTime": 5,
+      "pubDate": "Oct 24 2024",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (84 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (139 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "openai-agents-js-guardrails-kaskada.md",
+      "slug": "openai-agents-js-guardrails-kaskada",
+      "title": "Guardrails w praktyce: projektowanie wielopoziomowej moderacji w OpenAI Agents JS",
+      "titleLength": 81,
+      "description": "Dowiedz się, jak zbudować wielopoziomową moderację w OpenAI Agents JS. Implementujemy guardrails wejścia/wyjścia, obsługę wyjątków i manual override w TypeScript.",
+      "descriptionLength": 162,
+      "tags": [
+        "OpenAI Agents",
+        "Guardrails",
+        "Moderacja",
+        "TypeScript"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-js-guardrails-kaskada.jpg",
+      "heroImageAlt": "OpenAI Agents - Guardrails praktyce projektowanie wielopoziomowej",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (81 chars, max 60)",
+        "Description too long (162 chars, max 160)"
+      ],
+      "suggestions": [],
+      "seoScore": 84
+    },
+    {
+      "filename": "openai-agents-js-orkiestracja.md",
+      "slug": "openai-agents-js-orkiestracja",
+      "title": "OpenAI Agents SDK w JavaScript: Orkiestracja Agentów Krok po Kroku",
+      "titleLength": 66,
+      "description": "Dowiedz się, jak zbudować skalowalny system agentów w TypeScripcie z handoffami, guardrailami, MCP oraz kontrolą narzędzi.",
+      "descriptionLength": 122,
+      "tags": [
+        "OpenAI Agents",
+        "JavaScript",
+        "TypeScript",
+        "AI Orchestration"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-js-orkiestracja.jpg",
+      "heroImageAlt": "Przewodnik: OpenAI Agents - OpenAI Agents JavaScript Orkiestracja",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "2025-10-20",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (66 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (122 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-js-router-claude.md",
+      "slug": "openai-agents-js-router-claude",
+      "title": "OpenAI Agents JS jako router zadań dla Claude Code",
+      "titleLength": 50,
+      "description": "Pokazujemy, jak agent w TypeScripcie triage’uje zadania, wybiera właściwego specjalistę i przekazuje je do Claude Code przez asTool i hooki.",
+      "descriptionLength": 140,
+      "tags": [
+        "OpenAI Agents",
+        "Claude Code",
+        "Automation",
+        "TypeScript"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-js-router-claude.jpg",
+      "heroImageAlt": "Przewodnik: OpenAI Agents - OpenAI Agents jako router",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [],
+      "suggestions": [
+        "Description could be longer (140 chars, ideal 150-160)"
+      ],
+      "seoScore": 97
+    },
+    {
+      "filename": "openai-agents-js-stream-dashboard.md",
+      "slug": "openai-agents-js-stream-dashboard",
+      "title": "Streaming RunResult: tworzymy dashboard na żywo dla zespołu agentów",
+      "titleLength": 67,
+      "description": "Jak skorzystać z agent.run({ stream: true }), klasyfikować eventy RunToolCallItem i RunReasoningItem oraz wizualizować postęp zadań.",
+      "descriptionLength": 132,
+      "tags": [
+        "OpenAI Agents",
+        "Streaming",
+        "Dashboard",
+        "TypeScript"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-js-stream-dashboard.jpg",
+      "heroImageAlt": "Przewodnik: OpenAI Agents - Streaming RunResult tworzymy dashboard",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (67 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (132 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-js-zespol-pomocowy.md",
+      "slug": "openai-agents-js-zespol-pomocowy",
+      "title": "Budowa zespołu agentów pomocowych w TypeScripcie z OpenAI Agents SDK",
+      "titleLength": 68,
+      "description": "Przewodnik od podstaw: triage, wyspecjalizowane handoffy, guardraile, approvals i zarządzanie stanem w OpenAI Agents dla JavaScript.",
+      "descriptionLength": 132,
+      "tags": [
+        "OpenAI Agents",
+        "TypeScript",
+        "AI Workflow",
+        "Guardrails"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-js-zespol-pomocowy.jpg",
+      "heroImageAlt": "Tutorial: OpenAI Agents - Budowa zespołu agentów pomocowych",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (68 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (132 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-mcp-integracje.md",
+      "slug": "openai-agents-mcp-integracje",
+      "title": "Integracja agentów z danymi firmowymi przez MCP w OpenAI Agents SDK",
+      "titleLength": 67,
+      "description": "Praktyczny przewodnik po MCPServerStreamableHttp i MCPServerStdio: GitHub, Postgres i Notion jako źródła danych dla agentów AI.",
+      "descriptionLength": 127,
+      "tags": [
+        "OpenAI Agents",
+        "MCP",
+        "Integracje",
+        "TypeScript"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-mcp-integracje.jpg",
+      "heroImageAlt": "Tutorial: OpenAI Agents - Integracja agentów danymi firmowymi",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (67 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (127 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-mcp-notion-runbook.md",
+      "slug": "openai-agents-mcp-notion-runbook",
+      "title": "MCP + Notion: agent, który aktualizuje runbooki z historii PR",
+      "titleLength": 61,
+      "description": "Konfigurujemy MCP dla GitHuba i Notion, aby agent AI czytał pull requesty i automatycznie dopisywał Lessons Learned w bazie runbooków.",
+      "descriptionLength": 134,
+      "tags": [
+        "OpenAI Agents",
+        "MCP",
+        "Notion",
+        "Automation"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-mcp-notion-runbook.jpg",
+      "heroImageAlt": "OpenAI Agents - Notion agent, który aktualizuje",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (61 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (134 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-python-handoffs-rma.md",
+      "slug": "openai-agents-python-handoffs-rma",
+      "title": "Handoffs w Pythonie: orkiestracja działu wsparcia i analiz RMA",
+      "titleLength": 62,
+      "description": "Budujemy workflow w OpenAI Agents SDK dla Pythonu z wieloma agentami, priorytetowymi guardrailami i logowaniem do sesji.",
+      "descriptionLength": 120,
+      "tags": [
+        "OpenAI Agents",
+        "Python",
+        "Handoffs",
+        "Support"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-python-handoffs-rma.jpg",
+      "heroImageAlt": "OpenAI Agents - Handoffs Pythonie orkiestracja działu",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (62 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (120 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "openai-agents-python-wsparcie.md",
+      "slug": "openai-agents-python-wsparcie",
+      "title": "Pythonowy workflow agentowy dla działu wsparcia z OpenAI Agents SDK",
+      "titleLength": 67,
+      "description": "Jak użyć Pydantic, InputGuardrails i Sessions w Pythonie, by zbudować agenta wsparcia zapamiętującego kontekst i filtrującego niepożądane zgłoszenia.",
+      "descriptionLength": 149,
+      "tags": [
+        "OpenAI Agents",
+        "Python",
+        "Guardrails",
+        "Sessions"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/openai-agents-python-wsparcie.jpg",
+      "heroImageAlt": "Przewodnik: OpenAI Agents - Pythonowy workflow agentowy działu",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (67 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (149 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "pierwsze-kroki-z-claude-code.md",
+      "slug": "pierwsze-kroki-z-claude-code",
+      "title": "Pierwsze Kroki z Claude Code - Kompletny Przewodnik dla Początkujących",
+      "titleLength": 70,
+      "description": "Dowiedz się, jak zainstalować i skonfigurować Claude Code, oficjalne narzędzie CLI od Anthropic. Przewodnik krok po kroku dla początkujących.",
+      "descriptionLength": 141,
+      "tags": "['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/pierwsze-kroki-z-claude-code.jpg",
+      "heroImageAlt": "Przewodnik: [ - Pierwsze Kroki Claude Code",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "Jul 08 2022",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (70 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (141 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    },
+    {
+      "filename": "plan-mode-extended-thinking-refaktoryzacja.md",
+      "slug": "plan-mode-extended-thinking-refaktoryzacja",
+      "title": "Plan Mode + Extended Thinking: Strategia Migracji z Redux do Zustand",
+      "titleLength": 68,
+      "description": "Jak użyć trybu planowania Claude Code i rozszerzonego myślenia, aby bezpiecznie przenieść aplikację z Redux do Zustand według konkretnego harmonogramu.",
+      "descriptionLength": 151,
+      "tags": [
+        "Claude Code",
+        "Plan Mode",
+        "Extended Thinking",
+        "Refactoring"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/plan-mode-extended-thinking-refaktoryzacja.jpg",
+      "heroImageAlt": "Przewodnik: Claude Code - Plan Mode Extended Thinking",
+      "readingTime": "3",
+      "calculatedReadingTime": 4,
+      "pubDate": "2025-10-21",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (68 chars, max 60)"
+      ],
+      "suggestions": [],
+      "seoScore": 92
+    },
+    {
+      "filename": "react-lazy-initialization-dark-mode.md",
+      "slug": "react-lazy-initialization-dark-mode",
+      "title": "Dark Mode Toggle po naszemu: 5 wzorców lazy initialization w React",
+      "titleLength": 66,
+      "description": "Rozszerzamy dokumentację useState o przypadki SSR, cookies, A/B testy i magazyny przeglądarki, aby uniknąć migotania motywu.",
+      "descriptionLength": 124,
+      "tags": [
+        "React",
+        "useState",
+        "Lazy Initialization",
+        "Frontend"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/react-lazy-initialization-dark-mode.jpg",
+      "heroImageAlt": "React - Dark Mode Toggle naszemu",
+      "readingTime": "2",
+      "calculatedReadingTime": 2,
+      "pubDate": "2025-10-22",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (66 chars, max 60)"
+      ],
+      "suggestions": [
+        "Description could be longer (124 chars, ideal 150-160)"
+      ],
+      "seoScore": 89
+    },
+    {
+      "filename": "wprowadzenie-do-claude-code.md",
+      "slug": "wprowadzenie-do-claude-code",
+      "title": "Wprowadzenie do Claude Code: Rewolucja w Programowaniu z AI",
+      "titleLength": 59,
+      "description": "Odkryj, jak Claude Code zmienia sposób, w jaki programiści tworzą aplikacje, automatyzują zadania i rozwiązują problemy techniczne.",
+      "descriptionLength": 131,
+      "tags": [
+        "Claude Code",
+        "AI",
+        "Programowanie",
+        "Tutorial"
+      ],
+      "tagCount": 4,
+      "heroImage": "/blog/heroes/wprowadzenie-do-claude-code.jpg",
+      "heroImageAlt": "Przewodnik: Claude Code - Wprowadzenie Claude Code Rewolucja",
+      "readingTime": "3",
+      "calculatedReadingTime": 3,
+      "pubDate": "2025-01-15",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [],
+      "suggestions": [
+        "Title slightly long (59 chars, ideal 50)",
+        "Description could be longer (131 chars, ideal 150-160)"
+      ],
+      "seoScore": 94
+    },
+    {
+      "filename": "zaawansowane-techniki-claude-code.md",
+      "slug": "zaawansowane-techniki-claude-code",
+      "title": "Zaawansowane Techniki Claude Code - Extended Thinking i Plan Mode",
+      "titleLength": 65,
+      "description": "Poznaj zaawansowane funkcje Claude Code: Plan Mode do bezpiecznego planowania, Extended Thinking dla złożonych zadań i Unix pipelines.",
+      "descriptionLength": 134,
+      "tags": "['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']",
+      "tagCount": 0,
+      "heroImage": "/blog/heroes/zaawansowane-techniki-claude-code.jpg",
+      "heroImageAlt": "[ - Zaawansowane Techniki Claude Code",
+      "readingTime": "4",
+      "calculatedReadingTime": 4,
+      "pubDate": "Jul 22 2022",
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [],
+      "warnings": [
+        "Title too long (65 chars, max 60)",
+        "No tags found"
+      ],
+      "suggestions": [
+        "Description could be longer (134 chars, ideal 150-160)"
+      ],
+      "seoScore": 81
+    }
+  ]
+}

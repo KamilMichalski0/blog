@@ -1,12 +1,17 @@
 ---
 title: "Hooki Claude Code jako CI light: lint, astro check, testy i Lighthouse"
-description: "Budujemy zestaw hooków PostToolUse i Stop, które po każdej zmianie formatują kod, uruchamiają testy, generują coverage oraz raport dostępności."
-pubDate: "2025-10-22"
-heroImage: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop"
-tags: ["Claude Code", "Automation", "CI/CD", "Frontend"]
+description: Budujemy zestaw hooków PostToolUse i Stop, które po każdej zmianie formatują kod, uruchamiają testy, generują coverage oraz raport dostępności.
+pubDate: 2025-10-22
+heroImage: /blog/heroes/claude-code-hooki-ci-light.jpg
+tags: ["Claude Code","Automation","CI/CD","Frontend"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 2
+heroImageAlt: Claude Code - Hooki Claude Code jako
 ---
+
+
+
 
 ## 1. Pomysł na CI light
 

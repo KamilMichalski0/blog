@@ -1,12 +1,17 @@
 ---
 title: "Streaming RunResult: tworzymy dashboard na żywo dla zespołu agentów"
 description: "Jak skorzystać z agent.run({ stream: true }), klasyfikować eventy RunToolCallItem i RunReasoningItem oraz wizualizować postęp zadań."
-pubDate: "2025-10-22"
-heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-tags: ["OpenAI Agents", "Streaming", "Dashboard", "TypeScript"]
+pubDate: 2025-10-22
+heroImage: /blog/heroes/openai-agents-js-stream-dashboard.jpg
+tags: ["OpenAI Agents","Streaming","Dashboard","TypeScript"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 2
+heroImageAlt: "Przewodnik: OpenAI Agents - Streaming RunResult tworzymy dashboard"
 ---
+
+
+
 
 ## 1. Po co nam streaming?
 

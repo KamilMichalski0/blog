@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  category?: string;
+}
+
+const { title, category } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mb-8">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a
+        href="/"
+        itemprop="item"
+        class="hover:text-[rgb(var(--color-accent))] transition-colors"
+      >
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    <li aria-hidden="true" class="select-none">/</li>
+
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a
+        href="/blog"
+        itemprop="item"
+        class="hover:text-[rgb(var(--color-accent))] transition-colors"
+      >
+        <span itemprop="name">Blog</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+
+    {category && (
+      <>
+        <li aria-hidden="true" class="select-none">/</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span
+            itemprop="item"
+            class="capitalize text-gray-500 dark:text-gray-500"
+          >
+            <span itemprop="name">{category}</span>
+          </span>
+          <meta itemprop="position" content="3" />
+        </li>
+      </>
+    )}
+
+    <li aria-hidden="true" class="select-none">/</li>
+
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span
+        itemprop="item"
+        class="text-gray-900 dark:text-gray-100 font-medium"
+        aria-current="page"
+      >
+        <span itemprop="name">{title}</span>
+      </span>
+      <meta itemprop="position" content={category ? "4" : "3"} />
+    </li>
+  </ol>
+</nav>

@@ -1,12 +1,17 @@
 ---
 title: "Dark Mode Toggle po naszemu: 5 wzorców lazy initialization w React"
-description: "Rozszerzamy dokumentację useState o przypadki SSR, cookies, A/B testy i magazyny przeglądarki, aby uniknąć migotania motywu."
-pubDate: "2025-10-22"
-heroImage: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop"
-tags: ["React", "useState", "Lazy Initialization", "Frontend"]
+description: Rozszerzamy dokumentację useState o przypadki SSR, cookies, A/B testy i magazyny przeglądarki, aby uniknąć migotania motywu.
+pubDate: 2025-10-22
+heroImage: /blog/heroes/react-lazy-initialization-dark-mode.jpg
+tags: ["React","useState","Lazy Initialization","Frontend"]
 draft: false
-author: "ClaudeCodeLab"
+author: ClaudeCodeLab
+readingTime: 2
+heroImageAlt: React - Dark Mode Toggle naszemu
 ---
+
+
+
 
 ## 1. Dlaczego lazy initialization?
 
