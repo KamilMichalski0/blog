@@ -29,7 +29,12 @@
       "Bash(git push)",
       "Bash(for file in src/content/blog/*.md src/content/blog/*.mdx)",
       "Bash(for i in 1 2 3 5)",
-      "Bash(do echo \"=== blog-placeholder-$i.jpg ===\")"
+      "Bash(do echo \"=== blog-placeholder-$i.jpg ===\")",
+      "Bash(xargs:*)",
+      "Bash(git rm:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
