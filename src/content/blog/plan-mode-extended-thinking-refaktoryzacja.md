@@ -10,13 +10,13 @@ author: "ClaudeCodeLab"
 
 ## Dlaczego łączyć Plan Mode z Extended Thinking?
 
-Plan Mode zapewnia analizę w trybie tylko-do-odczytu, dzięki czemu Claude Code nie wprowadza zmian bez Twojej zgody (aktywacja: dwa razy **Shift+Tab**, wyjście: ponownie **Shift+Tab**). Extended Thinking daje głęboki budżet rozumowania (`think`, `megathink`, `ultrathink`) pozwalający na dokładne rozpisanie kroków. W połączeniu otrzymujemy bezpieczne i przemyślane przygotowanie migracji z Redux do Zustand – procesu, który wymaga koordynacji wielu modułów, testów i zespołów.
+Plan Mode zapewnia analizę w trybie tylko-do-odczytu, dzięki czemu Claude Code nie wprowadza zmian bez Twojej zgody (aktywacja: pojedyncze **Shift+Tab**, wyjście: ponownie **Shift+Tab**). Extended Thinking uruchomisz tak samo jednym naciśnięciem **Tab**, co daje głęboki budżet rozumowania (`think`, `megathink`, `ultrathink`) pozwalający na dokładne rozpisanie kroków. W połączeniu otrzymujemy bezpieczne i przemyślane przygotowanie migracji z Redux do Zustand – procesu, który wymaga koordynacji wielu modułów, testów i zespołów.
 
 ## Krok 1: Uruchomienie sesji diagnostycznej
 
 1. Wejdź do katalogu projektu i uruchom Claude Code.
-2. Aktywuj Plan Mode (dwukrotne **Shift+Tab**) zanim zadasz pierwsze pytanie.
-3. Poproś o pełną diagnozę:  
+2. Aktywuj Plan Mode (pojedyncze **Shift+Tab**) zanim zadasz pierwsze pytanie.
+3. Poproś o pełną diagnozę (po włączeniu głębokiego myślenia pojedynczym **Tab**):  
    ```
    Think deeply and map the current Redux usage (reducers, middleware, connected components).
    ```
@@ -73,7 +73,7 @@ Dzięki temu zyskasz listę działań utrzymaniowych (aktualizacja README, zmian
 ## Kluczowe praktyki z dokumentacji
 
 - **Plan Mode przed refaktorem** — pełna analiza bez dotykania kodu minimalizuje ryzyko w krytycznych modułach.  
-- **Extended Thinking na żądanie** — słowa kluczowe `think deeply`, `ultrathink` zapewniają rozbudowane wyjaśnienia i planowanie.  
+- **Extended Thinking na żądanie** — jedno naciśnięcie **Tab** wraz ze zwrotami `think deeply`, `ultrathink` zapewnia rozbudowane wyjaśnienia i planowanie.  
 - **Iteracyjne zatwierdzanie** — po wyjściu z Plan Mode akceptuj zmiany etapami, zgodnie z harmonogramem.  
 - **Ciągłe testy** — łącz Plan Mode z hookami uruchamiającymi linting, testy i build, aby szybko wykrywać regresje.  
 - **Dokumentowanie wyników** — końcowa analiza Extended Thinking wspiera przygotowanie changelogów i aktualizacji guidelines.
