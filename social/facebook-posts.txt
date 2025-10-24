@@ -1,0 +1,19 @@
+1. 🚀 Nowy poradnik na blogu: „Budowa zespołu agentów pomocowych w TypeScripcie”. Pokazujemy, jak triage, handoffy i guardraile z OpenAI Agents JS mogą usprawnić support. Sprawdź → https://claudecodelab.com/blog/openai-agents-js-zespol-pomocowy
+
+2. 🤖 Streaming RunResult w akcji! Zobacz, jak krok po kroku zbudować live dashboard postępu pracy agentów. Wpis: https://claudecodelab.com/blog/openai-agents-js-stream-dashboard
+
+3. 🛠️ Claude Code + MCP = DevOps audit. Nasz agent planuje kontrolę w Plan Mode, odpytuje GitHuba i Postgresa, a na koniec tworzy checklistę. Dowiedz się więcej: https://claudecodelab.com/blog/claude-code-plan-mode-mcp-audyt
+
+4. 🔁 Claude Code jako narzędzie w workflow JS? W nowym case study router zadań decyduje, kiedy włączyć Claude’a i jak spiąć hooki quality. Czytaj: https://claudecodelab.com/blog/openai-agents-js-router-claude
+
+5. 🌙 Dark Mode bez migotania! Zebraliśmy 5 wzorców lazy initialization w React – od SSR po A/B testy. Artykuł: https://claudecodelab.com/blog/react-lazy-initialization-dark-mode
+
+6. ✨ View Transitions w Astro pilnowane przez AI. Claude Code w Plan Mode analizuje layouty i proponuje animacje oraz fallbacki. Sprawdź tutorial: https://claudecodelab.com/blog/astro-view-transitions-claude
+
+7. 📞 Pythonowy workflow dla działu wsparcia – handoffy, priorytetowe guardraile i logowanie sesji. Dowiedz się, jak zorganizować triage i obsługę RMA: https://claudecodelab.com/blog/openai-agents-python-handoffs-rma
+
+8. 📝 MCP + Notion = automatyczne Lessons Learned. Agent pobiera PR-y z GitHuba i dopisuje wnioski do runbooków. Historia autora → https://claudecodelab.com/blog/openai-agents-mcp-notion-runbook
+
+9. ⚙️ Hooki Claude Code jako CI-light! Po każdej zmianie automatycznie format, astro check, testy i Lighthouse. Zainspiruj się: https://claudecodelab.com/blog/claude-code-hooki-ci-light
+
+10. 🧠 Power-user workflow: Extended Thinking, snapshoty sesji i approvals. Zobacz, jak prowadzić złożone projekty z Claude Code: https://claudecodelab.com/blog/claude-code-power-user-workflow
