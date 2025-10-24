@@ -5,7 +5,7 @@ pubDate: Jul 15 2022
 heroImage: /blog/heroes/7-scenariuszy-uzycia-claude-code.jpg
 tags: ['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']
 readingTime: 3
-heroImageAlt: [ - Najczęstszych Scenariuszy Użycia Claude
+heroImageAlt: "Claude Code - 7 najczęstszych scenariuszy użycia"
 ---
 
 

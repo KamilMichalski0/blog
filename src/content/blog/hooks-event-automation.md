@@ -5,7 +5,7 @@ pubDate: Oct 24 2024
 heroImage: /blog/heroes/hooks-event-automation.jpg
 tags: ['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']
 readingTime: 6
-heroImageAlt: [ - Hooks Event Driven Automation
+heroImageAlt: "Przewodnik - Hooks i event-driven automation w Claude Code"
 ---
 
 

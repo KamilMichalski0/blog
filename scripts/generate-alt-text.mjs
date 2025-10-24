@@ -70,9 +70,15 @@ function serializeFrontmatter(frontmatter) {
     } else if (typeof value === 'number') {
       lines.push(`${key}: ${value}`);
     } else {
-      // String values
-      const needsQuotes = value.includes(':') || value.includes('#') || value.includes('\n');
-      lines.push(`${key}: ${needsQuotes ? `"${value}"` : value}`);
+      // String values - always quote certain fields to prevent YAML issues
+      const alwaysQuote = ['heroImageAlt', 'description', 'title'];
+      const needsQuotes = alwaysQuote.includes(key) ||
+                          value.includes(':') ||
+                          value.includes('#') ||
+                          value.includes('\n') ||
+                          value.includes('[') ||
+                          value.includes(']');
+      lines.push(`${key}: ${needsQuotes ? `"${value.replace(/"/g, '\\"')}"` : value}`);
     }
   }
 
@@ -85,12 +91,17 @@ function generateAltText(title, description, tags) {
   // Strategy: Create descriptive, keyword-rich alt text
   // Format: "Main topic visualization - brief description"
 
+  // Clean title - remove special chars that could break YAML
+  const cleanTitle = title
+    .replace(/[:\-–—\[\]\{\}]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
   // Extract key concepts from title
-  const titleConcepts = title
-    .replace(/[:\-–—]/g, ' ')
+  const titleConcepts = cleanTitle
     .split(' ')
-    .filter(word => word.length > 3)
-    .slice(0, 4)
+    .filter(word => word.length > 2) // Changed from >3 to >2 to include numbers like "7"
+    .slice(0, 5)
     .join(' ');
 
   // Extract action words from description if available
@@ -112,22 +123,24 @@ function generateAltText(title, description, tags) {
     }
   }
 
-  // Use first tag if available for context
+  // Use first tag if available for context (cleaned)
   let topicContext = '';
   if (tags && tags.length > 0) {
-    topicContext = tags[0];
+    topicContext = tags[0].replace(/[\[\]\{\}]/g, '').trim();
   }
 
-  // Construct alt text
+  // Construct alt text (always quoted to prevent YAML issues)
   let altText = '';
 
-  if (topicContext) {
+  if (topicContext && titleConcepts) {
     altText = `${topicContext} - ${titleConcepts}`;
-  } else {
+  } else if (titleConcepts) {
     altText = titleConcepts;
+  } else {
+    altText = cleanTitle.substring(0, 80);
   }
 
-  if (context) {
+  if (context && altText) {
     altText = `${context}: ${altText}`;
   }
 
@@ -136,11 +149,12 @@ function generateAltText(title, description, tags) {
     altText = altText.substring(0, 122) + '...';
   }
 
-  // Fallback if alt text is empty
+  // Fallback if alt text is empty or too short
   if (!altText || altText.trim().length < 10) {
-    altText = `Grafika ilustrująca artykuł: ${title.substring(0, 80)}`;
+    altText = `Grafika ilustrująca: ${cleanTitle.substring(0, 100)}`;
   }
 
+  // Return quoted to prevent YAML parsing issues
   return altText;
 }
 

@@ -5,7 +5,7 @@ pubDate: Oct 24 2024
 heroImage: /blog/heroes/custom-plugins-claude-code.jpg
 tags: ['Claude Code', 'Plugins', 'Extensibility', 'Zaawansowane']
 readingTime: 4
-heroImageAlt: [ - Tworzenie Custom Plugins Claude
+heroImageAlt: "Tutorial - Tworzenie custom plugins dla Claude Code"
 ---
 
 

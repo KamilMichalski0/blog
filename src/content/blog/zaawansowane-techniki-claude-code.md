@@ -5,7 +5,7 @@ pubDate: Jul 22 2022
 heroImage: /blog/heroes/zaawansowane-techniki-claude-code.jpg
 tags: ['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']
 readingTime: 4
-heroImageAlt: [ - Zaawansowane Techniki Claude Code
+heroImageAlt: "Tutorial - Zaawansowane techniki w Claude Code"
 ---
 
 
