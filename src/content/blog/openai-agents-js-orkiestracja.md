@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## Dlaczego warto sięgnąć po SDK Agents?
 
-JavaScriptowe SDK OpenAI Agents dostarcza typowany interfejs do budowania wieloagentowych workflowów. Zamiast ręcznie sterować promptami, definiujesz agentów z instrukcjami, narzędziami i strażnikami, a następnie pozwalasz runtime’owi koordynować ich interakcje. Poniżej pokazuję, jak na bazie oficjalnej dokumentacji ułożyć kompletną orkiestrację dla zespołu wsparcia technicznego.
+JavaScriptowe [SDK OpenAI Agents](https://openai.github.io/openai-agents-js/) dostarcza typowany interfejs do budowania wieloagentowych workflowów. Zamiast ręcznie sterować promptami, definiujesz agentów z instrukcjami, narzędziami i strażnikami, a następnie pozwalasz runtime’owi koordynować ich interakcje. Poniżej pokazuję, jak na bazie oficjalnej dokumentacji ułożyć kompletną orkiestrację dla zespołu wsparcia technicznego.
 
 ## Fundamenty: Agent, Runner i Handoffs
 
@@ -121,7 +121,7 @@ const frontline = new Agent({
 
 ## MCP: wpięcie zewnętrznych systemów
 
-Jeżeli agent ma korzystać z API lub bazy danych, dołącz MCP server:
+Jeżeli agent ma korzystać z API lub bazy danych, dołącz [MCP server](https://modelcontextprotocol.io/):
 
 ```typescript
 import { MCPServerStreamableHttp } from "@openai/agents";
@@ -169,6 +169,16 @@ if (result.interruptions?.length) {
 - **MCP z filtrami** – ograniczaj narzędzia tylko do tych, które agent naprawdę potrzebuje, oraz czyść cache, gdy integracje się zmieniają.  
 - **Kontrola narzędzi** – `toolUseBehavior` pozwala zatrzymywać run po pierwszym narzędziu, specyficznych narzędziach lub własnej funkcji agregującej wyniki.
 
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [OpenAI Agents SDK - JavaScript](https://openai.github.io/openai-agents-js/)
+- [OpenAI Agents - Getting Started](https://platform.openai.com/docs/guides/agents)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+
+### Powiązane Artykuły
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
+
 ## Podsumowanie
 
-SDK OpenAI Agents w JavaScript przenosi nas z poziomu „prompt + odpowiedź” na poziom orkiestracji zespołu wysoko specjalizowanych agentów. Dzięki handoffom, guardrailom, narzędziom oraz integracjom MCP możesz odwzorować realny proces wsparcia, a jednocześnie utrzymać przewidywalność wyników. Zacznij od triage + specjalistów, dołóż walidację wejścia, a następnie rozszerzaj system o kolejne narzędzia – kod utrzymany w TypeScripcie pozostanie czytelny i bezpieczny.
+SDK OpenAI Agents w JavaScript przenosi nas z poziomu „prompt + odpowiedź" na poziom orkiestracji zespołu wysoko specjalizowanych agentów. Dzięki handoffom, guardrailom, narzędziom oraz integracjom MCP możesz odwzorować realny proces wsparcia, a jednocześnie utrzymać przewidywalność wyników. Zacznij od triage + specjalistów, dołóż walidację wejścia, a następnie rozszerzaj system o kolejne narzędzia – kod utrzymany w TypeScripcie pozostanie czytelny i bezpieczny.

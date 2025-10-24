@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## Czym jest Claude Code?
 
-Claude Code to zaawansowane narzędzie AI stworzone przez Anthropic, które rewolucjonizuje sposób, w jaki programiści pracują nad kodem. To nie jest zwykły asystent - to pełnoprawny partner programistyczny, który rozumie kontekst, analizuje problemy i pomaga w tworzeniu wysokiej jakości rozwiązań.
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code/) to zaawansowane narzędzie AI stworzone przez Anthropic, które rewolucjonizuje sposób, w jaki programiści pracują nad kodem. To nie jest zwykły asystent - to pełnoprawny partner programistyczny, który rozumie kontekst, analizuje problemy i pomaga w tworzeniu wysokiej jakości rozwiązań.
 
 ## Kluczowe Możliwości
 
@@ -118,11 +118,22 @@ Claude Code nie tylko rozwiązuje problemy - wyjaśnia też dlaczego dane rozwi�
 - Dokumentacja pisana automatycznie
 - Wspólny język dla zespołu
 
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Main Documentation](https://docs.anthropic.com/en/docs/claude-code/)
+- [Anthropic Console](https://console.anthropic.com/)
+
+### Powiązane Artykuły
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+
 ## Rozpocznij Swoją Przygodę
 
 Gotowy, aby spróbować Claude Code? Oto kilka pierwszych kroków:
 
-1. **Instalacja**: Pobierz Claude Code CLI z oficjalnej strony
+1. **Instalacja**: Pobierz Claude Code CLI z [oficjalnej strony](https://docs.anthropic.com/en/docs/claude-code/installation)
 2. **Konfiguracja**: Ustaw swoje API keys i preferencje
 3. **Pierwszy Projekt**: Zacznij od małego projektu lub istniejącego kodu
 4. **Eksperymentuj**: Testuj różne podejścia i ucz się możliwości

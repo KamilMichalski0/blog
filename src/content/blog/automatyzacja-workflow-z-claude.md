@@ -95,7 +95,7 @@ describe('User API Integration', () => {
 #### Setup GitHub Actions
 
 Poproś Claude Code o:
-> "Skonfiguruj GitHub Action, który używa AI do code review każdego PR"
+> "Skonfiguruj [GitHub Action](https://docs.github.com/en/actions), który używa AI do code review każdego PR"
 
 ```yaml
 # .github/workflows/code-review.yml
@@ -437,6 +437,19 @@ async function fetchMetrics(): Promise<Metrics> {
   };
 }
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Developer Guide](https://docs.anthropic.com/en/docs/claude-code/developers)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Husky Git Hooks](https://typicode.github.io/husky/)
+- [Playwright Testing](https://playwright.dev/)
+
+### Powiązane Artykuły
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
 
 ## Podsumowanie
 

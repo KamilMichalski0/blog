@@ -111,7 +111,7 @@ git config --global commit.template ~/.gitmessage
 
 ### Custom Task dla Claude Code
 
-Utwórz `.vscode/tasks.json`:
+Utwórz [`.vscode/tasks.json`](https://code.visualstudio.com/docs/editor/tasks):
 
 ```json
 {
@@ -534,7 +534,7 @@ alias nb="npm run build"
 
 ### 3. Husky dla Git Hooks
 
-Zamiast ręcznego zarządzania hookami, użyj Husky:
+Zamiast ręcznego zarządzania hookami, użyj [Husky](https://typicode.github.io/husky/):
 
 ```bash
 # Instalacja
@@ -547,6 +547,19 @@ npx husky add .husky/pre-commit "npm run lint && npm test"
 # Dodaj commit-msg hook (do conventional commits)
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Developer Guide](https://docs.anthropic.com/en/docs/claude-code/developers)
+- [VS Code - Tasks](https://code.visualstudio.com/docs/editor/tasks)
+- [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+- [Husky Documentation](https://typicode.github.io/husky/)
+
+### Powiązane Artykuły
+- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
 
 ## Podsumowanie
 

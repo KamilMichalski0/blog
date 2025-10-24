@@ -12,7 +12,7 @@ Po opanowaniu podstaw Claude Code, czas na zaawansowane techniki, które pozwol�
 
 ### Czym Jest Plan Mode?
 
-Plan Mode to tryb "read-only", w którym Claude analizuje kod i planuje zmiany **bez faktycznego ich wprowadzania**. To idealne rozwiązanie dla:
+[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) to tryb "read-only", w którym Claude analizuje kod i planuje zmiany **bez faktycznego ich wprowadzania**. To idealne rozwiązanie dla:
 
 - Refactoringu krytycznych części systemu
 - Analiz architektonicznych
@@ -123,7 +123,7 @@ Po przejrzeniu planu w Plan Mode:
 
 ### Czym Jest Extended Thinking?
 
-Extended Thinking to funkcja, w której Claude **głęboko przemyśla problem przed rozpoczęciem działania**, pokazując swój proces myślowy. Jest zasilany przez Claude 3.7 Sonnet i idealny dla:
+[Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking) to funkcja, w której Claude **głęboko przemyśla problem przed rozpoczęciem działania**, pokazując swój proces myślowy. Jest zasilany przez Claude 3.7 Sonnet i idealny dla:
 
 - Decyzji architektonicznych
 - Rozwiązywania złożonych bugów
@@ -247,7 +247,7 @@ Twoje 3 zespoły współpracują = monorepo jest lepszą opcją."
 
 ### Tworzenie Custom Commands
 
-Utwórz plik `.claude/commands/review.md` w swoim projekcie:
+Utwórz plik [`.claude/commands/review.md`](https://docs.anthropic.com/en/docs/claude-code/slash-commands) w swoim projekcie:
 
 ```markdown
 ---
@@ -465,6 +465,20 @@ Zamiast:
 ```bash
 > Find all bugs in the entire codebase  # Zbyt szerokie
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
+- [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
+- [Claude Code - Slash Commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
+- [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
+
+### Powiązane Artykuły
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
 
 ## Podsumowanie
 

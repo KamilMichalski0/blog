@@ -121,7 +121,7 @@ Masz stary kod do zmodernizowania, ale boisz się coś zepsuć.
 
 ### Rozwiązanie: Plan Mode
 
-Uruchom Claude i aktywuj Plan Mode (naciśnij **Shift+Tab dwa razy**). W trybie plan Claude analizuje bez wprowadzania zmian:
+Uruchom Claude i aktywuj [Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) (naciśnij **Shift+Tab dwa razy**). W trybie plan Claude analizuje bez wprowadzania zmian:
 
 ```bash
 claude
@@ -322,7 +322,7 @@ async function createUser(userData) {
 
 ## Bonus: Automatyzacja z Hooks
 
-Claude Code oferuje system hooks do automatyzacji workflow:
+Claude Code oferuje [system hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) do automatyzacji workflow:
 
 ```json
 // .claude/settings.json
@@ -340,7 +340,21 @@ Claude Code oferuje system hooks do automatyzacji workflow:
 }
 ```
 
-Więcej o automatyzacji z hooks w dedykowanym artykule!
+Więcej o automatyzacji z hooks w [dedykowanym artykule](/blog/hooks-event-automation)!
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Wprowadzenie](https://docs.anthropic.com/en/docs/claude-code/)
+- [Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
+- [Slash Commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
+- [Hooks System](https://docs.anthropic.com/en/docs/claude-code/hooks)
+
+### Powiązane Artykuły
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
 
 ## Podsumowanie
 

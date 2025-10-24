@@ -10,7 +10,7 @@ Model Context Protocol (MCP) to otwarty standard umożliwiający Claude Code ł�
 
 ## Czym Jest MCP?
 
-MCP to **open-source standard dla integracji AI z narzędziami**, który pozwala Claude Code:
+[MCP](https://modelcontextprotocol.io/) to **open-source standard dla integracji AI z narzędziami**, który pozwala Claude Code:
 
 - Łączyć się z zewnętrznymi API (GitHub, Stripe, Notion)
 - Odpytywać bazy danych (PostgreSQL, MySQL)
@@ -134,7 +134,7 @@ Dokumentacja wymienia **ponad 40 często używanych MCP serverów**:
 
 ## Konfiguracja przez Plik `.mcp.json`
 
-Dla projektów zespołowych, utwórz `.mcp.json`:
+Dla projektów zespołowych, utwórz [`.mcp.json`](https://docs.anthropic.com/en/docs/claude-code/mcp#configuration):
 
 ```json
 {
@@ -445,6 +445,19 @@ Chociaż szczegóły wykraczają poza ten tutorial, MCP to **open-source standar
 ```
 https://modelcontextprotocol.io/
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [Claude Code - MCP Integration](https://docs.anthropic.com/en/docs/claude-code/mcp)
+- [MCP Servers Repository](https://github.com/modelcontextprotocol/servers)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+
+### Powiązane Artykuły
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
 
 ## Podsumowanie
 

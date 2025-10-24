@@ -10,7 +10,7 @@ Hooks w Claude Code to system event-driven automation, który pozwala automatycz
 
 ## Czym Są Hooks?
 
-Hooks to **skrypty lub komendy wywoływane automatycznie** w odpowiedzi na zdarzenia w Claude Code.
+[Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) to **skrypty lub komendy wywoływane automatycznie** w odpowiedzi na zdarzenia w Claude Code.
 
 **Przykłady użycia:**
 - Auto-formatting kodu po edycji
@@ -820,6 +820,18 @@ claude
 ```
 
 Następnie wybierz "Reload hooks" aby zaaplikować nową konfigurację.
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
+- [Claude Code - Developer Guide](https://docs.anthropic.com/en/docs/claude-code/developers)
+- [Hook Event Types](https://docs.anthropic.com/en/docs/claude-code/hooks#event-types)
+
+### Powiązane Artykuły
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
+- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude)
+- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow)
 
 ## Podsumowanie
 

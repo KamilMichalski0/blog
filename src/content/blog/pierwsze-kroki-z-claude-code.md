@@ -19,7 +19,7 @@ Claude Code to narzędzie wiersza poleceń (CLI), które działa bezpośrednio w
 
 ## Wymagania Systemowe
 
-Przed instalacją upewnij się, że masz:
+Przed [instalacją](https://docs.anthropic.com/en/docs/claude-code/installation) upewnij się, że masz:
 
 - **Node.js 18 lub nowszy** - sprawdź wersję poleceniem `node --version`
 - **Konto Claude.ai** (subskrypcja) lub **Claude Console** (kredyty API)
@@ -164,6 +164,20 @@ claude
 # 5. Stwórz commit
 > Stwórz commit z opisem dodanego middleware
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Installation](https://docs.anthropic.com/en/docs/claude-code/installation)
+- [Claude Code - Getting Started](https://docs.anthropic.com/en/docs/claude-code/getting-started)
+- [Claude Code - Main Documentation](https://docs.anthropic.com/en/docs/claude-code/)
+
+### Powiązane Artykuły
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude)
+- [Budowanie Aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude)
 
 ## Co Dalej?
 

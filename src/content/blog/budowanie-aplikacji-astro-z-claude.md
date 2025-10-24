@@ -40,7 +40,7 @@ npx astro add tailwind
 ### Krok 2: Konfiguracja Content Collections
 
 Poproś o:
-> "Skonfiguruj content collections dla postów blogowych z polami: title, description, pubDate, heroImage, tags"
+> "Skonfiguruj [content collections](https://docs.astro.build/en/guides/content-collections/) dla postów blogowych z polami: title, description, pubDate, heroImage, tags"
 
 ```typescript
 // src/content/config.ts
@@ -222,7 +222,7 @@ export default defineConfig({
 
 ### 2. View Transitions
 
-Dodaj płynne przejścia między stronami za pomocą komponentu ClientRouter:
+Dodaj płynne przejścia między stronami za pomocą komponentu [ClientRouter](https://docs.astro.build/en/guides/view-transitions/):
 
 ```astro
 ---
@@ -294,6 +294,19 @@ Po wdrożeniu tych praktyk, Twoja aplikacja Astro będzie:
 - **SEO-friendly** - doskonała indeksacja
 - **Accessible** - dostępna dla wszystkich
 - **Developer-friendly** - łatwa w utrzymaniu
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Astro - Content Collections](https://docs.astro.build/en/guides/content-collections/)
+- [Astro - View Transitions](https://docs.astro.build/en/guides/view-transitions/)
+- [Astro - Images](https://docs.astro.build/en/guides/images/)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code/)
+
+### Powiązane Artykuły
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
 
 ## Podsumowanie
 

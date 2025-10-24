@@ -31,7 +31,7 @@ plugin-name/
 
 ## Plugin Manifest: `plugin.json`
 
-Każdy plugin **musi** zawierać plik `.claude-plugin/plugin.json`:
+Każdy [plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) **musi** zawierać plik `.claude-plugin/plugin.json`:
 
 ```json
 {
@@ -261,7 +261,7 @@ Hooks automatyzują działania na podstawie zdarzeń w Claude Code.
 
 ### 5. MCP Integration
 
-Pluginy mogą zawierać własne MCP serwery przez `.mcp.json`.
+Pluginy mogą zawierać własne [MCP serwery](https://docs.anthropic.com/en/docs/claude-code/mcp) przez `.mcp.json`.
 
 **Przykład: `.mcp.json`**
 
@@ -753,6 +753,18 @@ database-tools/
   }
 }
 ```
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Plugins](https://docs.anthropic.com/en/docs/claude-code/plugins)
+- [Claude Code - MCP](https://docs.anthropic.com/en/docs/claude-code/mcp)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+
+### Powiązane Artykuły
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
 
 ## Podsumowanie
 

@@ -10,7 +10,7 @@ author: "ClaudeCodeLab"
 
 ## Dlaczego łączyć Plan Mode z Extended Thinking?
 
-Plan Mode zapewnia analizę w trybie tylko-do-odczytu, dzięki czemu Claude Code nie wprowadza zmian bez Twojej zgody (aktywacja: pojedyncze **Shift+Tab**, wyjście: ponownie **Shift+Tab**). Extended Thinking uruchomisz tak samo jednym naciśnięciem **Tab**, co daje głęboki budżet rozumowania (`think`, `megathink`, `ultrathink`) pozwalający na dokładne rozpisanie kroków. W połączeniu otrzymujemy bezpieczne i przemyślane przygotowanie migracji z Redux do Zustand – procesu, który wymaga koordynacji wielu modułów, testów i zespołów.
+[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) zapewnia analizę w trybie tylko-do-odczytu, dzięki czemu Claude Code nie wprowadza zmian bez Twojej zgody (aktywacja: pojedyncze **Shift+Tab**, wyjście: ponownie **Shift+Tab**). [Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking) uruchomisz tak samo jednym naciśnięciem **Tab**, co daje głęboki budżet rozumowania (`think`, `megathink`, `ultrathink`) pozwalający na dokładne rozpisanie kroków. W połączeniu otrzymujemy bezpieczne i przemyślane przygotowanie migracji z Redux do Zustand – procesu, który wymaga koordynacji wielu modułów, testów i zespołów.
 
 ## Krok 1: Uruchomienie sesji diagnostycznej
 
@@ -77,6 +77,17 @@ Dzięki temu zyskasz listę działań utrzymaniowych (aktualizacja README, zmian
 - **Iteracyjne zatwierdzanie** — po wyjściu z Plan Mode akceptuj zmiany etapami, zgodnie z harmonogramem.  
 - **Ciągłe testy** — łącz Plan Mode z hookami uruchamiającymi linting, testy i build, aby szybko wykrywać regresje.  
 - **Dokumentowanie wyników** — końcowa analiza Extended Thinking wspiera przygotowanie changelogów i aktualizacji guidelines.
+
+## 📚 Dokumentacja i Zasoby
+
+### Oficjalna Dokumentacja
+- [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
+- [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
+
+### Powiązane Artykuły
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
 
 ## Podsumowanie
 
