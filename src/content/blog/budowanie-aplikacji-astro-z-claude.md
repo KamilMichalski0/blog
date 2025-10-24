@@ -48,11 +48,11 @@ import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    heroImage: z.string().optional(),
+    heroImage: image().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),
@@ -69,7 +69,7 @@ Zapytaj Claude Code:
 ```astro
 ---
 // src/layouts/BaseLayout.astro
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -86,7 +86,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <ViewTransitions />
+    <ClientRouter />
 
     <script is:inline>
       // Dark mode initialization
@@ -222,10 +222,15 @@ export default defineConfig({
 
 ### 2. View Transitions
 
-Dodaj płynne przejścia między stronami:
+Dodaj płynne przejścia między stronami za pomocą komponentu ClientRouter:
 
 ```astro
-<ViewTransitions />
+---
+import { ClientRouter } from 'astro:transitions';
+---
+<head>
+  <ClientRouter />
+</head>
 ```
 
 ### 3. Partial Hydration

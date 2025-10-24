@@ -50,17 +50,14 @@ Zobaczmy, jak Claude Code może pomóc w stworzeniu komponentu React:
 import { useState, useEffect } from 'react';
 
 export function DarkModeToggle() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // Odczytaj preferencje użytkownika
+  // Użyj lazy initialization - funkcja wykonuje się tylko raz przy montowaniu
+  const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia(
       '(prefers-color-scheme: dark)'
     ).matches;
-
-    setIsDark(saved === 'dark' || (!saved && prefersDark));
-  }, []);
+    return saved === 'dark' || (!saved && prefersDark);
+  });
 
   useEffect(() => {
     // Zastosuj motyw
