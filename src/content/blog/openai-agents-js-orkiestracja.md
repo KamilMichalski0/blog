@@ -2,7 +2,7 @@
 title: "OpenAI Agents SDK w JavaScript: Orkiestracja Agentów Krok po Kroku"
 description: Dowiedz się, jak zbudować skalowalny system agentów w TypeScripcie z handoffami, guardrailami, MCP oraz kontrolą narzędzi.
 pubDate: 2025-10-20
-heroImage: /blog/heroes/openai-agents-js-orkiestracja.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-js-orkiestracja.jpg
 tags: ["OpenAI Agents","JavaScript","TypeScript","AI Orchestration"]
 draft: false
 author: ClaudeCodeLab

@@ -2,7 +2,7 @@
 title: "View Transitions w Astro i Claude Code: AI, które pilnuje animacji"
 description: "Agent w Plan Mode analizuje layouty Astro, proponuje dyrektywy transition:animate i generuje fallback CSS dla przeglądarek bez wsparcia."
 pubDate: 2025-10-22
-heroImage: /blog/heroes/astro-view-transitions-claude.jpg
+heroImage: ../../assets/blog/heroes/astro-view-transitions-claude.jpg
 tags: ["Astro","View Transitions","Claude Code","Automation"]
 draft: false
 author: ClaudeCodeLab

@@ -2,7 +2,7 @@
 title: Pierwsze Kroki z Claude Code - Kompletny Przewodnik dla Początkujących
 description: Dowiedz się, jak zainstalować i skonfigurować Claude Code, oficjalne narzędzie CLI od Anthropic. Przewodnik krok po kroku dla początkujących.
 pubDate: Jul 08 2022
-heroImage: /blog/heroes/pierwsze-kroki-z-claude-code.jpg
+heroImage: ../../assets/blog/heroes/pierwsze-kroki-z-claude-code.jpg
 tags: ['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']
 readingTime: 3
 heroImageAlt: "Przewodnik: [ - Pierwsze Kroki Claude Code"

@@ -2,7 +2,7 @@
 title: Pythonowy workflow agentowy dla działu wsparcia z OpenAI Agents SDK
 description: Jak użyć Pydantic, InputGuardrails i Sessions w Pythonie, by zbudować agenta wsparcia zapamiętującego kontekst i filtrującego niepożądane zgłoszenia.
 pubDate: 2025-10-21
-heroImage: /blog/heroes/openai-agents-python-wsparcie.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-python-wsparcie.jpg
 tags: ["OpenAI Agents","Python","Guardrails","Sessions"]
 draft: false
 author: ClaudeCodeLab

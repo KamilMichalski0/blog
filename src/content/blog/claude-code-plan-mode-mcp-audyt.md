@@ -2,7 +2,7 @@
 title: "Plan Mode + MCP: audyt infrastruktury DevOps prowadzony przez AI"
 description: Claude Code analizuje repozytorium w trybie tylko-do-odczytu, a następnie wykorzystuje MCP do odpytywania GitHuba i Postgresa, aby stworzyć checklistę audytową.
 pubDate: 2025-10-22
-heroImage: /blog/heroes/claude-code-plan-mode-mcp-audyt.jpg
+heroImage: ../../assets/blog/heroes/claude-code-plan-mode-mcp-audyt.jpg
 tags: ["Claude Code","Plan Mode","MCP","DevOps"]
 draft: false
 author: ClaudeCodeLab

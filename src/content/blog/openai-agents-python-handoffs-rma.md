@@ -2,7 +2,7 @@
 title: "Handoffs w Pythonie: orkiestracja działu wsparcia i analiz RMA"
 description: Budujemy workflow w OpenAI Agents SDK dla Pythonu z wieloma agentami, priorytetowymi guardrailami i logowaniem do sesji.
 pubDate: 2025-10-22
-heroImage: /blog/heroes/openai-agents-python-handoffs-rma.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-python-handoffs-rma.jpg
 tags: ["OpenAI Agents","Python","Handoffs","Support"]
 draft: false
 author: ClaudeCodeLab

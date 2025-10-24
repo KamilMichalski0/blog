@@ -44,7 +44,16 @@
       "Bash(then if ! grep -q \"## 📚 Dokumentacja i Zasoby\" \"$file\")",
       "Bash(then basename \"$file\" fi fi done)",
       "Bash(do if grep -q \"## 📚 Dokumentacja i Zasoby\" \"$file\")",
-      "Bash(then basename \"$file\" fi done)"
+      "Bash(then basename \"$file\" fi done)",
+      "Bash(node /mnt/c/data/projekty/bonus/scripts/seo-audit.mjs:*)",
+      "Bash(node /mnt/c/data/projekty/bonus/scripts/download-images.mjs:*)",
+      "Bash(node /mnt/c/data/projekty/bonus/scripts/calculate-reading-time.mjs:*)",
+      "Bash(node /mnt/c/data/projekty/bonus/scripts/generate-alt-text.mjs:*)",
+      "Bash(timeout 15 npx astro check:*)",
+      "Bash(npx astro sync:*)",
+      "Bash(timeout 45 npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(if [ -f \"$file\" ])"
     ],
     "deny": [],
     "ask": []

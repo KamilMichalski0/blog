@@ -2,7 +2,7 @@
 title: Integracja agentów z danymi firmowymi przez MCP w OpenAI Agents SDK
 description: "Praktyczny przewodnik po MCPServerStreamableHttp i MCPServerStdio: GitHub, Postgres i Notion jako źródła danych dla agentów AI."
 pubDate: 2025-10-21
-heroImage: /blog/heroes/openai-agents-mcp-integracje.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-mcp-integracje.jpg
 tags: ["OpenAI Agents","MCP","Integracje","TypeScript"]
 draft: false
 author: ClaudeCodeLab

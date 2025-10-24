@@ -2,7 +2,7 @@
 title: MCP (Model Context Protocol) - Podłączanie Zewnętrznych Źródeł Danych do Claude Code
 description: Poznaj Model Context Protocol i dowiedz się, jak zintegrować Claude Code z GitHub, bazami danych, Notion, Stripe i setkami innych narzędzi.
 pubDate: Oct 24 2024
-heroImage: /blog/heroes/mcp-model-context-protocol.jpg
+heroImage: ../../assets/blog/heroes/mcp-model-context-protocol.jpg
 tags: ['Claude Code', 'MCP', 'Integracja', 'API', 'Zaawansowane']
 readingTime: 4
 heroImageAlt: "Przewodnik: [ - (Model Context Protocol) Podłączanie"

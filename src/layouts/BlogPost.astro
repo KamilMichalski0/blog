@@ -37,7 +37,7 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
 // Schema.org structured data
 const currentUrl = url || Astro.url.pathname;
 const fullUrl = new URL(currentUrl, Astro.site).toString();
-const imageUrl = heroImage ? new URL(heroImage.startsWith('http') ? heroImage : heroImage, Astro.site).toString() : null;
+const imageUrl = heroImage ? new URL(heroImage.src, Astro.site).toString() : null;
 
 const schema = {
   "@context": "https://schema.org",
@@ -78,7 +78,7 @@ const schema = {
     {heroImage ? (
       <div class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-gray-900">
         <img
-          src={heroImage}
+          src={heroImage.src}
           alt={heroImageAlt || `${title} - ClaudeCodeLab`}
           class="w-full h-full object-cover"
         />

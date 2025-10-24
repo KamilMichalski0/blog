@@ -2,7 +2,7 @@
 title: "Streaming RunResult: tworzymy dashboard na żywo dla zespołu agentów"
 description: "Jak skorzystać z agent.run({ stream: true }), klasyfikować eventy RunToolCallItem i RunReasoningItem oraz wizualizować postęp zadań."
 pubDate: 2025-10-22
-heroImage: /blog/heroes/openai-agents-js-stream-dashboard.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-js-stream-dashboard.jpg
 tags: ["OpenAI Agents","Streaming","Dashboard","TypeScript"]
 draft: false
 author: ClaudeCodeLab

@@ -2,7 +2,7 @@
 title: "Power-user workflow: Extended Thinking Megathink, Sessions i approvals"
 description: "Przewodnik dla zaawansowanych użytkowników Claude Code: jak łączyć najdłuższe tryby myślenia, zapisy stanu i mechanizm approvals w złożonych projektach."
 pubDate: 2025-10-22
-heroImage: /blog/heroes/claude-code-power-user-workflow.jpg
+heroImage: ../../assets/blog/heroes/claude-code-power-user-workflow.jpg
 tags: ["Claude Code","Extended Thinking","Sessions","Automation"]
 draft: false
 author: ClaudeCodeLab

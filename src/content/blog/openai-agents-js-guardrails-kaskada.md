@@ -2,7 +2,7 @@
 title: "Guardrails w praktyce: projektowanie wielopoziomowej moderacji w OpenAI Agents JS"
 description: Dowiedz się, jak zbudować wielopoziomową moderację w OpenAI Agents JS. Implementujemy guardrails wejścia/wyjścia, obsługę wyjątków i manual override w TypeScript.
 pubDate: 2025-10-22
-heroImage: /blog/heroes/openai-agents-js-guardrails-kaskada.jpg
+heroImage: ../../assets/blog/heroes/openai-agents-js-guardrails-kaskada.jpg
 tags: ["OpenAI Agents","Guardrails","Moderacja","TypeScript"]
 draft: false
 author: ClaudeCodeLab
