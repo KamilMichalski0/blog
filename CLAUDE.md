@@ -21,11 +21,17 @@ npm run preview
 # Type checking
 npx astro check
 
-# Create new blog post (interactive CLI)
+# Create new blog post (interactive CLI with auto-SEO)
 npm run new:post
 
 # Create new changelog entry (interactive CLI)
 npm run new:changelog
+
+# SEO Automation
+npm run seo:audit              # Full SEO audit of all posts
+npm run seo:reading-time       # Recalculate reading times
+npm run seo:alt-text           # Generate alt text for images
+npm run seo:download-images    # Download external images locally
 ```
 
 ## Tech Stack & Architecture
@@ -41,9 +47,15 @@ npm run new:changelog
 The project uses Astro's Content Collections API for type-safe content management. Schema definitions are in `src/content/config.ts`:
 
 **Blog Collection** (`src/content/blog/`)
-- Schema: `title`, `description`, `pubDate`, `updatedDate`, `heroImage`, `tags`, `draft`, `author`
+- Schema: `title`, `description`, `pubDate`, `updatedDate`, `heroImage`, `heroImageAlt`, `tags`, `draft`, `author`, `readingTime`, `category`, `seoTitle`, `keywords`
 - Files are `.md` or `.mdx` with frontmatter
 - Retrieved via `getCollection('blog')`
+- **SEO Fields** (required for optimal SEO):
+  - `heroImageAlt`: Alt text for hero image (accessibility + SEO)
+  - `readingTime`: Estimated reading time in minutes (auto-calculated)
+  - `category`: Post category (tutorial|guide|deep-dive|integration|reference)
+  - `keywords`: Array of SEO keywords
+  - `seoTitle`: Optional shorter title for search results (<60 chars)
 
 **Changelog Collection** (`src/content/changelog/`)
 - Schema: `title`, `date`, `type` (feat|fix|docs|perf|other), `highlights[]`, `version`
@@ -115,11 +127,48 @@ The project uses Astro's Content Collections API for type-safe content managemen
 
 ### Adding Blog Posts
 
-1. Use `npm run new:post` for interactive creation, OR
-2. Manually create `.md` file in `src/content/blog/`
-3. Include required frontmatter: `title`, `pubDate`
-4. Optional: `description`, `heroImage`, `tags[]`, `draft: true`, `author`
-5. Set `draft: true` to exclude from production build
+**Recommended workflow:**
+
+1. **Create post with auto-SEO:**
+   ```bash
+   npm run new:post
+   ```
+   This automatically generates:
+   - `heroImageAlt` based on title + first tag
+   - `readingTime: 1` (placeholder)
+   - All required SEO fields
+
+2. **Write your content** in the generated `.md` file
+
+3. **After writing, run SEO automation:**
+   ```bash
+   # Recalculate actual reading time
+   npm run seo:reading-time
+
+   # If you used an external heroImage URL, download it locally
+   npm run seo:download-images
+
+   # Optional: Regenerate alt text if title changed
+   npm run seo:alt-text
+   ```
+
+4. **Optional: Run full SEO audit**
+   ```bash
+   npm run seo:audit
+   ```
+   Reports saved to `seo-reports/seo-audit.md`
+
+**Manual creation:**
+
+1. Create `.md` file in `src/content/blog/`
+2. Include required frontmatter:
+   - `title` (string)
+   - `pubDate` (YYYY-MM-DD)
+   - `heroImage` (string, local path preferred)
+   - `heroImageAlt` (string, for accessibility)
+   - `tags` (array)
+   - `readingTime` (number, in minutes)
+3. Optional: `description`, `draft: true`, `author`, `category`, `seoTitle`, `keywords`
 
 ### Adding Changelog Entries
 
