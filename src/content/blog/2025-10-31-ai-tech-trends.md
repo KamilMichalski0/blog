@@ -2,7 +2,7 @@
 title: "Rewolucja w Technologii i AI: Przegląd Najważniejszych Trendów Ostatnich Tygodni"
 description: Odkryj najnowsze przełomy w komputerach kwantowych Google, regulacje AI w UE, nowe narzędzia generatywne oraz demokratyzację AI poprzez open source. Kompleksowy przegląd trendów technologicznych.
 pubDate: 2025-10-31
-heroImage: /blog-placeholder-1.jpg
+heroImage: ../../assets/blog/heroes/astro-view-transitions-claude.jpg
 heroImageAlt: Abstrakcyjna wizualizacja technologii AI i komputerów kwantowych z futurystycznymi elementami cyfrowymi
 tags: ["AI","Technologia","Quantum Computing","Regulacje","Open Source"]
 readingTime: 5
