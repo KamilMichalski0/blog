@@ -2,7 +2,7 @@
 title: "5 Przełomowych Trendów AI i Tech, Które Zmieniają Świat w 2025"
 description: "Odkryj najnowsze rewolucje w AI i technologii: od kwantowej supremacji Google po DALL-E 3 i Edge AI. Poznaj trendy, które kształtują przyszłość branży tech."
 pubDate: "2025-10-31"
-heroImage: /images/hero-2025-10-31-6a90d04d.jpg
+heroImage: /public/images/hero-2025-10-31-6a90d04d.jpg
 heroImageAlt: Technology and AI visualization
 tags: ["ai", "tech", "trends", "quantum-computing", "generative-ai"]
 readingTime: 8
