@@ -1,8 +1,8 @@
 ---
 title: "5 Przełomowych Trendów AI i Tech, Które Zmieniają Świat w 2025"
 description: "Odkryj najważniejsze innowacje w dziedzinie AI i technologii: od komputerów kwantowych Google po nowe chipy Nvidia. Poznaj trendy, które definiują przyszłość technologii."
-pubDate: "2025-10-31"
-heroImage: /blog-placeholder-1.jpg
+pubDate: "2025-11-01"
+heroImage: ../../assets/blog/heroes/claude-code-hooki-ci-light.jpg
 heroImageAlt: Technology and AI visualization
 tags: ["ai", "tech", "trends", "quantum-computing", "cybersecurity"]
 readingTime: 8
