@@ -2,7 +2,7 @@
 title: "4 Przełomowe Trendy AI i Tech, Które Kształtują Przyszłość w 2025"
 description: "Odkryj najważniejsze wydarzenia w świecie AI i technologii - od rewolucyjnego Sora OpenAI po komputery kwantowe Google i nowe regulacje UE."
 pubDate: "2025-11-01"
-heroImage: /blog-placeholder-1.jpg
+heroImage: /images/hero-2025-11-01-9977b8f0.jpg
 heroImageAlt: Technology and AI visualization
 tags: ["ai", "tech", "trends", "quantum-computing", "regulacje"]
 category: "deep-dive"
