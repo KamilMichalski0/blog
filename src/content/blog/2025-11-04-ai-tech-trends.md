@@ -2,7 +2,7 @@
 title: "Google Gemini vs Open-Source: Jak Mistral AI i Meta Zmieniają Reguły Gry w AI"
 description: "Analiza największej batalii w świecie AI: Google wypuszcza Gemini, podczas gdy Mistral AI i Meta stawiają na open-source. Kto wygra tę wojnę technologiczną?"
 pubDate: "2025-11-04"
-heroImage: /blog-placeholder-1.jpg
+heroImage: ../../assets/blog/heroes/hero-2025-11-04-3a454341.jpg
 heroImageAlt: Technology and AI visualization
 tags: ["ai", "google-gemini", "mistral-ai", "meta-llama", "open-source", "nvidia"]
 category: "deep-dive"
