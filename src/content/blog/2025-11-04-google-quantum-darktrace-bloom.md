@@ -2,7 +2,7 @@
 title: "Google Przełamuje Barierę Kwantową: Jak Korekcja Błędów Zmieni AI i Cyberbezpieczeństwo"
 description: "Google ogłasza przełom w korekcji błędów kwantowych. Odkryj jak to zmieni AI, cyberbezpieczeństwo i edge computing w najbliższych latach."
 pubDate: "2025-11-04"
-heroImage: /blog-placeholder-1.jpg
+heroImage: ../../assets/blog/heroes/hero-2025-11-04-quantum.jpg
 heroImageAlt: Technology and AI visualization
 tags: ["ai", "tech", "quantum-computing", "google", "cybersecurity"]
 category: "deep-dive"
