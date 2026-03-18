@@ -6,6 +6,7 @@ interface Props {
   description?: string;
   image?: string;
   publishDate?: Date;
+  modifiedDate?: Date;
   type?: 'website' | 'article';
 }
 
@@ -14,6 +15,7 @@ const {
   description = 'ClaudeCodeLab - Naucz się programowania z Claude Code',
   image = '/og-image.jpg',
   publishDate,
+  modifiedDate,
   type = 'website',
 } = Astro.props;
 
@@ -28,6 +30,7 @@ const socialImageURL = new URL(image, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index,follow" />
 
     <!-- SEO -->
     <title>{title}</title>
@@ -43,6 +46,7 @@ const socialImageURL = new URL(image, Astro.site);
     <meta property="og:site_name" content="ClaudeCodeLab" />
     <meta property="og:locale" content="pl_PL" />
     {publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
+    {modifiedDate && <meta property="article:modified_time" content={modifiedDate.toISOString()} />}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -94,7 +98,7 @@ const socialImageURL = new URL(image, Astro.site);
                   Changelog
                 </a>
                 <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  O Nas
+                  O nas
                 </a>
               </div>
             </div>
@@ -145,7 +149,7 @@ const socialImageURL = new URL(image, Astro.site);
               Changelog
             </a>
             <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-              O Nas
+              O nas
             </a>
           </div>
         </div>
@@ -176,7 +180,7 @@ const socialImageURL = new URL(image, Astro.site);
               <li><a href="/" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Start</a></li>
               <li><a href="/blog" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Blog</a></li>
               <li><a href="/changelog" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Changelog</a></li>
-              <li><a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">O Nas</a></li>
+              <li><a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">O nas</a></li>
             </ul>
           </div>
 

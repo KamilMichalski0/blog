@@ -1,13 +1,13 @@
 ---
-title: "Dark Mode Toggle po naszemu: 5 wzorców lazy initialization w React"
-description: Rozszerzamy dokumentację useState o przypadki SSR, cookies, A/B testy i magazyny przeglądarki, aby uniknąć migotania motywu.
+title: "Lazy initialization w React dla przełącznika motywu"
+description: Pokazujemy, jak używać lazy initialization w React z uwzględnieniem SSR, cookies, testów A/B i pamięci przeglądarki użytkownika.
 pubDate: 2025-10-22
 heroImage: ../../assets/blog/heroes/react-lazy-initialization-dark-mode.jpg
 tags: ["React","useState","Lazy Initialization","Frontend"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: React - Dark Mode Toggle naszemu
+heroImageAlt: "Ilustracja do artykułu o lazy initialization i przełączniku motywu w React"
 ---
 
 

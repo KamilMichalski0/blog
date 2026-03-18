@@ -1,33 +1,33 @@
 ---
-title: MCP (Model Context Protocol) - Podłączanie Zewnętrznych Źródeł Danych do Claude Code
-description: Poznaj Model Context Protocol i dowiedz się, jak zintegrować Claude Code z GitHub, bazami danych, Notion, Stripe i setkami innych narzędzi.
+title: "MCP w Claude Code: integracje zewnętrznych danych"
+description: Poznaj Model Context Protocol i zobacz, jak połączyć Claude Code z GitHubem, bazami danych, Notion, Stripe i innymi źródłami danych.
 pubDate: Oct 24 2024
 heroImage: ../../assets/blog/heroes/mcp-model-context-protocol.jpg
 tags: ['Claude Code', 'MCP', 'Integracja', 'API', 'Zaawansowane']
 readingTime: 4
-heroImageAlt: "Przewodnik: [ - (Model Context Protocol) Podłączanie"
+heroImageAlt: "Ilustracja do artykułu o Model Context Protocol i integracjach Claude Code"
 ---
 
 
 
 
-Model Context Protocol (MCP) to otwarty standard umożliwiający Claude Code łączenie się z zewnętrznymi narzędziami, bazami danych i API. Dzięki MCP możesz rozszerzyć możliwości Claude poza wbudowane funkcje i uzyskać dostęp do danych w czasie rzeczywistym podczas kodowania.
+Model Context Protocol (MCP) to otwarty standard umożliwiający Claude Code łączenie się z zewnętrznymi narzędziami, bazami danych i API. Dzięki niemu model może korzystać z kontekstu wykraczającego poza lokalne pliki, co ma znaczenie zwłaszcza przy pracy z dokumentacją, danymi firmowymi i narzędziami zespołowymi.
 
-## Czym Jest MCP?
+## Czym jest MCP?
 
-[MCP](https://modelcontextprotocol.io/) to **open-source standard dla integracji AI z narzędziami**, który pozwala Claude Code:
+[MCP](https://modelcontextprotocol.io/) to **otwarty standard integracji AI z narzędziami**, który pozwala Claude Code:
 
 - Łączyć się z zewnętrznymi API (GitHub, Stripe, Notion)
 - Odpytywać bazy danych (PostgreSQL, MySQL)
 - Czytać i zapisywać pliki w chmurze
 - Integrować się z narzędziami projektowymi (Figma, Linear, Jira)
-- Dostęp do **setek dostępnych MCP serverów**
+- Korzystać z **setek dostępnych serwerów MCP**
 
-## Trzy Rodzaje Transportu MCP
+## Trzy rodzaje transportu MCP
 
 MCP obsługuje trzy metody komunikacji:
 
-### 1. HTTP Servers (Rekomendowane)
+### 1. Serwery HTTP (rekomendowane)
 
 Zdalne usługi w chmurze używające transportu HTTP.
 
@@ -41,7 +41,7 @@ claude mcp add --transport http <nazwa> <url>
 claude mcp add --transport http notion https://mcp.notion.com/mcp
 ```
 
-### 2. SSE Servers (Przestarzałe)
+### 2. Serwery SSE (starsze rozwiązanie)
 
 Server-Sent Events - nadal działa, ale HTTP jest preferowany.
 
@@ -49,7 +49,7 @@ Server-Sent Events - nadal działa, ale HTTP jest preferowany.
 claude mcp add --transport sse asana https://mcp.asana.com/sse
 ```
 
-### 3. Stdio Servers (Lokalne)
+### 3. Serwery `stdio` (lokalne)
 
 Procesy uruchamiane lokalnie na Twoim komputerze.
 
@@ -108,7 +108,7 @@ claude mcp remove github
 
 ## Popularne Integracje MCP
 
-Dokumentacja wymienia **ponad 40 często używanych MCP serverów**:
+Dokumentacja wymienia **ponad 40 często używanych serwerów MCP**:
 
 ### Development & Version Control
 - **GitHub** - repositories, issues, PRs
@@ -116,7 +116,7 @@ Dokumentacja wymienia **ponad 40 często używanych MCP serverów**:
 
 ### Project Management
 - **Linear** - zadania, projekty, sprint planning
-- **Jira** - issue tracking, workflows
+- **Jira** - zgłoszenia i przepływy pracy
 - **Asana** - task management
 
 ### Databases
@@ -167,7 +167,7 @@ Dla projektów zespołowych, utwórz [`.mcp.json`](https://docs.anthropic.com/en
 
 ## Praktyczne Przykłady Użycia
 
-### Przykład 1: GitHub Integration
+### Przykład 1: integracja z GitHubem
 
 **Setup:**
 ```bash
@@ -214,7 +214,7 @@ claude mcp add --transport http notion https://mcp.notion.com/mcp
 
 > Utwórz nową stronę w Notion z dokumentacją tej funkcji
 
-> Zaktualizuj status projektu w Notion database
+> Zaktualizuj status projektu w bazie Notion
 ```
 
 ### Przykład 4: Stripe Payments
@@ -358,7 +358,7 @@ Następnie kliknij link OAuth i zaloguj się ponownie.
 }
 ```
 
-## Best Practices
+## Dobre praktyki
 
 ### 1. Używaj Scope Odpowiednio
 
@@ -438,12 +438,12 @@ claude mcp add --scope project --transport http api https://api.test.com
 
 ## Tworzenie Własnego MCP Servera
 
-Chociaż szczegóły wykraczają poza ten tutorial, MCP to **open-source standard**, więc możesz stworzyć własny serwer.
+Chociaż szczegóły wykraczają poza ten artykuł, MCP jest **otwartym standardem**, więc możesz przygotować także własny serwer.
 
 **Podstawowa struktura:**
-1. Implementuj MCP protocol (HTTP lub stdio)
-2. Zdefiniuj dostępne tools/resources/prompts
-3. Hostuj (dla HTTP) lub spakuj (dla stdio)
+1. Zaimplementuj protokół MCP (HTTP lub `stdio`)
+2. Zdefiniuj dostępne narzędzia, zasoby i prompty
+3. Uruchom usługę (dla HTTP) lub spakuj ją lokalnie (dla `stdio`)
 4. Dodaj do Claude Code
 
 **Dokumentacja MCP:**
@@ -451,7 +451,7 @@ Chociaż szczegóły wykraczają poza ten tutorial, MCP to **open-source standar
 https://modelcontextprotocol.io/
 ```
 
-## 📚 Dokumentacja i Zasoby
+## Dokumentacja i zasoby
 
 ### Oficjalna Dokumentacja
 - [Model Context Protocol](https://modelcontextprotocol.io/)
@@ -466,22 +466,6 @@ https://modelcontextprotocol.io/
 
 ## Podsumowanie
 
-MCP (Model Context Protocol) to potężna funkcjonalność Claude Code, która:
+MCP staje się ważny wtedy, gdy Claude Code ma pracować nie tylko na plikach repozytorium, ale także na danych i narzędziach używanych przez zespół. To właśnie wtedy standard pokazuje swoją wartość: porządkuje dostęp do zewnętrznych systemów i ogranicza potrzebę ręcznego kopiowania kontekstu.
 
-✅ Łączy Claude z **setkami zewnętrznych narzędzi**
-✅ Obsługuje **trzy rodzaje transportu**: HTTP, SSE, stdio
-✅ Oferuje **trzy poziomy konfiguracji**: local, project, user
-✅ Wspiera **OAuth 2.0** dla bezpiecznej autoryzacji
-✅ Umożliwia **resource referencing** przez `@server:protocol://path`
-✅ Eksportuje **prompty jako slash commands**
-✅ Pozwala na **centralną konfigurację enterprise**
-
-### Następne Kroki
-
-1. Zainstaluj pierwszy MCP server (np. GitHub)
-2. Eksperymentuj z resource references
-3. Dodaj database integration dla swojego projektu
-4. Skonfiguruj team-wide MCP w `.mcp.json`
-5. Rozważ stworzenie własnego MCP servera dla wewnętrznych API
-
-MCP przekształca Claude Code z lokalnego asystenta w **połączone centrum deweloperskie** z dostępem do całego Twojego ekosystemu narzędzi! 🚀
+Najlepiej zacząć od jednego prostego serwera, na przykład GitHuba lub Notion, a dopiero później rozszerzać konfigurację o bazy danych albo własne integracje. Dzięki temu łatwiej ocenić, które połączenia realnie pomagają w pracy, a które tylko komplikują środowisko.

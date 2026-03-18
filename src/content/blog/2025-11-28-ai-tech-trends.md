@@ -1,9 +1,9 @@
 ---
-title: "IBM Quantum System Two i Etyczna Rewolucja AI: 5 Przełomów Które Zmieniają Tech"
-description: "Odkryj najnowsze przełomy w technologii: IBM Quantum System Two, rozwój modeli językowych Meta, TensorFlow Quantum oraz nową erę etycznej sztucznej inteligencji."
+title: "IBM Quantum System Two i 5 zmian na rynku AI"
+description: "Przegląd pięciu tematów z końca listopada 2025: IBM Quantum System Two, modele Meta, TensorFlow Quantum i rozwój etycznego AI."
 pubDate: "2025-11-28"
 heroImage: ../../assets/blog/heroes/hero-2025-11-28-7428ba69.jpg
-heroImageAlt: Ai brain inside a lightbulb illustrates an idea.
+heroImageAlt: Ilustracja przedstawiająca motyw sztucznej inteligencji i innowacji technologicznych
 tags: ["ai", "tech", "trends", "quantum-computing", "ibm", "meta", "ethical-ai"]
 category: "deep-dive"
 readingTime: 8

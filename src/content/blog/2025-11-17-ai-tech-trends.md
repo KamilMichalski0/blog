@@ -1,9 +1,9 @@
 ---
-title: "IBM Qiskit i Google Gemini 3.0: Podwójna Rewolucja w AI i Komputerach Kwantowych"
-description: "Przełomowe ogłoszenia IBM i Google zmieniają krajobraz technologiczny. Qiskit z 24% wzrostem dokładności i Gemini 3.0 z zaawansowanym rozumowaniem – sprawdź, co to oznacza dla przyszłości technologii."
+title: "IBM Qiskit i Gemini 3.0: AI oraz komputery kwantowe"
+description: "IBM rozwija Qiskit, a Google przygotowuje Gemini 3.0. Sprawdzamy, co te zmiany oznaczają dla AI, obliczeń kwantowych i infrastruktury."
 pubDate: "2025-11-17"
 heroImage: ../../assets/blog/heroes/hero-2025-11-17-2b201af6.jpg
-heroImageAlt: a close up of a plant in a vase
+heroImageAlt: Abstrakcyjna ilustracja do artykułu o AI i komputerach kwantowych
 tags: ["ai", "quantum-computing", "google", "ibm", "gemini", "qiskit"]
 category: "deep-dive"
 readingTime: 9

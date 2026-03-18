@@ -1,19 +1,19 @@
 ---
-title: "Guardrails w praktyce: projektowanie wielopoziomowej moderacji w OpenAI Agents JS"
-description: Dowiedz się, jak zbudować wielopoziomową moderację w OpenAI Agents JS. Implementujemy guardrails wejścia/wyjścia, obsługę wyjątków i manual override w TypeScript.
+title: "Guardrails w OpenAI Agents JS: moderacja krok po kroku"
+description: Dowiedz się, jak zbudować moderację w OpenAI Agents JS z guardrailami wejścia i wyjścia, obsługą wyjątków oraz ręcznym zatwierdzaniem w TypeScripcie.
 pubDate: 2025-10-22
 heroImage: ../../assets/blog/heroes/openai-agents-js-guardrails-kaskada.jpg
 tags: ["OpenAI Agents","Guardrails","Moderacja","TypeScript"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: OpenAI Agents - Guardrails praktyce projektowanie wielopoziomowej
+heroImageAlt: "Ilustracja do artykułu o wielopoziomowych guardrailach w OpenAI Agents JS"
 ---
 
 
 
 
-## 1. Dlaczego potrzebujemy kaskadowych guardrailów?
+## 1. Dlaczego warto łączyć guardraile?
 
 Dokumentacja OpenAI Agents SDK dla JavaScript podkreśla, że strażnicy (guardrails) mogą działać na wejściu, wyjściu oraz w trakcie pracy agenta. W praktyce warto zbudować kaskadę:
 

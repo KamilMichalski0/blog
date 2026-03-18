@@ -1,41 +1,41 @@
 ---
-title: Hooks i Event-Driven Automation w Claude Code - Kompletny Przewodnik
-description: Automatyzuj workflow przez event hooks w Claude Code. Pre/Post tool hooks, validation, logging, notifications i integration z external tools.
+title: "Hooki w Claude Code: automatyzacja zdarzeń"
+description: Automatyzuj pracę przez hooki w Claude Code. Poznaj PreToolUse, PostToolUse, walidację, logowanie i integracje z zewnętrznymi narzędziami.
 pubDate: Oct 24 2024
 heroImage: ../../assets/blog/heroes/hooks-event-automation.jpg
 tags: ['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']
 readingTime: 6
-heroImageAlt: "Przewodnik - Hooks i event-driven automation w Claude Code"
+heroImageAlt: "Ilustracja do artykułu o hookach i automatyzacji zdarzeń w Claude Code"
 ---
 
 
 
 
-Hooks w Claude Code to system event-driven automation, który pozwala automatycznie wykonywać akcje w odpowiedzi na zdarzenia - używanie narzędzi, wysyłanie promptów, rozpoczynanie sesji i więcej. W tym przewodniku nauczysz się wykorzystywać hooks do budowania zaawansowanych workflow automation.
+Hooki w Claude Code pozwalają automatycznie wykonywać działania w odpowiedzi na zdarzenia, takie jak użycie narzędzia, wysłanie promptu czy rozpoczęcie sesji. Ten mechanizm jest przydatny wtedy, gdy chcesz wymuszać reguły jakości, dodawać walidację albo ograniczać ryzykowne operacje.
 
-## Czym Są Hooks?
+## Czym są hooki?
 
 [Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) to **skrypty lub komendy wywoływane automatycznie** w odpowiedzi na zdarzenia w Claude Code.
 
 **Przykłady użycia:**
-- Auto-formatting kodu po edycji
-- Logowanie wszystkich komend Bash do audit log
-- Validation przed wykonaniem ryzykownych operacji
+- Automatyczne formatowanie kodu po edycji
+- Logowanie komend Bash do dziennika audytowego
+- Walidacja przed wykonaniem ryzykownych operacji
 - Wysyłanie notyfikacji do Slacka
-- Injection dodatkowego kontekstu do promptów
+- Dodawanie dodatkowego kontekstu do promptów
 
-## 8 Typów Eventów Hook
+## 8 typów zdarzeń hooków
 
-Claude Code wspiera **8 głównych event hooks**:
+Claude Code wspiera **8 głównych typów hooków zdarzeniowych**:
 
 ### 1. PreToolUse
 **Kiedy:** Po utworzeniu parametrów tool przez Claude, **przed** wykonaniem
 
-**Use cases:**
-- Validation przed wykonaniem
-- Approval workflows
-- Logging planowanych działań
-- Blocking ryzykownych operacji
+**Typowe zastosowania:**
+- Walidacja przed wykonaniem
+- Proces zatwierdzania działań
+- Logowanie planowanych operacji
+- Blokowanie ryzykownych poleceń
 
 ### 2. PostToolUse
 **Kiedy:** Natychmiast **po** udanym wykonaniu tool
@@ -826,7 +826,7 @@ claude
 
 Następnie wybierz "Reload hooks" aby zaaplikować nową konfigurację.
 
-## 📚 Dokumentacja i Zasoby
+## Dokumentacja i zasoby
 
 ### Oficjalna Dokumentacja
 - [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
@@ -840,31 +840,6 @@ Następnie wybierz "Reload hooks" aby zaaplikować nową konfigurację.
 
 ## Podsumowanie
 
-Hooks w Claude Code to potężny system automation:
+Hooki są najbardziej użyteczne wtedy, gdy rozwiązują konkretny problem: pilnują jakości kodu, blokują niebezpieczne operacje albo przygotowują środowisko pracy. Nie warto zaczynać od zbyt rozbudowanej automatyzacji, bo to zwykle utrudnia diagnostykę i utrzymanie.
 
-✅ **8 typów eventów** - PreToolUse, PostToolUse, UserPromptSubmit, SessionStart/End, Stop, SubagentStop, Notification
-✅ **Flexible matchers** - Exact, regex, wildcard patterns
-✅ **Rich input data** - JSON via stdin, environment variables
-✅ **Control flow** - Exit codes, JSON output, blocking errors
-✅ **Parallel execution** - Multiple hooks run concurrently
-✅ **Security** - Input validation, path checking, permission limits
-
-### Best Practices Recap
-
-1. **Validate input** - Sprawdzaj `$TOOL_INPUT_*` przed użyciem
-2. **Quote variables** - Zawsze `"$VAR"` w bash
-3. **Check paths** - Blokuj `../` i absolute paths poza projektem
-4. **Limit permissions** - No sudo, no sensitive files
-5. **Use timeouts** - Prevent hanging hooks
-6. **Test locally** - Before deploying team-wide
-7. **Document hooks** - Comment complex logic
-
-### Następne Kroki
-
-1. Stwórz prosty PostToolUse hook (auto-format)
-2. Dodaj PreToolUse validation (dangerous commands)
-3. Implement UserPromptSubmit context injection
-4. Setup SessionStart environment initialization
-5. Build complete workflow automation pipeline
-
-Hooks przekształcają Claude Code w **w pełni automatyczny development environment**! 🎣
+Najlepiej wdrażać je etapami. Najpierw prosty `PostToolUse` do formatowania, potem `PreToolUse` do walidacji, a dopiero później bardziej złożone działania związane z kontekstem sesji czy integracjami zespołowymi. Taka kolejność daje kontrolę i pozwala łatwo ocenić, które hooki faktycznie pomagają.

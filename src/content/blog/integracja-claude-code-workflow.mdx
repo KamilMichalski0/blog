@@ -1,21 +1,21 @@
 ---
-title: Automatyzacja Workflow Deweloperskiego - Kompletny Przewodnik
-description: Dowiedz się, jak zautomatyzować swój workflow z Git hooks, CI/CD, VS Code, Husky i innymi narzędziami. Zwiększ produktywność!
+title: Automatyzacja pracy deweloperskiej z Git hooks i CI/CD
+description: Dowiedz się, jak uporządkować codzienną pracę z Git hooks, CI/CD, VS Code i Husky, aby szybciej wykonywać powtarzalne zadania.
 pubDate: Jun 01 2024
 heroImage: ../../assets/blog/heroes/integracja-claude-code-workflow.jpg
 tags: ['Workflow', 'Automatyzacja', 'Git Hooks', 'CI/CD', 'DevOps']
 readingTime: 2
-heroImageAlt: "Przewodnik: [ - Automatyzacja Workflow Deweloperskiego Kompletny"
+heroImageAlt: "Ilustracja do artykułu o automatyzacji workflow deweloperskiego"
 ---
 
 
 
 
-Automatyzacja workflow deweloperskiego to klucz do zwiększenia produktywności. W tym przewodniku pokażę, jak zintegrować Git hooks, CI/CD, VS Code tasks, Husky i wiele innych narzędzi, aby zautomatyzować rutynowe zadania.
+Automatyzacja pracy deweloperskiej pomaga ograniczyć liczbę ręcznych, powtarzalnych czynności. W tym przewodniku pokazuję, jak połączyć Git hooki, CI/CD, zadania VS Code, Husky i inne narzędzia w jeden proces, który da się utrzymać także w większym projekcie.
 
-## Integracja z Git Hooks
+## Integracja z Git hookami
 
-### Pre-commit Hook - Automatyczny Linting
+### Pre-commit hook: automatyczny linting
 
 Stwórz plik `.git/hooks/pre-commit`:
 
@@ -568,29 +568,6 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 
 ## Podsumowanie
 
-Integracja narzędzi deweloperskich z Twoim workflow może znacząco zwiększyć produktywność:
+Najlepsza automatyzacja to taka, która jest przewidywalna i nie przeszkadza w pracy. Git hooki, CI/CD, zadania VS Code i Husky mają sens wtedy, gdy razem skracają drogę od zmiany w kodzie do pewnego wdrożenia, zamiast dokładać kolejne obowiązki.
 
-✅ **Git Hooks** - automatyczny linting i testy przed commitem
-✅ **CI/CD** - automatyczne testy, linting i deployment
-✅ **VS Code** - custom tasks i keybindings dla szybkiego dostępu
-✅ **Scripts** - automatyzacja rutynowych zadań
-✅ **Docker** - izolowane środowiska dla buildów
-✅ **Husky** - zarządzanie git hooks w projekcie
-
-### Rekomendacje Końcowe
-
-1. **Zacznij od małych integracji** - najpierw linting, potem testy, na końcu CI/CD
-2. **Automatyzuj repetytywne zadania** - używaj npm scripts i git hooks
-3. **Konfiguruj środowiska** - .env dla secrets, .gitignore dla plików lokalnych
-4. **Używaj TypeScript** - type checking łapie błędy przed runtime
-5. **Testuj wszystko** - testy jednostkowe, integracyjne i e2e
-
-### Przydatne Narzędzia
-
-- **Husky** - Git hooks manager
-- **lint-staged** - Uruchamia lintery tylko na staged files
-- **conventional-changelog** - Generuje changelog z commitów
-- **commitlint** - Waliduje format commit messages
-- **ESLint + Prettier** - Linting i formatowanie kodu
-
-Powodzenia w automatyzacji swojego workflow! 🚀
+W praktyce najlepiej wdrażać to etapami: najpierw linting i podstawowe testy, potem zadania lokalne, a dopiero na końcu bardziej rozbudowane potoki CI/CD. Taka kolejność ułatwia utrzymanie i szybciej pokazuje, które elementy realnie oszczędzają czas.

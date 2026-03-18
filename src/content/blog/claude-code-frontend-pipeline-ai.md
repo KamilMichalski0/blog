@@ -1,13 +1,13 @@
 ---
-title: "AI w pipeline frontendu: Plan Mode + hook PostToolUse dla pełnej automatyzacji"
-description: Jak skonfigurować Claude Code, by po zmianach komponentów AI planował zadania, formatował kod, uruchamiał astro check oraz wskazywał brakujące testy.
+title: "Automatyzacja frontendu: Plan Mode i hook PostToolUse"
+description: "Sprawdź, jak skonfigurować Claude Code, aby planował zmiany, formatował kod, uruchamiał `astro check` i wskazywał brakujące testy."
 pubDate: 2025-10-21
 heroImage: ../../assets/blog/heroes/claude-code-frontend-pipeline-ai.jpg
 tags: ["Claude Code","Automation","Frontend","Astro"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: "Przewodnik: Claude Code - pipeline frontendu Plan Mode"
+heroImageAlt: "Ilustracja do artykułu o automatyzacji frontendu z Plan Mode i hookami"
 ---
 
 
@@ -68,7 +68,7 @@ Think harder and list missing unit or integration tests for updated components.
 
 AI przeanalizuje ostatnie edycje i wskaże scenariusze, które warto dopisać (np. walidację formularzy, edge cases dla dynamicznych tras Astro).
 
-## 4. Uspójnienie workflowu planowania i wykonania
+## 4. Uspójnienie planowania i wykonania
 
 Przykładowy cykl pracy:
 

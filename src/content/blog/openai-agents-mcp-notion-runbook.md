@@ -1,13 +1,13 @@
 ---
-title: "MCP + Notion: agent, który aktualizuje runbooki z historii PR"
-description: Konfigurujemy MCP dla GitHuba i Notion, aby agent AI czytał pull requesty i automatycznie dopisywał Lessons Learned w bazie runbooków.
+title: "MCP + Notion: agent aktualizujący runbooki"
+description: Konfigurujemy MCP dla GitHuba i Notion, aby agent czytał pull requesty i automatycznie dopisywał wnioski do bazy runbooków.
 pubDate: 2025-10-22
 heroImage: ../../assets/blog/heroes/openai-agents-mcp-notion-runbook.jpg
 tags: ["OpenAI Agents","MCP","Notion","Automation"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: OpenAI Agents - Notion agent, który aktualizuje
+heroImageAlt: "Ilustracja do artykułu o agencie aktualizującym runbooki w Notion"
 ---
 
 

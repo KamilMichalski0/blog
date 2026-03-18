@@ -1,58 +1,63 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout
-	title="O Nas"
-	description="Poznaj ClaudeCodeLab - platformę nauki programowania opartą na AI"
-	pubDate={new Date('August 08 2021')}
-	heroImage="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop"
+<BaseLayout
+	title="O nas | ClaudeCodeLab"
+	description="Poznaj ClaudeCodeLab: blog o praktycznym wykorzystaniu AI w programowaniu, automatyzacji i codziennej pracy deweloperskiej."
 >
+	<section class="section bg-gray-50 dark:bg-gray-950">
+		<div class="container-content">
+			<div class="prose max-w-4xl mx-auto">
+				<h1>O nas</h1>
 	<p>
-		ClaudeCodeLab to strona z tutorialami i przewodnikami poświęconymi <strong>Claude Code</strong> -
-		oficjalnemu narzędziu CLI od Anthropic, które pomaga programistom tworzyć kod szybciej
-		dzięki wsparciu sztucznej inteligencji.
+		ClaudeCodeLab to polskojęzyczny blog o praktycznym wykorzystaniu AI w programowaniu.
+		Publikujemy przewodniki, analizy i materiały wdrożeniowe związane z narzędziami takimi jak
+		<strong> Claude Code</strong>, OpenAI Agents czy Astro.
 	</p>
 
 	<h2>Czym jest Claude Code?</h2>
 
 	<p>
-		Claude Code to potężne narzędzie działające bezpośrednio w terminalu, które rewolucjonizuje sposób
-		w jaki piszemy kod. Dzięki zaawansowanej sztucznej inteligencji Claude, może:
+		Claude Code to narzędzie działające bezpośrednio w terminalu, które pomaga analizować projekty,
+		przygotowywać zmiany w kodzie i porządkować pracę nad zadaniami programistycznymi. W praktyce może
+		wspierać między innymi:
 	</p>
 
 	<ul>
 		<li>Budować funkcje na podstawie opisów w języku naturalnym</li>
 		<li>Analizować kod i automatycznie naprawiać błędy</li>
-		<li>Generować commity, release notes i dokumentację</li>
-		<li>Rozwiązywać konflikty mergów i problemy z linterem</li>
-		<li>Nawigować po całej strukturze projektu i pobierać aktualne informacje z internetu</li>
+		<li>Przygotowywać opisy commitów, notatki do wydań i dokumentację</li>
+		<li>Pomagać w rozwiązywaniu konfliktów oraz problemów z lintingiem i testami</li>
+		<li>Sprawnie poruszać się po strukturze projektu i wyszukiwać istotny kontekst</li>
 	</ul>
 
-	<h2>Nasza Misja</h2>
+	<h2>Nasza misja</h2>
 
 	<p>
-		W ClaudeCodeLab dostarczamy praktyczne tutoriale, które pomogą Ci opanować Claude Code
-		i wykorzystać jego pełen potencjał w codziennej pracy programistycznej. Wszystkie materiały
-		są napisane w języku polskim i zawierają przykłady z prawdziwych projektów.
+		Tworzymy materiały, które pomagają szybko przejść od ogólnej wiedzy o narzędziu do konkretnego
+		zastosowania w projekcie. Zależy nam na treściach po polsku, z jasnym językiem i przykładami
+		opartymi na realnych scenariuszach pracy.
 	</p>
 
 	<p>
-		Dowiesz się, jak używać Claude Code do tworzenia aplikacji w nowoczesnych technologiach
-		takich jak Astro, React, TypeScript i wielu innych. Każdy tutorial jest starannie opracowany,
-		aby zapewnić najwyższą jakość treści i pokazać praktyczne zastosowania narzędzia.
+		Opisujemy, jak wykorzystywać AI przy tworzeniu aplikacji w Astro, React, TypeScript i innych
+		nowoczesnych technologiach. Pokazujemy nie tylko gotowe rozwiązania, ale też decyzje, ograniczenia
+		i dobre praktyki, które mają znaczenie w codziennej pracy.
 	</p>
 
-	<h2>O Stronie</h2>
-
-	<p>
-		ClaudeCodeLab jest zbudowany z wykorzystaniem najnowszych technologii webowych, w tym Astro 5
-		i Tailwind CSS v4, co zapewnia błyskawiczną wydajność i doskonałe doświadczenie użytkownika.
-		Wszystkie treści są dostępne całkowicie za darmo, bez konieczności rejestracji.
-	</p>
+	<h2>O blogu</h2>
 
 	<p>
-		Dołącz do tysięcy programistów, którzy już rozwijają swoje umiejętności z Claude Code.
-		Rozpocznij swoją przygodę z AI-wspomaganym programowaniem już dziś!
+		Blog działa na Astro i stawia na szybkie ładowanie, czytelny układ treści oraz porządne podstawy SEO.
+		Wszystkie materiały są dostępne bezpłatnie i bez rejestracji.
 	</p>
-</Layout>
+
+	<p>
+		Jeśli interesuje Cię praktyczne wykorzystanie AI w programowaniu, zacznij od
+		<a href="/blog"> bloga</a> i przejrzyj najnowsze artykuły.
+	</p>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,13 +1,13 @@
 ---
-title: "Autonomiczne analizy kodu z Claude Code: Plan Mode, Extended Thinking i hooki"
-description: Jak połączyć tryb tylko-do-odczytu, głębokie myślenie oraz hook PostToolUse, by agent AI zaplanował refaktoring, zrealizował go etapowo i zebrał metryki testów.
+title: "Analiza kodu w Claude Code: Plan Mode i hooki"
+description: Jak połączyć tryb tylko do odczytu, rozszerzone myślenie i hook PostToolUse, aby zaplanować refaktoryzację i zebrać metryki testów.
 pubDate: 2025-10-21
 heroImage: ../../assets/blog/heroes/claude-code-plan-mode-analizy.jpg
 tags: ["Claude Code","Plan Mode","Extended Thinking","Automation"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 3
-heroImageAlt: "Przewodnik: Claude Code - Autonomiczne analizy kodu Claude"
+heroImageAlt: "Ilustracja do artykułu o autonomicznej analizie kodu w Claude Code"
 ---
 
 

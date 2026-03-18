@@ -1,18 +1,18 @@
 ---
-title: "Google Sycamore 3.0 i GPT-5.1: Podwójna Rewolucja w Komputerach Kwantowych i AI"
-description: "18 listopada 2025 przyniósł przełomowe ogłoszenia: Google zwiększa moc obliczeniową kwantową o 50%, a OpenAI udoskonala GPT-5. Analiza najważniejszych trendów tech."
+title: "Sycamore 3.0 i GPT-5.1: ważne ogłoszenia z 18 listopada"
+description: "Google rozwija Sycamore 3.0, OpenAI ogłasza GPT-5.1, a DeepMind aktualizuje AlphaCode. Porządkujemy najważniejsze informacje z rynku."
 pubDate: "2025-11-19"
 heroImage: ../../assets/blog/heroes/hero-2025-11-19-a683d97f.jpg
-heroImageAlt: a bunch of different colored sprinkles on a pink background
+heroImageAlt: Abstrakcyjna ilustracja do analizy trendów w AI i obliczeniach kwantowych
 tags: ["ai", "tech", "trends", "quantum-computing", "openai", "google"]
 category: "deep-dive"
 readingTime: 8
 keywords: ["Google Sycamore 3.0", "GPT-5.1", "AlphaCode 2.0", "komputer kwantowy", "etyczna AI"]
 ---
 
-18 listopada 2025 roku przejdzie do historii technologii jako dzień, w którym równocześnie ogłoszono przełomowe osiągnięcia w dwóch najbardziej obiecujących dziedzinach: komputerach kwantowych i sztucznej inteligencji. Google zaprezentowało Sycamore 3.0 z 50% poprawą koherencji kubitów, OpenAI wypuściło GPT-5.1, a DeepMind zaskoczyło nową wersją AlphaCode. Przyjrzyjmy się, co te ogłoszenia oznaczają dla przyszłości technologii.
+18 listopada 2025 przyniósł kilka ważnych ogłoszeń z obszaru AI i obliczeń kwantowych. Google zaprezentowało Sycamore 3.0 z poprawą koherencji kubitów, OpenAI ogłosiło GPT-5.1, a DeepMind nową wersję AlphaCode. To dobry moment, żeby uporządkować, które z tych zmian mają znaczenie techniczne, a które są przede wszystkim sygnałem kierunku rozwoju.
 
-## Google Sycamore 3.0: Kwantowy Skok w Przyszłość
+## Google Sycamore 3.0 i poprawa koherencji kubitów
 
 ### Przełom w Koherencji Kubitów
 

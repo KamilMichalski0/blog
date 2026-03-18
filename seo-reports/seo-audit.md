@@ -1,25 +1,99 @@
 # SEO Audit Report
-Generated: 2025-10-24T11:54:30.498Z
+Generated: 2026-03-18T09:32:24.669Z
 
 ## Summary
 
-- **Total Posts:** 28 (27 published, 1 drafts)
-- **Average SEO Score:** 88/100
-- **Posts with Critical Issues:** 0
-- **Posts Needing Work:** 24
+- **Total Posts:** 47 (46 published, 1 drafts)
+- **Average SEO Score:** 67/100
+- **Posts with Critical Issues:** 19
+- **Posts Needing Work:** 43
 
 ### Issue Breakdown
 
-- Short descriptions (<120 chars): **0**
+- Short descriptions (<120 chars): **19**
 - Long titles (>60 chars): **23**
 - External images: **0**
-- Missing alt text: **0**
+- Missing alt text: **1**
 
 ## Priority Fixes
 
-### 1. Short Descriptions (0 posts)
+### 1. Short Descriptions (19 posts)
 
+- **2025-10-31-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
 
+- **2025-11-01-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-04-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-04-google-quantum-darktrace-bloom.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-17-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-18-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-19-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-20-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-21-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-22-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-23-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-24-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-25-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-26-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-27-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-28-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-29-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-11-30-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
+
+- **2025-12-02-ai-tech-trends.md** (0 chars)
+  - Current: ""
+  - Target: 150-160 characters
 
 ### 2. Long Titles (23 posts)
 
@@ -116,6 +190,405 @@ Generated: 2025-10-24T11:54:30.498Z
   - Target: <60 characters
 
 ## All Posts
+
+### 2025-10-31-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-01-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-04-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-04-google-quantum-darktrace-bloom.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-17-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 7)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 7 to frontmatter
+
+---
+
+### 2025-11-18-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-19-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-20-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-21-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-22-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-23-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-24-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-25-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-26-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 7)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 7 to frontmatter
+
+---
+
+### 2025-11-27-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-28-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 6)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 6 to frontmatter
+
+---
+
+### 2025-11-29-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
+
+### 2025-11-30-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ✅
+- **Reading Time:** ❌ (suggested: 7)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 7 to frontmatter
+
+---
+
+### 2025-12-02-ai-tech-trends.md - Score: 36/100
+
+- **Title:**  (0 chars)
+- **Description:** MISSING
+- **Tags:** 0 tags
+- **Hero Image:** ❌ Missing
+- **Alt Text:** ❌
+- **Reading Time:** ❌ (suggested: 5)
+
+**Issues:**
+- ❌ Missing title
+- ❌ Missing description
+- ❌ Missing pubDate
+**Warnings:**
+- ⚠️ No tags found
+- ⚠️ Missing hero image
+**Suggestions:**
+- 💡 Add readingTime: 5 to frontmatter
+
+---
 
 ### 7-scenariuszy-uzycia-claude-code.md - Score: 81/100
 

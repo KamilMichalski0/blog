@@ -7,7 +7,7 @@ tags: ["OpenAI Agents","Claude Code","Automation","TypeScript"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: "Przewodnik: OpenAI Agents - OpenAI Agents jako router"
+heroImageAlt: "Ilustracja do artykułu o wykorzystaniu OpenAI Agents JS jako routera zadań"
 ---
 
 

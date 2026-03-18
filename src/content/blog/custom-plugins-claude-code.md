@@ -1,21 +1,21 @@
 ---
-title: Tworzenie Custom Plugins dla Claude Code - Kompletny Przewodnik
-description: Naucz się budować własne pluginy Claude Code z custom commands, agents, skills i hooks. Dystrybuuj je przez marketplace dla całego zespołu.
+title: Własne wtyczki do Claude Code
+description: Naucz się tworzyć własne wtyczki do Claude Code z komendami, agentami, skills i hookami oraz udostępniać je całemu zespołowi.
 pubDate: Oct 24 2024
 heroImage: ../../assets/blog/heroes/custom-plugins-claude-code.jpg
 tags: ['Claude Code', 'Plugins', 'Extensibility', 'Zaawansowane']
 readingTime: 4
-heroImageAlt: "Tutorial - Tworzenie custom plugins dla Claude Code"
+heroImageAlt: "Ilustracja do artykułu o tworzeniu własnych wtyczek do Claude Code"
 ---
 
 
 
 
-Claude Code pozwala rozszerzać swoje możliwości przez system pluginów. W tym przewodniku nauczysz się tworzyć własne pluginy z custom slash commands, specialized agents, reusable skills i event hooks - wszystko oparte na oficjalnej dokumentacji technicznej.
+Claude Code można rozszerzać przez system wtyczek. W tym przewodniku pokazuję, jak budować własne rozszerzenia z komendami slash, agentami, skills i hookami, tak aby dało się je bezpiecznie rozwijać i udostępniać w zespole.
 
-## Struktura Pluginu
+## Struktura wtyczki
 
-Każdy plugin Claude Code ma określoną strukturę katalogów:
+Każda wtyczka Claude Code ma określoną strukturę katalogów:
 
 ```
 plugin-name/
@@ -34,7 +34,7 @@ plugin-name/
 └── .mcp.json                # MCP servers (opcjonalne)
 ```
 
-## Plugin Manifest: `plugin.json`
+## Manifest wtyczki: `plugin.json`
 
 Każdy [plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) **musi** zawierać plik `.claude-plugin/plugin.json`:
 
@@ -759,7 +759,7 @@ database-tools/
 }
 ```
 
-## 📚 Dokumentacja i Zasoby
+## Dokumentacja i zasoby
 
 ### Oficjalna Dokumentacja
 - [Claude Code - Plugins](https://docs.anthropic.com/en/docs/claude-code/plugins)
@@ -773,21 +773,6 @@ database-tools/
 
 ## Podsumowanie
 
-Custom Plugins w Claude Code pozwalają:
+Własne wtyczki pozwalają uporządkować sposób pracy z Claude Code i przenieść powtarzalne działania do jednego, kontrolowanego miejsca. Największą wartość dają wtedy, gdy rozwiązują konkretny problem zespołu: ujednolicają komendy, automatyzują sprawdzenia albo porządkują integracje.
 
-✅ Tworzyć **custom slash commands** dla team workflow
-✅ Definiować **specialized agents** dla konkretnych zadań
-✅ Budować **reusable skills** autonomicznie używane przez Claude
-✅ Automatyzować przez **event hooks**
-✅ Integrować **MCP serwery** dla zewnętrznych narzędzi
-✅ Dystrybuować przez **marketplace** dla całego zespołu
-
-### Następne Kroki
-
-1. Stwórz pierwszy prosty plugin z jednym commandem
-2. Przetestuj lokalnie w `.claude/plugins/`
-3. Dodaj hooks dla automatyzacji
-4. Stwórz marketplace dla zespołu
-5. Skonfiguruj auto-install w `.claude/settings.json`
-
-Pluginy przekształcają Claude Code w **w pełni konfigurowalną platformę** dopasowaną do Twojego workflow! 🔌
+Najrozsądniejsza ścieżka wdrożenia jest prosta: zacznij od jednej komendy, przetestuj ją lokalnie, dopiero potem dodaj hooki i dystrybucję zespołową. Dzięki temu wtyczka pozostanie użyteczna, zamiast szybko zamienić się w trudny do utrzymania zestaw eksperymentów.

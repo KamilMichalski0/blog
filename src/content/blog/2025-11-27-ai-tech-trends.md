@@ -1,20 +1,20 @@
 ---
-title: "Gemini 3 od Google: Rewolucja w AI Multimodalnej z 1 Milionem Tokenów"
-description: "Google Gemini 3 ustanawia nowy standard w AI multimodalnej z milionem tokenów kontekstu i 81% wynikiem w MMMU-Pro. Poznaj przełomowe możliwości najnowszego modelu od DeepMind."
+title: "Gemini 3 od Google i 1 mln tokenów kontekstu"
+description: "Gemini 3 zwraca uwagę dużym oknem kontekstu i rozbudowaną multimodalnością. Sprawdzamy, co ten model wnosi do rynku AI."
 pubDate: "2025-11-27"
 heroImage: ../../assets/blog/heroes/hero-2025-11-27-40a72c6c.jpg
-heroImageAlt: A purple and black background with lines
+heroImageAlt: Abstrakcyjne tło technologiczne ilustrujące model Gemini 3
 tags: ["ai", "tech", "trends", "google", "gemini", "multimodal"]
 category: "deep-dive"
 readingTime: 8
 keywords: ["Gemini 3", "Google AI", "AI multimodalna", "modele językowe", "DeepMind"]
 ---
 
-Świat sztucznej inteligencji właśnie doświadczył kolejnego przełomu. 18 listopada 2025 roku Google DeepMind zaprezentowało **Gemini 3** – najbardziej zaawansowany model multimodalny, który przepisuje reguły gry w dziedzinie AI. Z milionem tokenów kontekstu, rekordowym wynikiem 1501 w skali Elo i zdolnością do przetwarzania tekstu, obrazów, wideo i dźwięku w jednym żądaniu, Gemini 3 stawia poprzeczkę na nieosiągalnym wcześniej poziomie.
+Premiera Gemini 3 zwróciła uwagę przede wszystkim z dwóch powodów: bardzo dużego okna kontekstu i szerokiej obsługi wielu modalności. Dla rynku oznacza to kolejny krok w stronę modeli, które potrafią pracować jednocześnie na tekście, obrazie, dźwięku, wideo i kodzie.
 
-## Co Sprawia, że Gemini 3 Jest Wyjątkowy?
+## Co wyróżnia Gemini 3?
 
-### Multimodalność na Nowym Poziomie
+### Multimodalność na nowym poziomie
 
 Gemini 3 został zaprojektowany od podstaw jako model naprawdę multimodalny. W przeciwieństwie do wcześniejszych rozwiązań, które łączyły różne modele specjalizujące się w poszczególnych trybach, Gemini 3 **natywnie rozumie i syntetyzuje informacje** z pięciu modalności: tekstu, obrazów, wideo, dźwięku i kodu.
 
@@ -64,7 +64,7 @@ Ta funkcja, którą Google nazywa "vibe-coding", pozwala modelowi dostosować fo
 
 ## Autonomiczne Agenty AI: Przyszłość Automatyzacji
 
-Gemini 3 wprowadza również **zdolność do autonomicznego wykonywania wieloetapowych workflow**. Model może:
+Gemini 3 wprowadza również **zdolność do autonomicznego wykonywania wieloetapowych procesów**. Model może:
 
 1. Zaplanować sekwencję działań potrzebnych do rozwiązania problemu
 2. Wykonać te działania samodzielnie

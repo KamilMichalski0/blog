@@ -1,9 +1,9 @@
 ---
-title: "Sycamore 3.0, LLaMA 5 i Loihi 3: Trojna Rewolucja w AI i Komputerach Kwantowych"
-description: "Google, Meta i Intel ogłaszają przełomowe technologie tego samego dnia. Analiza trzech innowacji, które zmienią przyszłość AI, robotyki i kryptografii."
+title: "Sycamore 3.0, LLaMA 5 i Loihi 3: trzy ważne premiery"
+description: "Google, Meta i Intel ogłaszają nowe technologie tego samego dnia. Analizujemy znaczenie Sycamore 3.0, LLaMA 5 i Loihi 3 dla rynku."
 pubDate: "2025-11-25"
 heroImage: ../../assets/blog/heroes/hero-2025-11-25-77d6044a.jpg
-heroImageAlt: a black and white photo of a street light
+heroImageAlt: Minimalistyczna ilustracja technologiczna do artykułu o AI i obliczeniach kwantowych
 tags: ["ai", "tech", "quantum-computing", "google", "meta", "intel"]
 category: "deep-dive"
 readingTime: 8

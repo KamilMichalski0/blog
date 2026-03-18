@@ -1,13 +1,13 @@
 ---
-title: Budowa zespołu agentów pomocowych w TypeScripcie z OpenAI Agents SDK
-description: "Przewodnik od podstaw: triage, wyspecjalizowane handoffy, guardraile, approvals i zarządzanie stanem w OpenAI Agents dla JavaScript."
+title: Zespół agentów pomocowych w TypeScripcie
+description: "Przewodnik od podstaw po triage, wyspecjalizowanych handoffach, guardrailach, approvals i zarządzaniu stanem w OpenAI Agents SDK."
 pubDate: 2025-10-21
 heroImage: ../../assets/blog/heroes/openai-agents-js-zespol-pomocowy.jpg
 tags: ["OpenAI Agents","TypeScript","AI Workflow","Guardrails"]
 draft: false
 author: ClaudeCodeLab
 readingTime: 2
-heroImageAlt: "Tutorial: OpenAI Agents - Budowa zespołu agentów pomocowych"
+heroImageAlt: "Ilustracja do artykułu o budowie zespołu agentów pomocowych w TypeScripcie"
 ---
 
 

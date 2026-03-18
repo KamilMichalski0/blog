@@ -1,28 +1,28 @@
 ---
-title: Pierwsze Kroki z Claude Code - Kompletny Przewodnik dla Początkujących
-description: Dowiedz się, jak zainstalować i skonfigurować Claude Code, oficjalne narzędzie CLI od Anthropic. Przewodnik krok po kroku dla początkujących.
+title: "Claude Code: pierwsze kroki i instalacja"
+description: Dowiedz się, jak zainstalować i skonfigurować Claude Code oraz jak rozpocząć pierwszą pracę z tym narzędziem w terminalu.
 pubDate: Jul 08 2022
 heroImage: ../../assets/blog/heroes/pierwsze-kroki-z-claude-code.jpg
 tags: ['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']
 readingTime: 3
-heroImageAlt: "Przewodnik: [ - Pierwsze Kroki Claude Code"
+heroImageAlt: "Ilustracja do artykułu o pierwszych krokach z Claude Code"
 ---
 
 
 
 
-Claude Code to rewolucyjne narzędzie CLI od Anthropic, które umożliwia programistom tworzenie kodu szybciej dzięki wsparciu sztucznej inteligencji. W tym tutorialu przeprowadzę Cię przez proces instalacji i pierwsze kroki z narzędziem.
+Claude Code to narzędzie CLI od Anthropic, które wspiera programistów w pracy z kodem. W tym artykule pokazuję, jak je zainstalować, skonfigurować i rozpocząć pierwszą sesję w terminalu.
 
-## Czym Jest Claude Code?
+## Czym jest Claude Code?
 
-Claude Code to narzędzie wiersza poleceń (CLI), które działa bezpośrednio w Twoim terminalu. W przeciwieństwie do tradycyjnych IDE czy edytorów, Claude Code integruje się z Twoim istniejącym workflow programistycznym, pozwalając na:
+Claude Code to narzędzie wiersza poleceń (CLI), które działa bezpośrednio w Twoim terminalu. W przeciwieństwie do tradycyjnych IDE czy edytorów, Claude Code integruje się z Twoim obecnym sposobem pracy, pozwalając na:
 
 - **Tworzenie funkcji z opisów** - wystarczy opisać, co chcesz zrobić
 - **Analizę i naprawę kodu** - automatyczne wykrywanie i rozwiązywanie błędów
-- **Nawigację po projekcie** - inteligentne przeszukiwanie całego codebase'u
-- **Generowanie dokumentacji** - automatyczne tworzenie commitów i release notes
+- **Nawigację po projekcie** - inteligentne przeszukiwanie całej bazy kodu
+- **Generowanie dokumentacji** - automatyczne tworzenie commitów i notatek do wydań
 
-## Wymagania Systemowe
+## Wymagania systemowe
 
 Przed [instalacją](https://docs.anthropic.com/en/docs/claude-code/installation) upewnij się, że masz:
 
@@ -52,7 +52,7 @@ https://claude.ai/download
 
 Wybierz wersję dla swojego systemu operacyjnego (macOS, Linux, Windows).
 
-## Weryfikacja Instalacji
+## Weryfikacja instalacji
 
 Po instalacji sprawdź, czy wszystko działa poprawnie:
 
@@ -62,7 +62,7 @@ claude --version
 
 Powinieneś zobaczyć numer wersji Claude Code.
 
-## Pierwsza Konfiguracja
+## Pierwsza konfiguracja
 
 ### Uruchomienie i Autoryzacja
 
@@ -79,7 +79,7 @@ Zostaniesz poproszony o uwierzytelnienie. Masz dwie opcje:
 
 Dane uwierzytelniające zostaną zapisane lokalnie dla przyszłych sesji.
 
-## Twój Pierwszy Projekt
+## Twój pierwszy projekt
 
 Przejdź do katalogu swojego projektu:
 
@@ -148,9 +148,9 @@ Przed wprowadzeniem zmian, pozwól Claude zrozumieć kontekst:
 Przeanalizuj, jak działa system autoryzacji w tym projekcie
 ```
 
-## Przykładowy Workflow
+## Przykładowy przebieg pracy
 
-Oto typowy workflow z Claude Code:
+Oto typowy przebieg pracy z Claude Code:
 
 ```bash
 # 1. Uruchom Claude w katalogu projektu
@@ -161,7 +161,7 @@ claude
 > Wyjaśnij, jak działa routing w tej aplikacji
 
 # 3. Wprowadź zmiany
-> Dodaj middleware do logowania requestów HTTP
+> Dodaj middleware do logowania żądań HTTP
 
 # 4. Przetestuj
 > Uruchom testy dla nowego middleware
@@ -170,7 +170,7 @@ claude
 > Stwórz commit z opisem dodanego middleware
 ```
 
-## 📚 Dokumentacja i Zasoby
+## Dokumentacja i zasoby
 
 ### Oficjalna Dokumentacja
 - [Claude Code - Installation](https://docs.anthropic.com/en/docs/claude-code/installation)
@@ -181,7 +181,7 @@ claude
 - [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
 - [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
 - [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
-- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude)
+- [Automatyzacja pracy z Claude](/blog/automatyzacja-workflow-z-claude)
 - [Budowanie Aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude)
 
 ## Co Dalej?
@@ -190,17 +190,15 @@ Teraz, gdy masz zainstalowane i skonfigurowane Claude Code, możesz:
 
 - Eksperymentować z różnymi promptami
 - Sprawdzić dokumentację zaawansowanych funkcji
-- Przeczytać o [automatyzacji workflow z Claude](/blog/automatyzacja-workflow-z-claude)
+- Przeczytać o [automatyzacji pracy z Claude](/blog/automatyzacja-workflow-z-claude)
 - Poznać [budowanie aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude)
 
 ## Podsumowanie
 
 Claude Code to potężne narzędzie, które może znacząco przyspieszyć Twój rozwój jako programisty. Pamiętaj:
 
-✅ Instalacja jest prosta - wystarczy NPM lub Homebrew
-✅ Autoryzacja odbywa się tylko raz
-✅ Claude automatycznie rozumie strukturę Twojego projektu
-✅ Bądź konkretny w swoich requestach
-✅ Dziel duże zadania na mniejsze kroki
-
-Miłego kodowania z Claude! 🚀
+- Instalacja jest prosta i zajmuje tylko chwilę
+- Autoryzację wykonujesz tylko raz
+- Claude automatycznie rozumie strukturę Twojego projektu
+- Warto formułować polecenia możliwie konkretnie
+- Duże zadania najlepiej dzielić na mniejsze kroki

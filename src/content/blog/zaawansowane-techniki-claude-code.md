@@ -1,28 +1,28 @@
 ---
-title: Zaawansowane Techniki Claude Code - Extended Thinking i Plan Mode
-description: "Poznaj zaawansowane funkcje Claude Code: Plan Mode do bezpiecznego planowania, Extended Thinking dla złożonych zadań i Unix pipelines."
+title: "Claude Code: Plan Mode i Extended Thinking"
+description: "Poznaj zaawansowane funkcje Claude Code: Plan Mode do bezpiecznego planowania, Extended Thinking i pracę z narzędziami w terminalu."
 pubDate: Jul 22 2022
 heroImage: ../../assets/blog/heroes/zaawansowane-techniki-claude-code.jpg
 tags: ['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']
 readingTime: 4
-heroImageAlt: "Tutorial - Zaawansowane techniki w Claude Code"
+heroImageAlt: "Ilustracja do artykułu o zaawansowanych technikach pracy z Claude Code"
 ---
 
 
 
 
-Po opanowaniu podstaw Claude Code, czas na zaawansowane techniki, które pozwolą Ci wykorzystać pełen potencjał narzędzia. W tym artykule omówię Plan Mode, Extended Thinking, integrację z Unix pipelines i custom slash commands.
+Gdy podstawy Claude Code są już opanowane, warto przejść do technik, które naprawdę porządkują pracę z większym projektem. W tym artykule pokazuję, jak używać Plan Mode, Extended Thinking, potoków unixowych i własnych komend, aby pracować precyzyjniej i bezpieczniej.
 
 ## Plan Mode - Bezpieczne Planowanie Zmian
 
-### Czym Jest Plan Mode?
+### Czym jest Plan Mode?
 
-[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) to tryb "read-only", w którym Claude analizuje kod i planuje zmiany **bez faktycznego ich wprowadzania**. To idealne rozwiązanie dla:
+[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) to tryb tylko do odczytu, w którym Claude analizuje kod i planuje zmiany **bez ich wykonywania**. Sprawdza się szczególnie przy:
 
-- Refactoringu krytycznych części systemu
+- Refaktoryzacji krytycznych części systemu
 - Analiz architektonicznych
-- Planning sprintów
-- Code reviews przed implementacją
+- Planowaniu sprintów
+- Przeglądzie zmian przed wdrożeniem
 
 ### Uruchomienie Plan Mode
 
@@ -318,7 +318,7 @@ claude "/release-notes commits.txt"
 
 ## Automatyzacja z Hooks
 
-Claude Code oferuje system **hooks** do automatyzacji workflow. Hooks to skrypty, które wykonują się w odpowiedzi na wydarzenia.
+Claude Code oferuje system **hooków** do automatyzacji pracy. Są to skrypty uruchamiane w odpowiedzi na określone zdarzenia.
 
 ### Przykład: Pre-commit Hook
 
@@ -338,9 +338,9 @@ Możesz skonfigurować hook, który automatycznie sprawdza kod przed commitem:
 }
 ```
 
-### Automatyczne Code Review
+### Automatyczny przegląd zmian
 
-Użyj custom slash commands do automatyzacji code review:
+Własne komendy slash mogą pomóc zautomatyzować przegląd zmian:
 
 ```markdown
 # .claude/commands/review-pr.md
@@ -375,14 +375,14 @@ Możesz łączyć Plan Mode z Extended Thinking:
 > Think deeply and plan the migration from Redux to Zustand
 ```
 
-Najlepsze dla:
-- Wielkie refaktoringi
+Najlepiej sprawdza się to przy:
+- Dużych refaktoryzacjach
 - Decyzje architektoniczne
-- Migration planning
+- Planowaniu migracji
 
-### Extended Thinking + Custom Commands
+### Extended Thinking + własne komendy
 
-Custom slash commands mogą sugerować użycie Extended Thinking w swoim opisie:
+Własne komendy slash mogą sugerować użycie Extended Thinking w opisie:
 
 ```markdown
 # W .claude/commands/architect.md
@@ -397,11 +397,11 @@ Think deeply about the system architecture and recommend:
 - Security enhancements
 ```
 
-## Performance Tips
+## Wskazówki dotyczące pracy
 
 ### 1. Używaj Pojedynczej Sesji
 
-Claude cachuje context w sesji - wykorzystaj to:
+Claude zachowuje kontekst w ramach sesji, więc warto to wykorzystać:
 
 ```bash
 # Źle - wielokrotne uruchomienia
@@ -412,7 +412,7 @@ claude
 > Fix bug in user.js
 # Zamknij
 
-# Dobrze - jedna sesja, shared context
+# Dobrze - jedna sesja, wspólny kontekst
 claude
 > Fix bug in auth.js
 > Fix bug in user.js
@@ -435,7 +435,7 @@ claude
 > Continue with remaining files
 ```
 
-### 3. Precyzyjne Zadania
+### 3. Precyzyjne zadania
 
 ```bash
 # Zbyt szerokie zadanie:
@@ -471,7 +471,7 @@ Zamiast:
 > Find all bugs in the entire codebase  # Zbyt szerokie
 ```
 
-## 📚 Dokumentacja i Zasoby
+## Dokumentacja i zasoby
 
 ### Oficjalna Dokumentacja
 - [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
@@ -487,19 +487,6 @@ Zamiast:
 
 ## Podsumowanie
 
-Zaawansowane techniki Claude Code:
+Najważniejsze zaawansowane techniki w Claude Code sprowadzają się do czterech obszarów: planowania, głębszej analizy, automatyzacji powtarzalnych działań i lepszego wykorzystania kontekstu sesji. To właśnie one najbardziej wpływają na jakość pracy przy większych zadaniach.
 
-✅ **Plan Mode** - bezpieczne planowanie bez ryzyka
-✅ **Extended Thinking** - głęboka analiza złożonych problemów
-✅ **Custom Commands** - automatyzacja repetitywnych zadań
-✅ **Unix Pipelines** - integracja z istniejącymi tools
-✅ **Smart Caching** - optymalizacja wydajności
-
-### Next Steps
-
-1. Utwórz własne slash commands dla swojego workflow
-2. Eksperymentuj z Plan Mode na production code
-3. Integruj Claude z CI/CD pipeline
-4. Stwórz team-wide best practices
-
-Jakich zaawansowanych technik używasz? Podziel się w komentarzach! 💡
+Jeśli chcesz zacząć rozsądnie, najpierw przetestuj Plan Mode przy refaktoryzacji jednego modułu, potem dodaj jedną własną komendę slash, a dopiero na końcu buduj automatyzację z hookami i integracją z CI/CD. Taka kolejność daje najlepszy efekt bez zbędnego chaosu.

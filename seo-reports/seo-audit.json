@@ -1,20 +1,532 @@
 {
-  "generated": "2025-10-24T11:54:30.496Z",
+  "generated": "2026-03-18T09:32:24.661Z",
   "summary": {
-    "totalPosts": 28,
-    "publishedPosts": 27,
+    "totalPosts": 47,
+    "publishedPosts": 46,
     "draftPosts": 1,
-    "averageSeoScore": 88,
-    "criticalIssues": 0,
-    "postsNeedingWork": 24,
+    "averageSeoScore": 67,
+    "criticalIssues": 19,
+    "postsNeedingWork": 43,
     "issues": {
-      "shortDescriptions": 0,
+      "shortDescriptions": 19,
       "longTitles": 23,
       "externalImages": 0,
-      "missingAltText": 0
+      "missingAltText": 1
     }
   },
   "posts": [
+    {
+      "filename": "2025-10-31-ai-tech-trends.md",
+      "slug": "2025-10-31-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Ilustracja technologiczna związana ze sztuczną inteligencją i nowoczesnym oprogramowaniem",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-01-ai-tech-trends.md",
+      "slug": "2025-11-01-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Abstrakcyjna ilustracja przedstawiająca rozwój sztucznej inteligencji i technologii",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-04-ai-tech-trends.md",
+      "slug": "2025-11-04-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Ilustracja symbolizująca rywalizację modeli AI i rozwój nowoczesnych technologii",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-04-google-quantum-darktrace-bloom.md",
+      "slug": "2025-11-04-google-quantum-darktrace-bloom",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Ilustracja technologiczna nawiązująca do komputerów kwantowych i sztucznej inteligencji",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-17-ai-tech-trends.md",
+      "slug": "2025-11-17-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Abstrakcyjna ilustracja do artykułu o AI i komputerach kwantowych",
+      "calculatedReadingTime": 7,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 7 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-18-ai-tech-trends.md",
+      "slug": "2025-11-18-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Abstrakcyjna ilustracja związana z rozwojem komputerów kwantowych i AI",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-19-ai-tech-trends.md",
+      "slug": "2025-11-19-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Abstrakcyjna ilustracja do analizy trendów w AI i obliczeniach kwantowych",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-20-ai-tech-trends.md",
+      "slug": "2025-11-20-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Dynamiczna ilustracja symbolizująca szybkie tempo zmian w świecie AI",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-21-ai-tech-trends.md",
+      "slug": "2025-11-21-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Zbliżenie na układ elektroniczny ilustrujący temat sztucznej inteligencji",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-22-ai-tech-trends.md",
+      "slug": "2025-11-22-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Ciemna ilustracja technologiczna związana z komputerami kwantowymi i AI",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-23-ai-tech-trends.md",
+      "slug": "2025-11-23-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Zbliżenie na urządzenie elektroniczne ilustrujące nowoczesne technologie",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-24-ai-tech-trends.md",
+      "slug": "2025-11-24-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Robot w ciemnej scenerii ilustrujący porównanie nowoczesnych modeli AI",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-25-ai-tech-trends.md",
+      "slug": "2025-11-25-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Minimalistyczna ilustracja technologiczna do artykułu o AI i obliczeniach kwantowych",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-26-ai-tech-trends.md",
+      "slug": "2025-11-26-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Dynamiczna ilustracja technologiczna symbolizująca przyspieszenie rozwoju AI",
+      "calculatedReadingTime": 7,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 7 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-27-ai-tech-trends.md",
+      "slug": "2025-11-27-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Abstrakcyjne tło technologiczne ilustrujące model Gemini 3",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-28-ai-tech-trends.md",
+      "slug": "2025-11-28-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Ilustracja przedstawiająca motyw sztucznej inteligencji i innowacji technologicznych",
+      "calculatedReadingTime": 6,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 6 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-29-ai-tech-trends.md",
+      "slug": "2025-11-29-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Niebiesko-czarne tło technologiczne ilustrujące temat AI i komputerów kwantowych",
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-11-30-ai-tech-trends.md",
+      "slug": "2025-11-30-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "heroImageAlt": "Laptop z kodem na ekranie ilustrujący temat rozwoju AI i narzędzi programistycznych",
+      "calculatedReadingTime": 7,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 7 to frontmatter"
+      ],
+      "seoScore": 36
+    },
+    {
+      "filename": "2025-12-02-ai-tech-trends.md",
+      "slug": "2025-12-02-ai-tech-trends",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "tags": [],
+      "tagCount": 0,
+      "calculatedReadingTime": 5,
+      "author": "ClaudeCodeLab",
+      "draft": false,
+      "issues": [
+        "Missing title",
+        "Missing description",
+        "Missing pubDate"
+      ],
+      "warnings": [
+        "No tags found",
+        "Missing hero image"
+      ],
+      "suggestions": [
+        "Add readingTime: 5 to frontmatter"
+      ],
+      "seoScore": 36
+    },
     {
       "filename": "7-scenariuszy-uzycia-claude-code.md",
       "slug": "7-scenariuszy-uzycia-claude-code",
@@ -24,8 +536,8 @@
       "descriptionLength": 141,
       "tags": "['Claude Code', 'Workflow', 'Best Practices', 'Produktywność']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/7-scenariuszy-uzycia-claude-code.jpg",
-      "heroImageAlt": "[ - Najczęstszych Scenariuszy Użycia Claude",
+      "heroImage": "../../assets/blog/heroes/7-scenariuszy-uzycia-claude-code.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o siedmiu praktycznych zastosowaniach Claude Code",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "Jul 15 2022",
@@ -55,8 +567,8 @@
         "Automation"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/astro-view-transitions-claude.jpg",
-      "heroImageAlt": "Astro - View Transitions Astro Claude",
+      "heroImage": "../../assets/blog/heroes/astro-view-transitions-claude.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o View Transitions w Astro i pracy z Claude Code",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -86,8 +598,8 @@
         "Claude Code"
       ],
       "tagCount": 5,
-      "heroImage": "/blog/heroes/automatyzacja-workflow-z-claude.jpg",
-      "heroImageAlt": "Przewodnik: Automatyzacja - Automatyzacja Workflow Programistycznego Claude",
+      "heroImage": "../../assets/blog/heroes/automatyzacja-workflow-z-claude.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o automatyzacji pracy programistycznej z Claude Code",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-01-20",
@@ -116,8 +628,8 @@
         "Performance"
       ],
       "tagCount": 5,
-      "heroImage": "/blog/heroes/budowanie-aplikacji-astro-z-claude.jpg",
-      "heroImageAlt": "Tutorial: Astro - Budowanie Nowoczesnych Aplikacji Astro",
+      "heroImage": "../../assets/blog/heroes/budowanie-aplikacji-astro-z-claude.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o budowaniu aplikacji Astro z pomocą Claude Code",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "2025-01-18",
@@ -145,8 +657,8 @@
         "Astro"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/claude-code-frontend-pipeline-ai.jpg",
-      "heroImageAlt": "Przewodnik: Claude Code - pipeline frontendu Plan Mode",
+      "heroImage": "../../assets/blog/heroes/claude-code-frontend-pipeline-ai.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o automatyzacji frontendu z Plan Mode i hookami",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-21",
@@ -175,8 +687,8 @@
         "Frontend"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/claude-code-hooki-ci-light.jpg",
-      "heroImageAlt": "Claude Code - Hooki Claude Code jako",
+      "heroImage": "../../assets/blog/heroes/claude-code-hooki-ci-light.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o hookach Claude Code używanych jako lekkie CI",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -205,8 +717,8 @@
         "Automation"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/claude-code-plan-mode-analizy.jpg",
-      "heroImageAlt": "Przewodnik: Claude Code - Autonomiczne analizy kodu Claude",
+      "heroImage": "../../assets/blog/heroes/claude-code-plan-mode-analizy.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o autonomicznej analizie kodu w Claude Code",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "2025-10-21",
@@ -233,8 +745,8 @@
         "DevOps"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/claude-code-plan-mode-mcp-audyt.jpg",
-      "heroImageAlt": "Claude Code - Plan Mode audyt infrastruktury",
+      "heroImage": "../../assets/blog/heroes/claude-code-plan-mode-mcp-audyt.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o audycie infrastruktury z Plan Mode i MCP",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -261,8 +773,8 @@
         "Automation"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/claude-code-power-user-workflow.jpg",
-      "heroImageAlt": "Tutorial: Claude Code - Power user workflow Extended",
+      "heroImage": "../../assets/blog/heroes/claude-code-power-user-workflow.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o zaawansowanym workflow w Claude Code",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -284,8 +796,8 @@
       "descriptionLength": 139,
       "tags": "['Claude Code', 'Plugins', 'Extensibility', 'Zaawansowane']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/custom-plugins-claude-code.jpg",
-      "heroImageAlt": "[ - Tworzenie Custom Plugins Claude",
+      "heroImage": "../../assets/blog/heroes/custom-plugins-claude-code.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o tworzeniu własnych wtyczek do Claude Code",
       "readingTime": "4",
       "calculatedReadingTime": 4,
       "pubDate": "Oct 24 2024",
@@ -338,8 +850,8 @@
       "descriptionLength": 141,
       "tags": "['Claude Code', 'Hooks', 'Automation', 'DevOps', 'Zaawansowane']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/hooks-event-automation.jpg",
-      "heroImageAlt": "[ - Hooks Event Driven Automation",
+      "heroImage": "../../assets/blog/heroes/hooks-event-automation.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o hookach i automatyzacji zdarzeń w Claude Code",
       "readingTime": "6",
       "calculatedReadingTime": 6,
       "pubDate": "Oct 24 2024",
@@ -364,8 +876,8 @@
       "descriptionLength": 125,
       "tags": "['Workflow', 'Automatyzacja', 'Git Hooks', 'CI/CD', 'DevOps']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/integracja-claude-code-workflow.jpg",
-      "heroImageAlt": "Przewodnik: [ - Automatyzacja Workflow Deweloperskiego Kompletny",
+      "heroImage": "../../assets/blog/heroes/integracja-claude-code-workflow.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o automatyzacji workflow deweloperskiego",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "Jun 01 2024",
@@ -390,8 +902,8 @@
       "descriptionLength": 139,
       "tags": "['Claude Code', 'MCP', 'Integracja', 'API', 'Zaawansowane']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/mcp-model-context-protocol.jpg",
-      "heroImageAlt": "Przewodnik: [ - (Model Context Protocol) Podłączanie",
+      "heroImage": "../../assets/blog/heroes/mcp-model-context-protocol.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o Model Context Protocol i integracjach Claude Code",
       "readingTime": "4",
       "calculatedReadingTime": 5,
       "pubDate": "Oct 24 2024",
@@ -421,8 +933,8 @@
         "TypeScript"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-js-guardrails-kaskada.jpg",
-      "heroImageAlt": "OpenAI Agents - Guardrails praktyce projektowanie wielopoziomowej",
+      "heroImage": "../../assets/blog/heroes/openai-agents-js-guardrails-kaskada.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o wielopoziomowych guardrailach w OpenAI Agents JS",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -450,8 +962,8 @@
         "AI Orchestration"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-js-orkiestracja.jpg",
-      "heroImageAlt": "Przewodnik: OpenAI Agents - OpenAI Agents JavaScript Orkiestracja",
+      "heroImage": "../../assets/blog/heroes/openai-agents-js-orkiestracja.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o orkiestracji agentów w OpenAI Agents SDK dla JavaScript",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "2025-10-20",
@@ -480,8 +992,8 @@
         "TypeScript"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-js-router-claude.jpg",
-      "heroImageAlt": "Przewodnik: OpenAI Agents - OpenAI Agents jako router",
+      "heroImage": "../../assets/blog/heroes/openai-agents-js-router-claude.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o wykorzystaniu OpenAI Agents JS jako routera zadań",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -508,8 +1020,8 @@
         "TypeScript"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-js-stream-dashboard.jpg",
-      "heroImageAlt": "Przewodnik: OpenAI Agents - Streaming RunResult tworzymy dashboard",
+      "heroImage": "../../assets/blog/heroes/openai-agents-js-stream-dashboard.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o dashboardzie strumieniowym dla zespołu agentów",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -538,8 +1050,8 @@
         "Guardrails"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-js-zespol-pomocowy.jpg",
-      "heroImageAlt": "Tutorial: OpenAI Agents - Budowa zespołu agentów pomocowych",
+      "heroImage": "../../assets/blog/heroes/openai-agents-js-zespol-pomocowy.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o budowie zespołu agentów pomocowych w TypeScripcie",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-21",
@@ -568,8 +1080,8 @@
         "TypeScript"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-mcp-integracje.jpg",
-      "heroImageAlt": "Tutorial: OpenAI Agents - Integracja agentów danymi firmowymi",
+      "heroImage": "../../assets/blog/heroes/openai-agents-mcp-integracje.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o integracji agentów z danymi firmowymi przez MCP",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-21",
@@ -598,8 +1110,8 @@
         "Automation"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-mcp-notion-runbook.jpg",
-      "heroImageAlt": "OpenAI Agents - Notion agent, który aktualizuje",
+      "heroImage": "../../assets/blog/heroes/openai-agents-mcp-notion-runbook.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o agencie aktualizującym runbooki w Notion",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -628,8 +1140,8 @@
         "Support"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-python-handoffs-rma.jpg",
-      "heroImageAlt": "OpenAI Agents - Handoffs Pythonie orkiestracja działu",
+      "heroImage": "../../assets/blog/heroes/openai-agents-python-handoffs-rma.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o handoffach i orkiestracji zgłoszeń w Pythonie",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -658,8 +1170,8 @@
         "Sessions"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/openai-agents-python-wsparcie.jpg",
-      "heroImageAlt": "Przewodnik: OpenAI Agents - Pythonowy workflow agentowy działu",
+      "heroImage": "../../assets/blog/heroes/openai-agents-python-wsparcie.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o agencie wsparcia z OpenAI Agents SDK dla Pythonu",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-21",
@@ -683,8 +1195,8 @@
       "descriptionLength": 141,
       "tags": "['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/pierwsze-kroki-z-claude-code.jpg",
-      "heroImageAlt": "Przewodnik: [ - Pierwsze Kroki Claude Code",
+      "heroImage": "../../assets/blog/heroes/pierwsze-kroki-z-claude-code.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o pierwszych krokach z Claude Code",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "Jul 08 2022",
@@ -714,8 +1226,8 @@
         "Refactoring"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/plan-mode-extended-thinking-refaktoryzacja.jpg",
-      "heroImageAlt": "Przewodnik: Claude Code - Plan Mode Extended Thinking",
+      "heroImage": "../../assets/blog/heroes/plan-mode-extended-thinking-refaktoryzacja.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o migracji z Redux do Zustand z użyciem Plan Mode",
       "readingTime": "3",
       "calculatedReadingTime": 4,
       "pubDate": "2025-10-21",
@@ -742,8 +1254,8 @@
         "Frontend"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/react-lazy-initialization-dark-mode.jpg",
-      "heroImageAlt": "React - Dark Mode Toggle naszemu",
+      "heroImage": "../../assets/blog/heroes/react-lazy-initialization-dark-mode.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o lazy initialization i przełączniku motywu w React",
       "readingTime": "2",
       "calculatedReadingTime": 2,
       "pubDate": "2025-10-22",
@@ -772,8 +1284,8 @@
         "Tutorial"
       ],
       "tagCount": 4,
-      "heroImage": "/blog/heroes/wprowadzenie-do-claude-code.jpg",
-      "heroImageAlt": "Przewodnik: Claude Code - Wprowadzenie Claude Code Rewolucja",
+      "heroImage": "../../assets/blog/heroes/wprowadzenie-do-claude-code.jpg",
+      "heroImageAlt": "Ilustracja do artykułu wprowadzającego do Claude Code",
       "readingTime": "3",
       "calculatedReadingTime": 3,
       "pubDate": "2025-01-15",
@@ -796,8 +1308,8 @@
       "descriptionLength": 134,
       "tags": "['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']",
       "tagCount": 0,
-      "heroImage": "/blog/heroes/zaawansowane-techniki-claude-code.jpg",
-      "heroImageAlt": "[ - Zaawansowane Techniki Claude Code",
+      "heroImage": "../../assets/blog/heroes/zaawansowane-techniki-claude-code.jpg",
+      "heroImageAlt": "Ilustracja do artykułu o zaawansowanych technikach pracy z Claude Code",
       "readingTime": "4",
       "calculatedReadingTime": 4,
       "pubDate": "Jul 22 2022",
