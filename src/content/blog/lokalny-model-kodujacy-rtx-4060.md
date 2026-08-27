@@ -4,7 +4,7 @@ description: "Ollama, Aider i dwa modele Qwen na karcie z 8 GB VRAM. Twarde licz
 seoTitle: "Lokalny model kodujący na RTX 4060: pomiary"
 pubDate: Aug 27 2026
 heroImage: ../../assets/blog/heroes/lokalny-model-kodujacy-rtx-4060.jpg
-heroImageAlt: "Ciemna grafika z napisem AI nie wie, kiedy zrobiło źle oraz dwiema liczbami: 47 sekund z testem i zero naprawionych błędów bez testu"
+heroImageAlt: "Abstrakcyjna ciemna grafika przypominająca odczyt z przyrządu pomiarowego"
 tags: ['Lokalne AI', 'Ollama', 'Aider', 'Qwen', 'Wydajność', 'Prywatność danych']
 category: deep-dive
 keywords: ['lokalny model LLM', 'Ollama RTX 4060', 'Aider lokalny model', 'qwen2.5-coder', 'qwen3-coder MoE', 'agent kodujący lokalnie']
@@ -46,6 +46,11 @@ Baseline na samym CPU: 5,6 tokena na sekundę generacji, 29 tokenów na sekundę
 | Deklarowany max kontekst | 32 768 | 262 144 |
 
 Przyspieszenie 7B względem CPU: generacja 9,5x, przetwarzanie promptu 60x.
+
+![Porównanie czasu wczytania 22 500 tokenów kontekstu: qwen2.5-coder:7b 12,8 sekundy, qwen3-coder:30b MoE 108,8 sekundy](/blog/lokalny-model-rtx4060-prompt.png)
+
+Ta jedna różnica, 12,8 sekundy kontra 108,8 sekundy na wczytanie tego samego kontekstu,
+przesądza o wyborze modelu bardziej niż cokolwiek innego w tej tabeli.
 
 ## Hipoteza, która się nie obroniła
 
