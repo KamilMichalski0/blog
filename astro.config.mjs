@@ -7,7 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://claudecodelab.com',
+  // Blog stoi na tej subdomenie. Wczesniej bylo tu claudecodelab.com, ktora nie
+  // odpowiada (adres parkingowy), przez co canonical, og:url, og:image i cala
+  // sitemapa wskazywaly na martwa domene.
+  site: 'https://blog.claudecodelab.pl',
   integrations: [
     mdx(),
     sitemap(),
