@@ -268,6 +268,13 @@ const schema = {
 <style>
   @reference "tailwindcss";
 
+  /* Ta sama strategia trybu ciemnego co w global.css. Bez tej linii @reference
+     nie przenosi deklaracji z global.css i kazde `dark:` w tym bloku kompiluje
+     sie do @media (prefers-color-scheme: dark), czyli slucha systemu zamiast
+     przelacznika na stronie. Efekt: ciemne tlo chipow i szary tekst na bialej
+     stronie u kazdego, kto ma system w trybie ciemnym. */
+  @variant dark (&:where(.dark, .dark *));
+
   /* Enhanced prose styles */
   .prose-content {
     @apply text-black dark:text-gray-200;
