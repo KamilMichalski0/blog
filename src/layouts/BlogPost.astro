@@ -10,6 +10,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 
 const {
   title,
+  seoTitle,
   description,
   pubDate,
   updatedDate,
@@ -21,6 +22,8 @@ const {
   url,
   relatedPosts = []
 } = Astro.props;
+
+const metadataTitle = seoTitle || title;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('pl-PL', {
   year: 'numeric',
@@ -69,7 +72,7 @@ const schema = {
 ---
 
 <BaseLayout
-  title={title}
+  title={metadataTitle}
   description={description}
   image={heroImage?.src}
   type="article"
