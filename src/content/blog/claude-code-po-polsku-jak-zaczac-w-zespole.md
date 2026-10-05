@@ -2,12 +2,11 @@
 title: "Claude Code po polsku: jak zacząć pracę w zespole"
 description: "Instalacja Claude Code, konto, plik CLAUDE.md po polsku, uprawnienia i pierwszy serwer MCP. Praktyczny start dla zespołu, krok po kroku."
 seoTitle: "Claude Code po polsku: start w zespole"
-pubDate: Oct 10 2026
+pubDate: Oct 05 2026
 tags: ['Claude Code', 'Instalacja', 'CLAUDE.md', 'MCP', 'Zespół IT']
 category: tutorial
 keywords: ['Claude Code po polsku', 'Claude Code instalacja', 'jak zainstalować Claude Code', 'Claude Code jak zacząć', 'CLAUDE.md', 'Claude Code w zespole']
 readingTime: 7
-draft: true
 ---
 
 Claude Code to agent, który pracuje w terminalu, w katalogu projektu. Czyta pliki, uruchamia

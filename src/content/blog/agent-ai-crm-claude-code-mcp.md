@@ -2,14 +2,13 @@
 title: "Agent AI obsługuje CRM: od maila klienta do szkicu odpowiedzi w 4 minuty"
 description: "Jak agent w Claude Code przez serwer MCP sprawdza leada w CRM, zakłada szansę sprzedaży i przygotowuje szkic odpowiedzi w Outlooku. Konkretny przebieg, reguły i granice."
 seoTitle: "Agent AI w CRM: Claude Code i MCP w praktyce"
-pubDate: Oct 06 2026
+pubDate: Oct 05 2026
 heroImage: ../../assets/blog/heroes/agent-ai-crm-claude-code-mcp.png
 heroImageAlt: "Agent Claude Code pracujący na CRM Open Mercato i skrzynce Outlook"
 tags: ['Claude Code', 'MCP', 'CRM', 'Agent AI', 'Automatyzacja sprzedaży', 'Open Mercato']
 category: integration
 keywords: ['agent AI CRM', 'Claude Code MCP', 'automatyzacja CRM', 'agent AI sprzedaż', 'Open Mercato', 'Claude Code Outlook']
 readingTime: 6
-draft: true
 ---
 
 Każde zapytanie od klienta wymaga tych samych kroków. Trzeba sprawdzić, czy firma jest już

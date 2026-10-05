@@ -2,12 +2,11 @@
 title: "Szkolenie Claude Code dla zespołu: po czym poznać dobry program"
 description: "Na co patrzeć, wybierając szkolenie z Claude Code dla zespołu IT lub operacyjnego. Pięć kryteriów, pytania do prowadzącego i przykład z drukarni Leyko."
 seoTitle: "Szkolenie Claude Code dla zespołu: jak wybrać"
-pubDate: Oct 08 2026
+pubDate: Oct 05 2026
 tags: ['Claude Code', 'Szkolenia AI', 'Wdrożenie AI', 'Zespół IT', 'Agent AI']
 category: guide
 keywords: ['szkolenie Claude Code', 'szkolenie Claude Code dla firm', 'warsztat Claude Code', 'szkolenie Claude dla zespołu', 'Claude Code w firmie']
 readingTime: 6
-draft: true
 ---
 
 Szkolenie z Claude Code można zrobić na dwa sposoby. Pierwszy: prowadzący pokazuje funkcje
