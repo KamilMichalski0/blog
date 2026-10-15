@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   url?: string;
@@ -217,6 +218,10 @@ const schema = {
                 </button>
               </div>
             </div>
+          </div>
+
+          <div class="mt-12">
+            <NewsletterCTA source="blog-post" />
           </div>
 
           <!-- Related Posts -->

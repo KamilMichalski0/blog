@@ -1,0 +1,115 @@
+---
+// Zapis na newsletter ClaudeCodeLab (Sendy, lista waitlist-claudecode).
+// Ten sam mechanizm co pakiet startowy na claudecodelab.pl: ukryty formularz POST do iframe.
+interface Props {
+  source: string;
+}
+const { source } = Astro.props;
+---
+
+<section class="newsletter-cta card bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-hidden relative" data-source={source}>
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="relative p-10 md:p-14 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      Nie przegap kolejnych artykułów
+    </h2>
+    <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+      Nowe poradniki o Claude Code i testy modeli AI w praktyce firmy. Jeden mail, gdy pojawi się coś nowego.
+    </p>
+    <form class="newsletter-form max-w-md mx-auto text-left" novalidate>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <label class="sr-only" for={`newsletter-email-${source}`}>Adres e-mail</label>
+        <input
+          id={`newsletter-email-${source}`}
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="twoj@email.com"
+          class="flex-1 px-6 py-3 rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:border-white focus:ring-2 focus:ring-white/20 transition-colors"
+        />
+        <button type="submit" class="px-8 py-3 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-xl disabled:opacity-60">
+          Subskrybuj
+        </button>
+      </div>
+      <label class="mt-4 flex items-start gap-3 text-sm text-white/90">
+        <input name="consent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0" />
+        <span>
+          Chcę otrzymywać wiadomości o Claude Code, AI i materiałach edukacyjnych. Mogę wypisać się w każdej chwili.
+          <a href="https://claudecodelab.pl/polityka-prywatnosci" class="underline">Polityka prywatności</a>.
+        </span>
+      </label>
+      <p class="newsletter-status mt-4 min-h-[1.5rem] text-center font-semibold text-white" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    function submitToSendy(email) {
+      return new Promise(function (resolve) {
+        var iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.name = "sendy-frame-" + Date.now();
+        document.body.appendChild(iframe);
+
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = "https://sendy.spartcom.pl/subscribe";
+        form.target = iframe.name;
+        form.style.display = "none";
+        var fields = { email: email, list: "jItFYD1iJWHteNmsYRAOqw", subform: "yes", gdpr: "true" };
+        Object.keys(fields).forEach(function (name) {
+          var input = document.createElement("input");
+          input.type = "hidden";
+          input.name = name;
+          input.value = fields[name];
+          form.appendChild(input);
+        });
+        document.body.appendChild(form);
+
+        var done = false;
+        function finish() {
+          if (done) return;
+          done = true;
+          window.setTimeout(function () { form.remove(); iframe.remove(); }, 800);
+          resolve();
+        }
+        iframe.onload = finish;
+        form.submit();
+        window.setTimeout(finish, 5000);
+      });
+    }
+
+    document.querySelectorAll(".newsletter-cta:not([data-bound])").forEach(function (box) {
+      box.dataset.bound = "1";
+      var form = box.querySelector(".newsletter-form");
+      var status = box.querySelector(".newsletter-status");
+      var button = form.querySelector("button[type='submit']");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var email = form.email.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          status.textContent = "Wpisz poprawny adres e-mail.";
+          return;
+        }
+        if (!form.consent.checked) {
+          status.textContent = "Zaznacz zgodę na otrzymywanie wiadomości.";
+          return;
+        }
+        button.disabled = true;
+        status.textContent = "Zapisuję...";
+        submitToSendy(email).then(function () {
+          status.textContent = "Dziękuję, adres zapisany na newsletter.";
+          form.reset();
+          if (window.gtag) window.gtag("event", "sign_up", { method: "newsletter", source: box.dataset.source });
+        }).finally(function () {
+          button.disabled = false;
+        });
+      });
+    });
+  })();
+</script>
