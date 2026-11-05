@@ -1,382 +1,160 @@
 ---
 title: "7 zastosowań Claude Code w codziennej pracy"
 seoTitle: "Do czego służy Claude Code? 7 zastosowań z przykładami"
-description: "Poznanie nowego projektu, naprawa błędów, refaktoryzacja, testy, pull requesty, mockupy i dokumentacja - 7 zastosowań Claude Code z poleceniami."
-pubDate: Jul 15 2022
+description: "Poznanie nowego projektu, naprawa błędów, refaktoryzacja, testy, pull requesty, mockupy i dokumentacja - 7 zastosowań Claude Code z gotowymi poleceniami."
+pubDate: 2025-10-23
+updatedDate: 2026-11-05
 heroImage: ../../assets/blog/heroes/7-scenariuszy-uzycia-claude-code.jpg
 tags: ['Claude Code', 'Automatyzacja pracy', 'Dobre praktyki', 'Produktywność']
-readingTime: 3
+readingTime: 6
 heroImageAlt: "Ilustracja do artykułu o siedmiu praktycznych zastosowaniach Claude Code"
 ---
 
+Claude Code nie służy tylko do pisania nowego kodu. Najwięcej czasu oszczędza przy zadaniach, które
+wymagają przeczytania wielu plików: poznawaniu projektu, szukaniu przyczyny błędu, testach i
+opisach zmian. Poniżej siedem takich sytuacji z poleceniami, które można skopiować. Opis dotyczy
+stanu z listopada 2026.
 
+## 1. Poznanie nowego projektu
 
+Dołączasz do projektu albo przejmujesz kod po kimś. Zamiast przeglądać katalogi ręcznie, uruchom
+Claude Code w repozytorium i zadawaj pytania:
 
-Claude Code nie służy wyłącznie do generowania kodu. To narzędzie, które może realnie usprawnić codzienną pracę programisty. W tym artykule pokazuję 7 praktycznych sytuacji, w których sprawdza się najlepiej.
-
-## 1. Szybkie Zrozumienie Nowego Projektu
-
-### Problem
-Dołączasz do nowego projektu lub przejmujesz starszy kod. Samodzielne przejrzenie całej bazy kodu może zająć dni albo tygodnie.
-
-### Rozwiązanie z Claude Code
-
-```bash
-cd ~/nowy-projekt
-claude
+```text
+Opisz ten projekt: do czego służy, jakie technologie wykorzystuje, jak go uruchomić lokalnie.
 ```
 
-Następnie zadaj pytania:
-
-```
-Daj mi przegląd tego projektu - czego dotyczy, jakie technologie używa?
-```
-
-```
-Wyjaśnij architekturę aplikacji - jak komponenty ze sobą komunikują?
+```text
+Jak działa logowanie użytkownika? Przejdź od formularza do zapisu sesji
+i wypisz pliki po kolei.
 ```
 
-```
-Gdzie znajduje się logika autoryzacji użytkowników?
-```
+Claude przeszukuje pliki sam i odpowiada z nazwami plików i funkcji. Każdą odpowiedź da się
+sprawdzić, otwierając wskazane miejsce. Gdy coś się nie zgadza, dopytaj: „pokaż fragment, na
+którym to opierasz”.
 
-### Przykład z życia
+## 2. Szukanie przyczyny błędu
 
-```
-> Przeanalizuj system uwierzytelniania w tej aplikacji
+Wklej komunikat błędu i opisz, kiedy występuje:
 
-Claude: "Ta aplikacja używa JWT (JSON Web Tokens) do autoryzacji.
-Oto kluczowe elementy:
-
-1. middleware/auth.js - weryfikacja tokenów
-2. services/user-service.js - logika logowania/rejestracji
-3. models/user.model.js - model użytkownika w bazie
-
-Flow autoryzacji:
-1. POST /api/auth/login przyjmuje credentials
-2. UserService weryfikuje dane
-3. Generowany jest JWT token
-4. Token zwracany w response
-5. Kolejne requesty zawierają token w header Authorization"
+```text
+Na produkcji pojawia się błąd:
+TypeError: Cannot read properties of undefined (reading 'map')
+  at UserList (UserList.tsx:42)
+Występuje po wejściu na listę użytkowników zaraz po zalogowaniu.
+Znajdź przyczynę, napisz test, który ją odtwarza, a dopiero potem popraw kod.
 ```
 
-## 2. Naprawianie Bugów
+Kolejność „test, potem poprawka” jest ważna. Test pokazuje, że Claude znalazł prawdziwą przyczynę,
+a nie tylko ukrył objaw, na przykład dopisując `?.` w miejscu błędu.
 
-### Problem
-Otrzymujesz zgłoszenie buga z cryptycznym error message i stacktrace.
+## 3. Refaktoryzacja starszego kodu
 
-### Rozwiązanie z Claude Code
+Przy zmianach w wielu plikach zacznij od [Plan Mode](/blog/plan-mode-claude-code-jak-uzywac/).
+Naciskaj `Shift+Tab`, aż pojawi się `plan mode on`, albo poprzedź polecenie słowem `/plan`:
 
-Przekaż error i kontekst:
-
-```
-Mam błąd w produkcji:
-TypeError: Cannot read property 'map' of undefined
-  at UserList.render (UserList.tsx:42)
-
-Pomóż znaleźć przyczynę i zaproponuj rozwiązanie
+```text
+/plan Przepisz moduł db/users.js z callbacków na async/await.
+Zachowaj publiczne API funkcji, a zmianę sprawdź istniejącymi testami.
 ```
 
-Claude przeanalizuje kod, zidentyfikuje problem i zaproponuje fix:
+Claude czyta kod i pisze plan, ale nie zmienia plików, dopóki planu nie zatwierdzisz. W planie
+sprawdź listę plików i sposób weryfikacji. Jeśli refaktoryzacja pójdzie źle,
+[/rewind](/blog/checkpointy-claude-code-rewind-cofanie-zmian/) cofa zmiany.
 
-```
-> Claude analizuje UserList.tsx
+## 4. Testy dla kodu bez testów
 
-"Problem: brakuje sprawdzenia czy users istnieje przed użyciem .map()
-
-Aktualna linia 42:
-{users.map(user => <UserCard key={user.id} user={user} />)}
-
-Proponowana poprawka:
-{users?.map(user => <UserCard key={user.id} user={user} />) || <EmptyState />}
-
-Dodałem optional chaining (?.) i fallback do EmptyState gdy users jest undefined."
+```text
+Uruchom testy z pomiarem pokrycia i wskaż trzy pliki w src/services
+z najniższym pokryciem.
 ```
 
-### Przykład: Bug z async/await
-
-```
-> Mam race condition - czasami dane nie ładują się poprawnie
-
-useEffect(() => {
-  fetchUsers()
-  fetchPosts()
-}, [])
-
-Claude: "Problem: fetchUsers i fetchPosts są asynchroniczne,
-ale nie czekasz na ich zakończenie. Sugeruję:
-
-useEffect(() => {
-  async function loadData() {
-    try {
-      await Promise.all([fetchUsers(), fetchPosts()])
-    } catch (error) {
-      console.error('Data loading failed:', error)
-    }
-  }
-  loadData()
-}, [])
-
-Promise.all zapewni, że obie operacje zakończą się przed renderowaniem."
+```text
+Dopisz testy dla payment-service.js. Uwzględnij odrzuconą kartę, przekroczony
+czas odpowiedzi bramki i ponowienie po błędzie przejściowym. Uruchom testy.
 ```
 
-## 3. Refactoring Legacy Code
+Claude uruchamia testy sam, więc widzi, które przechodzą. Przejrzyj jednak, co testy faktycznie
+sprawdzają. Test, który zawsze przechodzi, nic nie mówi o kodzie.
 
-### Problem
-Masz stary kod do zmodernizowania, ale boisz się coś zepsuć.
+## 5. Commity i pull requesty
 
-### Rozwiązanie: Plan Mode
-
-Uruchom Claude i aktywuj [Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) (naciśnij **Shift+Tab dwa razy**). W trybie plan Claude analizuje bez wprowadzania zmian:
-
-```bash
-claude
-# Następnie naciśnij Shift+Tab dwa razy
+```text
+Przejrzyj moje zmiany, podziel je na logiczne commity i zaproponuj opisy.
 ```
 
-```
-> Zrefaktoruj utils.js aby używał ES2024 features, zachowując tę samą funkcjonalność
-```
-
-Claude przedstawi plan:
-
-```
-Plan refactoringu utils.js:
-
-1. Zamienić var na const/let
-2. Użyć arrow functions zamiast function()
-3. Zastąpić callbacks przez async/await
-4. Dodać optional chaining i nullish coalescing
-5. Użyć destructuring dla parametrów
-
-Czy zatwierdzić i wykonać zmiany?
+```text
+Utwórz pull request z tej gałęzi. W opisie: co się zmienia, dlaczego
+i jak to przetestować.
 ```
 
-### Przykład: Modernizacja Callbacks na Async/Await
+Do tworzenia PR na GitHubie Claude używa narzędzia `gh`, jeśli jest zainstalowane i zalogowane.
+Opis powstaje na podstawie faktycznych zmian w kodzie, więc nie zawiera wymyślonych liczb, o ile
+ich nie podasz.
 
-**Przed:**
-```javascript
-function getUserData(userId, callback) {
-  db.query('SELECT * FROM users WHERE id = ?', [userId], (err, result) => {
-    if (err) {
-      callback(err, null)
-      return
-    }
-    callback(null, result[0])
-  })
-}
+## 6. Ekran z obrazka
+
+Claude Code czyta obrazy. Zrzut ekranu albo makietę wklejasz do pola polecenia (`Ctrl+V`),
+przeciągasz plik do terminala albo podajesz ścieżkę:
+
+```text
+Zbuduj formularz logowania według makiety design/logowanie.png.
+Użyj istniejących komponentów z src/components/ui.
 ```
 
-**Po refactoringu:**
-```javascript
-async function getUserData(userId) {
-  const [result] = await db.query(
-    'SELECT * FROM users WHERE id = ?',
-    [userId]
-  )
-  return result
-}
+Ten sam sposób działa przy błędach wyglądu: wklej zrzut ekranu i opisz, co jest nie tak.
+
+## 7. Dokumentacja
+
+```text
+Dodaj komentarze JSDoc do funkcji eksportowanych z user-service.js.
+Opisz parametry, wartość zwracaną i rzucane błędy. Nie zmieniaj logiki.
 ```
 
-## 4. Generowanie i Uzupełnianie Testów
-
-### Problem
-Masz kod bez testów lub niekompletny coverage.
-
-### Rozwiązanie
-
-```
-> Znajdź kod bez pokrycia testami w src/services/
-
-Claude: "Znalazłem 3 pliki z niewystarczającym pokryciem:
-- payment-service.js: 45% coverage
-- email-service.js: 30% coverage
-- notification-service.js: 60% coverage"
-
-> Wygeneruj testy dla payment-service.js, uwzględnij edge cases
+```text
+Na podstawie kodu napisz w README sekcję o uruchamianiu projektu lokalnie.
+Każde polecenie sprawdź, uruchamiając je.
 ```
 
-Claude wygeneruje kompletny suite testów:
+Druga prośba jest ważna: dokumentacja, której polecenia zostały uruchomione, jest zgodna z
+projektem, a nie tylko wiarygodnie brzmi.
 
-```javascript
-describe('PaymentService', () => {
-  describe('processPayment', () => {
-    it('powinien przetworzyć poprawną płatność', async () => {
-      // Test implementacja
-    })
+## Dodatkowo: automatyczne sprawdzanie przez hooki
 
-    it('powinien odrzucić płatność z niewłaściwą kartą', async () => {
-      // Edge case
-    })
-
-    it('powinien obsłużyć timeout gateway płatności', async () => {
-      // Edge case
-    })
-
-    it('powinien retry przy przejściowych błędach', async () => {
-      // Edge case
-    })
-  })
-})
-```
-
-## 5. Automatyczne Pull Requests
-
-### Problem
-Musisz napisać opis PR, który zajmuje tyle czasu co sama implementacja.
-
-### Rozwiązanie
-
-```
-> Przeanalizuj moje zmiany i wygeneruj opis PR
-
-Claude: "## Summary
-Dodano cache dla API requests aby poprawić wydajność
-
-## Changes
-- Zaimplementowano Redis cache layer
-- Dodano cache invalidation po 1h
-- Utworzono middleware cachingMiddleware
-- Dodano testy integracyjne dla cache
-
-## Performance Impact
-- Redukcja czasu response o 75% dla powtarzających się zapytań
-- Obniżenie load na bazie danych o 60%
-
-## Breaking Changes
-Brak
-
-## Testing
-- ✅ Unit tests (15 nowych)
-- ✅ Integration tests (5 nowych)
-- ✅ Manual testing w staging environment"
-```
-
-## 6. Praca z Obrazami i Mockupami
-
-### Problem
-Designer przysłał mockup nowego UI - musisz zaimplementować.
-
-### Rozwiązanie
-
-Claude Code może analizować obrazy:
-
-```
-> Przeanalizuj attached mockup (design.png) i zaimplementuj ten formularz logowania
-```
-
-Claude przeanalizuje design i wygeneruje kod:
-
-```jsx
-<form className="login-form">
-  <div className="form-header">
-    <h1>Zaloguj się</h1>
-    <p>Witaj ponownie!</p>
-  </div>
-
-  <div className="form-group">
-    <label htmlFor="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      placeholder="twoj@email.com"
-      className="form-input"
-    />
-  </div>
-
-  {/* Reszta formularza według mockupu */}
-</form>
-```
-
-## 7. Dokumentacja i JSDoc
-
-### Problem
-Musisz udokumentować kod, ale to nudne i czasochłonne.
-
-### Rozwiązanie
-
-```
-> Dodaj JSDoc comments do wszystkich funkcji w user-service.js
-```
-
-Claude automatycznie doda profesjonalną dokumentację:
-
-```javascript
-/**
- * Tworzy nowego użytkownika w systemie
- *
- * @param {Object} userData - Dane nowego użytkownika
- * @param {string} userData.email - Email użytkownika (unikalny)
- * @param {string} userData.password - Hasło (min. 8 znaków)
- * @param {string} userData.name - Pełne imię
- *
- * @returns {Promise<User>} Utworzony obiekt użytkownika
- * @throws {ValidationError} Gdy dane są nieprawidłowe
- * @throws {DuplicateError} Gdy email już istnieje
- *
- * @example
- * const user = await createUser({
- *   email: 'jan@example.com',
- *   password: 'bezpiecznehaslo123',
- *   name: 'Jan Kowalski'
- * })
- */
-async function createUser(userData) {
-  // implementacja
-}
-```
-
-## Bonus: Automatyzacja z Hooks
-
-Claude Code oferuje [system hooków](https://docs.anthropic.com/en/docs/claude-code/hooks) do automatyzacji pracy:
+Hooki to polecenia, które Claude Code uruchamia sam w określonych momentach, na przykład po każdej
+edycji pliku. Ten wpis w `.claude/settings.json` formatuje każdy plik zaraz po tym, jak Claude go
+zmieni (wymaga narzędzia `jq`, które czyta ścieżkę pliku z danych przekazanych do hooka):
 
 ```json
-// .claude/settings.json
 {
   "hooks": {
-    "pre-commit": {
-      "command": "npm run lint",
-      "blocking": true
-    },
-    "post-commit": {
-      "command": "echo 'Commit created successfully'",
-      "blocking": false
-    }
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "jq -r '.tool_input.file_path' | xargs npx prettier --write" }
+        ]
+      }
+    ]
   }
 }
 ```
 
-Więcej o automatyzacji z hooks w [dedykowanym artykule](/blog/hooks-event-automation/)!
+Więcej przykładów w artykule o [hookach jako lekkim CI](/blog/claude-code-hooki-ci-light/).
 
-## 📚 Dokumentacja i Zasoby
+## Wspólna zasada
 
-### Oficjalna Dokumentacja
-- [Claude Code - Wprowadzenie](https://docs.anthropic.com/en/docs/claude-code/)
-- [Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
-- [Slash Commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
-- [Hooks System](https://docs.anthropic.com/en/docs/claude-code/hooks)
+We wszystkich siedmiu sytuacjach lepszy wynik daje polecenie, które mówi, jak sprawdzić efekt:
+„uruchom testy”, „sprawdź polecenie”, „nie zmieniaj logiki”. Claude Code sprawdza swoją pracę,
+jeśli wie, czym ją sprawdzić.
 
-### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
-- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/)
+## Co dalej
 
-## Podsumowanie
+- [Pierwsze kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/).
+- [Zaawansowane techniki](/blog/zaawansowane-techniki-claude-code/) - poziom effort, własne skille,
+  hooki i subagenty.
+- [Oficjalne przykłady typowych zadań](https://docs.anthropic.com/en/docs/claude-code/common-workflows).
 
-Claude Code to znacznie więcej niż generator kodu. To asystent, który:
-
-✅ **Oszczędza czas** - automatyzuje rutynowe zadania
-✅ **Poprawia jakość** - wykrywa problemy i podpowiada dobre praktyki
-✅ **Przyspiesza naukę** - wyjaśnia nieznany kod
-✅ **Zwiększa produktywność** - pozwala skupić się na logice biznesowej
-
-### Najlepsze Praktyki
-
-1. **Bądź konkretny** w swoich requestach
-2. **Dziel duże zadania** na mniejsze kroki
-3. **Używaj Plan Mode** dla ryzykownych zmian
-4. **Weryfikuj output** - AI jest potężne, ale nie nieomylne
-5. **Eksperymentuj** - odkrywaj nowe use cases
-
-Jakich scenariuszy użycia Claude Code najbardziej Ci brakuje? Daj znać w komentarzach! 💬
+Te zastosowania ćwiczymy na repozytorium Twojego zespołu na
+[warsztacie Claude Code](https://claudecodelab.pl/kurs). Możesz też
+[umówić 30 minut rozmowy](https://calendly.com/kamil-spartcom/30min).

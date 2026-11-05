@@ -1,155 +1,107 @@
 ---
 title: "Claude Code: wprowadzenie do pracy z AI"
 seoTitle: "Czym jest Claude Code? Co potrafi i jak z niego korzystać"
-description: "Claude Code to agent AI od Anthropic, który działa w terminalu: czyta projekt, edytuje pliki i uruchamia polecenia. Możliwości, przykład i dobre praktyki."
-pubDate: 2025-01-15
+description: "Claude Code to agent AI od Anthropic, który działa w terminalu: czyta projekt, edytuje pliki i uruchamia polecenia. Co potrafi, ile kosztuje dostęp i od czego zacząć."
+pubDate: 2025-10-22
+updatedDate: 2026-11-05
 heroImage: ../../assets/blog/heroes/wprowadzenie-do-claude-code.jpg
 tags: ["Claude Code","AI","Programowanie","Tutorial"]
 draft: false
 author: ClaudeCodeLab
-readingTime: 3
+readingTime: 5
 heroImageAlt: "Ilustracja do artykułu wprowadzającego do Claude Code"
 ---
 
+Claude Code to agent AI od Anthropic, który pracuje w Twoim projekcie. Uruchamiasz go w terminalu
+w katalogu repozytorium, opisujesz zadanie zwykłym językiem, a on sam czyta potrzebne pliki,
+wprowadza zmiany i uruchamia polecenia, na przykład testy. Każdą zmianę możesz obejrzeć i
+zatwierdzić albo odrzucić.
 
+Różnica w porównaniu z czatem w przeglądarce jest prosta: w czacie kopiujesz fragmenty kodu tam
+i z powrotem. Claude Code widzi cały projekt i działa na plikach na Twoim dysku.
 
+Opis dotyczy stanu z listopada 2026.
 
-## Czym jest Claude Code?
+## Co Claude Code robi w praktyce
 
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code/) to narzędzie AI stworzone przez Anthropic, które wspiera programistów w pracy nad kodem. Nie jest to zwykły asystent, ale narzędzie pomagające rozumieć kontekst projektu, analizować problemy i przygotowywać sensowne rozwiązania.
+- **Odpowiada na pytania o projekt.** „Gdzie jest liczony rabat?”, „Co się stanie, jeśli zmienię
+  tę funkcję?”. Przeszukuje pliki i wskazuje konkretne miejsca.
+- **Wprowadza zmiany w wielu plikach naraz.** Nowa funkcja, poprawka błędu, zmiana nazwy w całym
+  projekcie.
+- **Uruchamia polecenia.** Testy, linter, build, git. Po zmianie sam sprawdza, czy testy
+  przechodzą, i poprawia kod, jeśli nie.
+- **Pracuje z gitem i pull requestami.** Pisze opis commita, tworzy gałąź, przygotowuje opis PR.
+- **Łączy się z innymi narzędziami przez MCP.** Baza danych, przeglądarka, system zgłoszeń. Więcej
+  w artykule o [MCP w Claude Code](/blog/mcp-model-context-protocol/).
 
-## Kluczowe możliwości
+Nie ogranicza się do jednego języka programowania. Działa z każdym projektem, który da się
+otworzyć w terminalu.
 
-### 1. Inteligentne rozumienie kodu
+## Gdzie działa
 
-Claude Code potrafi:
-- Analizować całe projekty i rozumieć ich architekturę
-- Wykrywać potencjalne błędy przed ich powstaniem
-- Sugerować optymalizacje i najlepsze praktyki
-- Generować dokumentację automatycznie
+- **Terminal** na macOS, Linuxie i Windows (natywnie albo w WSL). To podstawowa wersja.
+- **VS Code i JetBrains** przez rozszerzenia, które pokazują zmiany w edytorze.
+- **Aplikacja desktopowa i przeglądarka** (claude.ai/code), gdzie zadanie może działać w chmurze.
 
-### 2. Interaktywna współpraca
+Instalacja to jedno polecenie. Szczegóły dla każdego systemu są w poradniku
+[jak zainstalować Claude Code na Windows, macOS i Linux](/blog/instalacja-claude-code-windows-mac-linux/).
 
-Praca z Claude Code to jak współpraca z doświadczonym programistą:
-- Zadawaj pytania w naturalnym języku
-- Otrzymuj szczegółowe wyjaśnienia
-- Iteruj nad rozwiązaniami w czasie rzeczywistym
-- Ucz się nowych technik i wzorców
+## Jaki dostęp jest potrzebny
 
-### 3. Wielojęzyczne wsparcie
+Claude Code wymaga płatnego dostępu. Są dwie drogi:
 
-Claude Code wspiera:
-- JavaScript/TypeScript
-- Python
-- Java, C++, Go
-- HTML, CSS, SQL
-- I wiele innych języków programowania
+1. **Subskrypcja Claude** (Pro, Max, Team albo Enterprise). Płacisz stałą kwotę miesięcznie, a
+   limity użycia zależą od planu.
+2. **Konto w Claude Console** z kredytami API. Płacisz za faktycznie zużyte tokeny.
 
-## Przykład Użycia
+Darmowy plan Claude nie obejmuje Claude Code.
 
-Zobaczmy, jak Claude Code może pomóc w stworzeniu komponentu React:
+## Jak wygląda praca: przykład
 
-```typescript
-// Poproś Claude Code o:
-// "Stwórz komponent React z dark mode toggle"
+W katalogu projektu uruchamiasz:
 
-import { useState, useEffect } from 'react';
-
-export function DarkModeToggle() {
-  // Użyj lazy initialization - funkcja wykonuje się tylko raz przy montowaniu
-  const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    return saved === 'dark' || (!saved && prefersDark);
-  });
-
-  useEffect(() => {
-    // Zastosuj motyw
-    document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
-
-  return (
-    <button
-      onClick={() => setIsDark(!isDark)}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
-      aria-label="Toggle dark mode"
-    >
-      {isDark ? '🌙' : '☀️'}
-    </button>
-  );
-}
+```bash
+claude
 ```
 
-## Najlepsze Praktyki
+i piszesz zadanie:
 
-### 1. Bądź Precyzyjny
+```text
+W formularzu rejestracji brakuje walidacji adresu e-mail.
+Dodaj ją tak jak w formularzu logowania i dopisz test.
+```
 
-Im bardziej szczegółowe pytania zadajesz, tym lepsze odpowiedzi otrzymasz. Zamiast "napraw ten błąd", spróbuj "ten komponent powoduje błąd TypeScript przy destrukturyzacji props, jak to poprawić zachowując typy?"
+Claude Code znajduje formularz logowania, sprawdza, jak tam wygląda walidacja, pokazuje proponowane
+zmiany w obu plikach i pyta o zgodę na edycję. Potem uruchamia testy i pokazuje wynik. Jeśli test
+nie przechodzi, poprawia kod w kolejnej turze.
 
-### 2. Iteruj i Udoskonalaj
+Przy większych zmianach warto zacząć od [Plan Mode](/blog/plan-mode-claude-code-jak-uzywac/): Claude
+najpierw pisze plan, a pliki zmienia dopiero po jego zatwierdzeniu. Gdy wynik się nie podoba,
+[checkpointy i /rewind](/blog/checkpointy-claude-code-rewind-cofanie-zmian/) cofają zmiany.
 
-Nie oczekuj perfekcyjnego rozwiązania za pierwszym razem. Pracuj z Claude Code iteracyjnie:
-1. Otrzymaj pierwszą wersję
-2. Przetestuj i zidentyfikuj problemy
-3. Poproś o ulepszenia
-4. Powtarzaj aż do osiągnięcia celu
+## Trzy zasady na start
 
-### 3. Ucz Się w Trakcie
+**1. Konkretne polecenia.** Zamiast „napraw ten błąd” napisz, co się dzieje, gdzie i jak to
+sprawdzić: „Po kliknięciu Zapisz w edycji profilu pojawia się błąd 500. Znajdź przyczynę i
+dopisz test, który go odtwarza”.
 
-Claude Code nie tylko rozwiązuje problemy - wyjaśnia też dlaczego dane rozwiązanie jest dobre. Zadawaj pytania o:
-- Dlaczego użyto konkretnego wzorca?
-- Jakie są alternatywy?
-- Jak to działa pod maską?
+**2. Plik CLAUDE.md w projekcie.** To plik z zasadami projektu, który Claude Code czyta na początku
+każdej sesji: jak uruchomić testy, jakie są konwencje, czego nie ruszać. Pierwszą wersję tworzy
+polecenie `/init`. Więcej o tym w artykule o
+[starcie z Claude Code w zespole](/blog/claude-code-po-polsku-jak-zaczac-w-zespole/).
 
-## Korzyści dla Zespołów
+**3. Ty sprawdzasz wynik.** Claude Code przyspiesza pisanie i szukanie, ale odpowiedzialność za
+kod zostaje po Twojej stronie. Czytaj zmiany przed zatwierdzeniem i każ uruchamiać testy.
 
-### Przyspieszenie Rozwoju
+## Co dalej
 
-- Szybsze prototypowanie
-- Automatyzacja powtarzalnych zadań
-- Redukcja błędów
+- [Pierwsze kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/) - logowanie, podstawowe
+  komendy i pierwsza zmiana w projekcie.
+- [7 zastosowań Claude Code w codziennej pracy](/blog/7-scenariuszy-uzycia-claude-code/).
+- [Zaawansowane techniki](/blog/zaawansowane-techniki-claude-code/) - poziom effort, własne skille,
+  hooki i subagenty.
+- [Oficjalna dokumentacja Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview).
 
-### Lepsza Jakość Kodu
-
-- Konsystentny styl kodowania
-- Wbudowane dobre praktyki
-- Automatyczne code review
-
-### Transfer Wiedzy
-
-- Junior developerzy uczą się szybciej
-- Dokumentacja pisana automatycznie
-- Wspólny język dla zespołu
-
-## Dokumentacja i zasoby
-
-### Oficjalna Dokumentacja
-- [Claude Code - Main Documentation](https://docs.anthropic.com/en/docs/claude-code/)
-- [Anthropic Console](https://console.anthropic.com/)
-
-### Powiązane Artykuły
-- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
-
-## Rozpocznij Swoją Przygodę
-
-Gotowy, aby spróbować Claude Code? Oto kilka pierwszych kroków:
-
-1. **Instalacja**: Pobierz Claude Code CLI z [oficjalnej strony](https://docs.anthropic.com/en/docs/claude-code/installation)
-2. **Konfiguracja**: Ustaw klucze API i preferencje
-3. **Pierwszy Projekt**: Zacznij od małego projektu lub istniejącego kodu
-4. **Eksperymentuj**: Testuj różne podejścia i ucz się możliwości
-
-## Podsumowanie
-
-Claude Code to potężne narzędzie, które zmienia sposób, w jaki tworzymy oprogramowanie. Nie zastępuje ono programistów - wzmacnia ich możliwości, pozwalając skupić się na kreatywnym rozwiązywaniu problemów zamiast na żmudnych, powtarzalnych zadaniach.
-
-Jeśli chcesz sprawdzić, jak Claude Code może usprawnić codzienną pracę, najlepiej zacząć od prostego zadania w realnym projekcie i stopniowo rozszerzać zakres użycia.
-
----
-
-**Masz pytania?** Przejrzyj powiązane artykuły i zacznij od podstawowych scenariuszy pracy z narzędziem.
+Pracę z Claude Code na repozytorium Twojego zespołu ćwiczymy na
+[warsztacie Claude Code](https://claudecodelab.pl/kurs). Możesz też
+[umówić 30 minut rozmowy](https://calendly.com/kamil-spartcom/30min).

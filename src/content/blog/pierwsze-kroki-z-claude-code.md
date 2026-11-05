@@ -1,205 +1,151 @@
 ---
 title: "Claude Code: pierwsze kroki i instalacja"
 seoTitle: "Pierwsze kroki z Claude Code: logowanie, komendy, projekt"
-description: "Jak uruchomić Claude Code w terminalu, zalogować się, poznać projekt pierwszym poleceniem i wprowadzić pierwszą zmianę. Komendy CLI i dobre praktyki."
-pubDate: Jul 08 2022
+description: "Jak uruchomić Claude Code w terminalu, zalogować się, poznać projekt pierwszym poleceniem i wprowadzić pierwszą zmianę. Najważniejsze komendy i skróty."
+pubDate: 2025-10-23
+updatedDate: 2026-11-05
 heroImage: ../../assets/blog/heroes/pierwsze-kroki-z-claude-code.jpg
 tags: ['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']
-readingTime: 3
+readingTime: 5
 heroImageAlt: "Ilustracja do artykułu o pierwszych krokach z Claude Code"
 ---
 
+Ten poradnik prowadzi od instalacji do pierwszej zmiany w projekcie: logowanie, pierwsze pytania
+o kod, zatwierdzanie zmian i komendy, których używa się codziennie. Opis dotyczy stanu z listopada
+2026.
 
+## 1. Instalacja
 
-
-Claude Code to narzędzie CLI od Anthropic, które wspiera programistów w pracy z kodem. W tym artykule pokazuję, jak je zainstalować, skonfigurować i rozpocząć pierwszą sesję w terminalu.
-
-## Czym jest Claude Code?
-
-Claude Code to narzędzie wiersza poleceń (CLI), które działa bezpośrednio w Twoim terminalu. W przeciwieństwie do tradycyjnych IDE czy edytorów, Claude Code integruje się z Twoim obecnym sposobem pracy, pozwalając na:
-
-- **Tworzenie funkcji z opisów** - wystarczy opisać, co chcesz zrobić
-- **Analizę i naprawę kodu** - automatyczne wykrywanie i rozwiązywanie błędów
-- **Nawigację po projekcie** - inteligentne przeszukiwanie całej bazy kodu
-- **Generowanie dokumentacji** - automatyczne tworzenie commitów i notatek do wydań
-
-## Wymagania systemowe
-
-Przed [instalacją](https://docs.anthropic.com/en/docs/claude-code/installation) upewnij się, że masz:
-
-- **Node.js 18 lub nowszy** - sprawdź wersję poleceniem `node --version`
-- **Konto Claude.ai** (subskrypcja) lub **Claude Console** (kredyty API)
-- System operacyjny: macOS, Linux lub Windows (z WSL)
-
-## Instalacja Claude Code
-
-### Metoda 1: NPM (Rekomendowana)
-
-Najprostsza metoda instalacji dla użytkowników Node.js:
+Claude Code instaluje się jednym poleceniem. Na macOS, Linuxie i w WSL:
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-Flaga `-g` instaluje narzędzie globalnie, dzięki czemu będzie dostępne w każdym katalogu.
+W Windows PowerShell:
 
-### Metoda 2: Pobierz z Oficjalnej Strony
-
-Możesz również pobrać instalator bezpośrednio ze strony:
-
-```
-https://claude.ai/download
+```powershell
+irm https://claude.ai/install.ps1 | iex
 ```
 
-Wybierz wersję dla swojego systemu operacyjnego (macOS, Linux, Windows).
+Ta metoda nie wymaga Node.js i sama aktualizuje Claude Code. Starsze poradniki pokazują
+instalację przez `npm install -g`. Nadal działa, ale nie jest już zalecana. Pozostałe metody
+(Homebrew, WinGet) i najczęstsze błędy opisuje
+[poradnik instalacji dla Windows, macOS i Linux](/blog/instalacja-claude-code-windows-mac-linux/).
 
-## Weryfikacja instalacji
-
-Po instalacji sprawdź, czy wszystko działa poprawnie:
+Sprawdzenie, czy wszystko działa:
 
 ```bash
 claude --version
+claude doctor
 ```
 
-Powinieneś zobaczyć numer wersji Claude Code.
+## 2. Logowanie
 
-## Pierwsza konfiguracja
-
-### Uruchomienie i Autoryzacja
-
-Uruchom Claude Code po raz pierwszy:
+Uruchom Claude Code:
 
 ```bash
 claude
 ```
 
-Zostaniesz poproszony o uwierzytelnienie. Masz dwie opcje:
+Przy pierwszym uruchomieniu otworzy się przeglądarka z logowaniem. Wybierasz jedną z dwóch opcji:
 
-1. **Claude.ai** - dla użytkowników z subskrypcją
-2. **Claude Console** - dla użytkowników z kredytami API
+- **konto Claude z subskrypcją** (Pro, Max, Team, Enterprise),
+- **konto Claude Console** z kredytami API.
 
-Dane uwierzytelniające zostaną zapisane lokalnie dla przyszłych sesji.
+Darmowy plan Claude nie obejmuje Claude Code. Konto zmienisz później poleceniem `/login`.
 
-## Twój pierwszy projekt
+## 3. Pierwsza sesja w projekcie
 
-Przejdź do katalogu swojego projektu:
+Uruchamiaj Claude Code zawsze w katalogu projektu. Claude ma wtedy dostęp do plików tego katalogu
+i podkatalogów:
 
 ```bash
-cd ~/moje-projekty/moja-aplikacja
+cd ~/projekty/sklep
 claude
 ```
 
-Claude Code automatycznie przeanalizuje strukturę Twojego projektu bez konieczności ręcznego uploadowania plików!
+Przy pierwszym uruchomieniu w nowym katalogu Claude zapyta, czy ufasz temu folderowi. Potwierdź
+tylko dla własnych projektów.
 
-## Podstawowe Komendy
+Zacznij od pytań, nie od zmian:
 
-### Zrozumienie Projektu
-
-Zacznij od zadawania pytań:
-
-```
-Czego dotyczy ten projekt?
+```text
+Czego dotyczy ten projekt i jak uruchomić testy?
 ```
 
-```
-Jakie technologie są tutaj używane?
-```
-
-```
-Wyjaśnij strukturę folderów
+```text
+Gdzie jest obsługa płatności? Wypisz pliki i opisz przepływ jednym akapitem.
 ```
 
-### Wprowadzanie Zmian
+Claude sam przeszukuje pliki. Nie musisz ich wklejać. Jeśli chcesz wskazać konkretny plik, wpisz
+`@` i zacznij pisać jego nazwę.
 
-Poproś o modyfikacje konwersacyjnie:
+## 4. Plik CLAUDE.md
 
-```
-Dodaj walidację inputu do formularza rejestracji
-```
+Wpisz w sesji:
 
-Claude pokaże proponowane zmiany i poprosi o zatwierdzenie przed edycją plików.
-
-## Przydatne Komendy CLI
-
-| Komenda | Funkcja |
-|---------|----------|
-| `claude` | Uruchom tryb interaktywny |
-| `/help` | Wyświetl dostępne komendy |
-| `/clear` | Zresetuj historię konwersacji |
-| `/exit` | Zakończ sesję |
-| `Shift+Tab` (2x) | Aktywuj Plan Mode (tylko odczyt) |
-
-## Dobre Praktyki
-
-### 1. Bądź Konkretny
-
-❌ Źle: "Popraw kod"
-✅ Dobrze: "Dodaj walidację email w komponencie LoginForm.tsx"
-
-### 2. Dziel Zadania
-
-Zamiast: "Zrefaktoruj całą aplikację"
-Lepiej: "Najpierw przeanalizuj strukturę, potem zrefaktoruj moduł autoryzacji"
-
-### 3. Pozwól Claude Eksplorować
-
-Przed wprowadzeniem zmian, pozwól Claude zrozumieć kontekst:
-
-```
-Przeanalizuj, jak działa system autoryzacji w tym projekcie
+```text
+/init
 ```
 
-## Przykładowy przebieg pracy
+Claude przejrzy projekt i utworzy plik `CLAUDE.md` z opisem struktury, poleceniami do budowania i
+testów oraz konwencjami. Ten plik jest czytany na początku każdej kolejnej sesji. Przejrzyj go i
+dopisz zasady, których Claude nie wyczyta z kodu, na przykład „nie zmieniaj migracji, które już są
+na produkcji”.
 
-Oto typowy przebieg pracy z Claude Code:
+## 5. Pierwsza zmiana
 
-```bash
-# 1. Uruchom Claude w katalogu projektu
-cd ~/projekt
-claude
+Opisz małe, sprawdzalne zadanie:
 
-# 2. Zrozum projekt
-> Wyjaśnij, jak działa routing w tej aplikacji
-
-# 3. Wprowadź zmiany
-> Dodaj middleware do logowania żądań HTTP
-
-# 4. Przetestuj
-> Uruchom testy dla nowego middleware
-
-# 5. Stwórz commit
-> Stwórz commit z opisem dodanego middleware
+```text
+Dodaj walidację adresu e-mail w formularzu rejestracji, tak jak w formularzu logowania.
+Dopisz test i uruchom testy.
 ```
 
-## Dokumentacja i zasoby
+Claude pokaże zmianę w pliku i zapyta o zgodę. Masz trzy odpowiedzi: zgoda na tę jedną edycję,
+zgoda na wszystkie edycje w tej sesji albo odmowa z komentarzem, co zrobić inaczej. To samo dotyczy
+poleceń w terminalu, na przykład uruchomienia testów.
 
-### Oficjalna Dokumentacja
-- [Claude Code - Installation](https://docs.anthropic.com/en/docs/claude-code/installation)
-- [Claude Code - Getting Started](https://docs.anthropic.com/en/docs/claude-code/getting-started)
-- [Claude Code - Main Documentation](https://docs.anthropic.com/en/docs/claude-code/)
+Jeśli wynik Ci się nie podoba, naciśnij **Esc dwa razy** albo wpisz `/rewind`. Kod i rozmowa wrócą
+do stanu sprzed zmiany. Szczegóły w artykule o
+[checkpointach i /rewind](/blog/checkpointy-claude-code-rewind-cofanie-zmian/).
 
-### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
-- [Automatyzacja pracy z Claude](/blog/automatyzacja-workflow-z-claude/)
-- [Budowanie Aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude/)
+## Komendy i skróty na co dzień
 
-## Co Dalej?
+| Komenda lub skrót | Co robi |
+|---|---|
+| `claude` | Nowa sesja w bieżącym katalogu |
+| `claude -c` | Wznawia ostatnią rozmowę w tym katalogu |
+| `/resume` | Lista wcześniejszych rozmów do wznowienia |
+| `/clear` | Czyści rozmowę i zaczyna od nowa |
+| `/compact` | Streszcza długą rozmowę, żeby zwolnić miejsce w kontekście |
+| `/context` | Pokazuje, ile kontekstu jest zajęte |
+| `/model` | Zmiana modelu |
+| `/help` | Lista wszystkich komend |
+| `Esc` | Przerywa Claude w trakcie pracy |
+| `Esc` `Esc` | Cofnięcie do wcześniejszego punktu (`/rewind`) |
+| `Shift+Tab` | Zmiana trybu: zwykły, automatyczna akceptacja edycji, [Plan Mode](/blog/plan-mode-claude-code-jak-uzywac/) |
+| `!polecenie` | Uruchamia polecenie powłoki bez udziału Claude |
 
-Teraz, gdy masz zainstalowane i skonfigurowane Claude Code, możesz:
+## Dobre nawyki od pierwszego dnia
 
-- Eksperymentować z różnymi promptami
-- Sprawdzić dokumentację zaawansowanych funkcji
-- Przeczytać o [automatyzacji pracy z Claude](/blog/automatyzacja-workflow-z-claude/)
-- Poznać [budowanie aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude/)
+- **Jedno zadanie na rozmowę.** Po skończeniu zadania użyj `/clear`. Stary kontekst z innego
+  zadania tylko przeszkadza.
+- **Polecenie z kryterium sprawdzenia.** „Dodaj X i uruchom testy” daje lepszy wynik niż „dodaj
+  X”, bo Claude sam sprawdzi, czy działa.
+- **Najpierw zrozumienie, potem zmiana.** Przy nieznanym kodzie zacznij od pytań albo od Plan
+  Mode.
+- **Commit przed większą zmianą.** Checkpointy cofają edycje Claude, ale git jest pewniejszy.
 
-## Podsumowanie
+## Co dalej
 
-Claude Code to potężne narzędzie, które może znacząco przyspieszyć Twój rozwój jako programisty. Pamiętaj:
+- [Czym jest Claude Code](/blog/wprowadzenie-do-claude-code/) - przegląd możliwości.
+- [7 zastosowań Claude Code w codziennej pracy](/blog/7-scenariuszy-uzycia-claude-code/).
+- [Start z Claude Code w zespole](/blog/claude-code-po-polsku-jak-zaczac-w-zespole/) - wspólny
+  CLAUDE.md, uprawnienia i pierwszy serwer MCP.
+- [Oficjalny quickstart](https://docs.anthropic.com/en/docs/claude-code/quickstart).
 
-- Instalacja jest prosta i zajmuje tylko chwilę
-- Autoryzację wykonujesz tylko raz
-- Claude automatycznie rozumie strukturę Twojego projektu
-- Warto formułować polecenia możliwie konkretnie
-- Duże zadania najlepiej dzielić na mniejsze kroki
+Pierwsze kroki na repozytorium Twojego zespołu przechodzimy razem na
+[warsztacie Claude Code](https://claudecodelab.pl/kurs). Możesz też
+[umówić 30 minut rozmowy](https://calendly.com/kamil-spartcom/30min).

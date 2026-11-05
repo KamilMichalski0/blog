@@ -1,493 +1,185 @@
 ---
-title: "Claude Code: Plan Mode i Extended Thinking"
-seoTitle: "Claude Code: Extended Thinking, slash commands i hooki"
-description: "Extended Thinking (think, ultrathink), własne polecenia slash w .claude/commands, hooki i łączenie ich z Plan Mode - z przykładami poleceń."
-pubDate: Jul 22 2022
+title: "Zaawansowane techniki Claude Code: effort, skille, hooki i subagenty"
+seoTitle: "Claude Code dla zaawansowanych: effort, skille, hooki"
+description: "Poziom effort zamiast think i ultrathink, własne skille w .claude/skills, hooki PreToolUse i PostToolUse, subagenty i tryb bez interakcji claude -p - z przykładami."
+pubDate: 2025-10-23
+updatedDate: 2026-11-05
 heroImage: ../../assets/blog/heroes/zaawansowane-techniki-claude-code.jpg
-tags: ['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']
-readingTime: 4
+tags: ['Claude Code', 'Zaawansowane', 'Skille', 'Hooki', 'Subagenty']
+readingTime: 7
 heroImageAlt: "Ilustracja do artykułu o zaawansowanych technikach pracy z Claude Code"
 ---
 
+Gdy podstawy są opanowane, następny krok to dopasowanie Claude Code do projektu: ile ma myśleć
+przy danym zadaniu, jakie powtarzalne procedury zna, co ma sprawdzać sam po każdej zmianie i jak
+podzielić duże zadanie na mniejsze. Opis dotyczy stanu z listopada 2026.
 
+Jeśli dopiero zaczynasz, przeczytaj najpierw
+[pierwsze kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/).
 
+## 1. Plan przed zmianą
 
-Gdy podstawy Claude Code są już opanowane, warto przejść do technik, które naprawdę porządkują pracę z większym projektem. W tym artykule pokazuję, jak używać Plan Mode, Extended Thinking, potoków unixowych i własnych komend, aby pracować precyzyjniej i bezpieczniej.
+Przy zmianach w wielu plikach zacznij od Plan Mode: Claude bada projekt i pisze plan, a pliki
+zmienia dopiero po zatwierdzeniu. Włączasz go klawiszem `Shift+Tab`, prefiksem `/plan` przed
+poleceniem albo flagą `claude --permission-mode plan`. Wszystkie opcje zatwierdzania i sposób
+czytania planu opisuje [osobny poradnik o Plan Mode](/blog/plan-mode-claude-code-jak-uzywac/).
 
-## Plan Mode - Bezpieczne Planowanie Zmian
+## 2. Poziom effort zamiast „think” i „ultrathink”
 
-### Czym jest Plan Mode?
+Starsze poradniki (także wcześniejsza wersja tego artykułu) podawały tabelę słów kluczowych:
+„think” to 4 000 tokenów myślenia, „megathink” 10 000, „ultrathink” 32 000. Te liczby są
+nieaktualne. Obecne modele same decydują, ile myśleć, a Ty ustawiasz ogólny poziom wysiłku.
 
-[Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode) to tryb tylko do odczytu, w którym Claude analizuje kod i planuje zmiany **bez ich wykonywania**. Sprawdza się szczególnie przy:
-
-- Refaktoryzacji krytycznych części systemu
-- Analiz architektonicznych
-- Planowaniu sprintów
-- Przeglądzie zmian przed wdrożeniem
-
-### Uruchomienie Plan Mode
-
-Plan Mode aktywujesz przez naciśnięcie **Shift+Tab dwa razy** w trakcie sesji Claude Code.
-
-```bash
-# 1. Uruchom Claude Code
-claude
-
-# 2. Naciśnij Shift+Tab dwa razy
-# Claude przełączy się w Plan Mode
-```
-
-W Plan Mode Claude ma dostęp tylko do narzędzi read-only:
-- ✅ Read, Glob, Grep (czytanie i wyszukiwanie)
-- ✅ Task, TodoRead/TodoWrite (research i planowanie)
-- ❌ Edit, Write, Bash (edycja i wykonywanie)
-
-### Wyjście z Plan Mode
-
-Aby wyjść z Plan Mode i wrócić do normalnego trybu, naciśnij **Shift+Tab** ponownie.
-
-### Przykład: Planning Dużego Refactoringu
+Poziom ustawiasz na całą sesję przy starcie:
 
 ```bash
-# Uruchom Claude Code
-claude
-
-# Naciśnij Shift+Tab dwa razy aby aktywować Plan Mode
+claude --effort high
 ```
 
-Teraz poproś o analizę:
-```
-> Przeanalizuj aplikację i zaplanuj refactoring z Redux na Zustand
+Dostępne wartości to `low`, `medium`, `high`, `xhigh` i `max`. W trakcie sesji poziom zmienisz w
+`/model`.
 
-Claude rozpocznie głęboką analizę:
+Praktyczna zasada:
 
-"Analizuję architekturę state management...
+- **niższy poziom** przy prostych, jasno opisanych zmianach: szybciej i taniej,
+- **wyższy poziom** przy decyzjach architektonicznych, trudnych błędach i planowaniu migracji.
 
-Znalazłem:
-- 12 Redux reducers
-- 45 Redux actions
-- 23 komponenty używające useSelector
-- 18 komponentów używających useDispatch
+Wyższy poziom zużywa więcej limitu subskrypcji albo więcej tokenów API, więc nie ma sensu
+zostawiać `max` na stałe.
 
-Plan migracji (etapowy):
+## 3. Własne skille: powtarzalne procedury
 
-### Etap 1: Setup (1 dzień)
-1. Zainstaluj Zustand: npm install zustand
-2. Utwórz store/index.ts z podstawową konfiguracją
-3. Dodaj devtools middleware
+Skill to plik z instrukcją, którą Claude Code wykonuje na żądanie albo sam, gdy zadanie do niej
+pasuje. Dobre kandydatury to rzeczy, które tłumaczysz agentowi co tydzień: przegląd kodu według
+zasad zespołu, przygotowanie wydania, dodanie nowego endpointu według wzorca.
 
-### Etap 2: Migracja Store (2-3 dni)
-1. Przekonwertuj user reducer → useUserStore
-   - actions: login, logout, updateProfile
-   - selectors: getCurrentUser, isAuthenticated
-
-2. Przekonwertuj cart reducer → useCartStore
-   - actions: addItem, removeItem, updateQuantity
-   - selectors: getCartItems, getCartTotal
-
-3. [pozostałe reducers...]
-
-### Etap 3: Migracja Komponentów (3-4 dni)
-Priorytet: rozpocznij od leaf components (bez children)
-
-1. Komponenty cart (5 plików)
-   - CartItem.tsx
-   - CartSummary.tsx
-   - CartCheckout.tsx
-
-2. Komponenty user (8 plików)
-   - UserProfile.tsx
-   - UserSettings.tsx
-   [...]
-
-### Etap 4: Cleanup (1 dzień)
-1. Usuń Redux dependencies
-2. Usuń Provider z App.tsx
-3. Update dokumentacji
-
-### Ryzyka:
-⚠️ Komponenty z nested subscriptions mogą wymagać optymalizacji
-⚠️ Redux middleware (logger, saga) trzeba przepisać na Zustand middleware
-⚠️ Testy będą wymagały aktualizacji mock store
-
-### Rekomendacja:
-Wykonaj migrację feature-by-feature, nie wszystko naraz.
-Zacznij od izolowanych modułów (np. Settings page).
-
-Szacowany czas: 7-9 dni roboczych"
-```
-
-### Wykonanie Planu
-
-Po przejrzeniu planu w Plan Mode:
-
-1. Naciśnij **Shift+Tab** aby wyjść z Plan Mode
-2. Potwierdź wykonanie planu w normalnym trybie
-3. Claude wykona zaplanowane zmiany z możliwością zatwierdzania każdego kroku
-
-## Extended Thinking - Dla Złożonych Problemów
-
-### Czym Jest Extended Thinking?
-
-[Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking) to funkcja, w której Claude **głęboko przemyśla problem przed rozpoczęciem działania**, pokazując swój proces myślowy. Jest zasilany przez Claude 3.7 Sonnet i idealny dla:
-
-- Decyzji architektonicznych
-- Rozwiązywania złożonych bugów
-- Planowania refactoringu
-- Wyboru design patterns
-
-### Aktywacja Extended Thinking
-
-Po prostu poproś Claude aby "pomyślał" w swoim promptcie:
-
-```bash
-claude
-
-> Pomyśl głęboko o tym problemie i zaplanuj refactoring z Redux na Zustand
-```
-
-Możesz kontrolować intensywność myślenia:
-- **"think"** - 4,000 tokenów budżetu myślenia
-- **"think hard"** lub **"megathink"** - 10,000 tokenów
-- **"ultrathink"** lub **"think harder"** - 32,000 tokenów (najdłuższe)
-
-### Przykład: Wybór Architektury
-
-```
-> Think deeply: Muszę zdecydować między monorepo a multi-repo
-  dla systemu mikroservisów (5 serwisów, 3 zespoły, CI/CD już jest)
-
-[Claude pokazuje swój proces myślowy...]
-
-<thinking>
-Analizuję problem z różnych perspektyw...
-
-Rozważam strukturę teamów:
-- 3 zespoły: Frontend, Backend API, DevOps
-- Czy zespoły są autonomiczne czy współdzielą kod?
-- Historia: czy były problemy z dependency hell?
-
-Analizuję deployment patterns:
-- CI/CD już istnieje - czy wspiera monorepo?
-- Jak często deploye? Daily? Weekly?
-- Potrzeba atomic deploys cross-service?
-
-Techniczne rozważania:
-- Shared libraries - ile? Jaka częstotliwość zmian?
-- Build times - jak długie obecnie?
-- Code ownership - czy jasno zdefiniowane?
-</thinking>
-
-📊 REKOMENDACJA: Monorepo z Nx/Turborepo
-
-Uzasadnienie:
-
-✅ PRO Monorepo:
-1. Atomic changes - zmiana API + konsument w jednym PR
-2. Shared types - TypeScript types między serwisami
-3. Prostsze code review - widzisz wszystkie zmiany
-4. Tool sharing - wspólne ESLint, Prettier, Tsconfig
-5. Refactoring - IDE widzi wszystkie użycia
-
-❌ KONTRA:
-1. Build cache jest KLUCZOWY - wymaga Nx lub Turborepo
-2. CI musi być sprytny - tylko zmienione części
-3. Większy repo size - ale Git sparse checkout pomaga
-
-🏗️ Implementacja:
-
-1. **Wybierz tool**: Turborepo (prostszy) vs Nx (więcej features)
-   Rekomendacja: Turborepo - lżejszy, łatwiej zacząć
-
-2. **Struktura**:
-```
-monorepo/
-├── apps/
-│   ├── api-gateway/
-│   ├── auth-service/
-│   ├── user-service/
-│   └── frontend/
-├── packages/
-│   ├── shared-types/
-│   ├── shared-utils/
-│   └── ui-components/
-└── tools/
-    └── scripts/
-```
-
-3. **Package.json**:
-```json
-{
-  "private": true,
-  "workspaces": ["apps/*", "packages/*"],
-  "scripts": {
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "dev": "turbo run dev --parallel"
-  }
-}
-```
-
-4. **Migracja** (etapowa):
-   - Tydzień 1: Setup monorepo structure
-   - Tydzień 2: Przenieś shared code
-   - Tydzień 3-5: Migruj serwisy (jeden per tydzień)
-   - Tydzień 6: Cleanup i dokumentacja
-
-⚡ KLUCZOWA ZASADA:
-Dodaj `turbo.json` z dependency graph - to zapewni:
-- Cache buildów
-- Selective testing
-- Parallel execution
-
-Alternatywa do rozważenia:
-Multi-repo TYLKO jeśli:
-- Zespoły są całkowicie autonomiczne
-- Deployment są niezależne (różne release cycles)
-- Brak shared code między serwisami
-
-Twoje 3 zespoły współpracują = monorepo jest lepszą opcją."
-```
-
-## Custom Slash Commands - Automatyzacja Workflow
-
-### Tworzenie Custom Commands
-
-Utwórz plik [`.claude/commands/review.md`](https://docs.anthropic.com/en/docs/claude-code/slash-commands) w swoim projekcie:
+Skill projektu to katalog w `.claude/skills/`. Przykład `.claude/skills/przeglad/SKILL.md`:
 
 ```markdown
 ---
-name: review
-description: Code review with security focus
+name: przeglad
+description: Przegląd zmian w bieżącej gałęzi pod kątem bezpieczeństwa i zasad zespołu
 ---
 
-Review the provided code for:
-1. Security vulnerabilities (SQL injection, XSS, etc.)
-2. Performance issues
-3. Best practices violations
-4. Potential bugs
+Porównaj bieżącą gałąź z main (git diff main...HEAD) i sprawdź:
+1. dane z formularzy trafiające do zapytań SQL bez parametrów,
+2. sekrety i klucze w kodzie,
+3. nowe funkcje bez testów.
 
-Format output as:
-- 🔴 Critical issues
-- 🟡 Warnings
-- 🟢 Suggestions
+Dla każdego problemu podaj plik, linię i proponowaną poprawkę.
+Skup się na: $ARGUMENTS
 ```
 
-### Użycie:
+Wywołanie w sesji:
 
-```bash
-claude
-> /review src/api/user-controller.js
+```text
+/przeglad moduł płatności
 ```
 
-### Przykład: Release Notes Generator
+Tekst po nazwie skilla trafia w miejsce `$ARGUMENTS`. Katalog `.claude/skills/` warto trzymać w
+repozytorium, wtedy cały zespół ma te same procedury. Skille, które mają działać we wszystkich
+Twoich projektach, umieszczasz w `~/.claude/skills/`.
 
-`.claude/commands/release-notes.md`:
+Starszy format, czyli pojedyncze pliki w `.claude/commands/`, nadal działa. Nowe procedury lepiej
+pisać jako skille, bo mogą zawierać dodatkowe pliki, na przykład szablony i skrypty.
 
-```markdown
----
-name: release-notes
-description: Generate release notes from git commits
----
+## 4. Hooki: sprawdzanie, o którym agent nie zapomni
 
-Analyze git commits since last release and generate:
+Instrukcja w CLAUDE.md to prośba. Hook to polecenie, które Claude Code uruchamia zawsze, w
+określonym momencie. Najczęściej używane zdarzenia:
 
-## 🎉 New Features
-[List new features]
+- `PreToolUse` - przed użyciem narzędzia, na przykład przed edycją pliku. Może zablokować akcję.
+- `PostToolUse` - po użyciu narzędzia, na przykład po edycji: formatowanie, linter, testy.
+- `Stop` - gdy Claude kończy odpowiedź: na przykład pełny zestaw testów.
+- `SessionStart` - na początku sesji: na przykład wczytanie stanu zadań.
 
-## 🐛 Bug Fixes
-[List fixes]
-
-## ⚡ Performance
-[List optimizations]
-
-## 📚 Documentation
-[List doc updates]
-
-## ⚠️ Breaking Changes
-[List breaking changes]
-
-Group by category and use commit messages as base.
-```
-
-Użycie:
-
-```bash
-git log --since="2 weeks ago" > commits.txt
-claude "/release-notes commits.txt"
-```
-
-## Automatyzacja z Hooks
-
-Claude Code oferuje system **hooków** do automatyzacji pracy. Są to skrypty uruchamiane w odpowiedzi na określone zdarzenia.
-
-### Przykład: Pre-commit Hook
-
-Możesz skonfigurować hook, który automatycznie sprawdza kod przed commitem:
-
-1. Utwórz plik `.claude/hooks/pre-commit.sh`
-2. Skonfiguruj w `.claude/settings.json`:
+Przykład w `.claude/settings.json`: blokada edycji plików `.env`:
 
 ```json
 {
   "hooks": {
-    "pre-commit": {
-      "command": "bash .claude/hooks/pre-commit.sh",
-      "blocking": true
-    }
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | grep -q '\\.env' && { echo 'Pliki .env edytuje tylko człowiek' >&2; exit 2; } || exit 0"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
 
-### Automatyczny przegląd zmian
+Hook dostaje opis akcji jako JSON na wejściu standardowym. Kod wyjścia `2` blokuje akcję, a tekst
+z wyjścia błędów trafia do Claude jako wyjaśnienie. Hooki uruchamiają dowolne polecenia na Twoim
+komputerze, więc przed dodaniem cudzego hooka przeczytaj, co robi. Więcej przykładów w artykule o
+[hookach jako lekkim CI](/blog/claude-code-hooki-ci-light/).
 
-Własne komendy slash mogą pomóc zautomatyzować przegląd zmian:
+## 5. Subagenty: osobny kontekst dla zadania pobocznego
 
-```markdown
-# .claude/commands/review-pr.md
----
-name: review-pr
-description: Review current branch changes
----
+Długa sesja zapełnia kontekst: każdy przeczytany plik i wynik testów zostaje w rozmowie. Subagent
+to osobna instancja Claude z własnym kontekstem. Dostaje zadanie, wykonuje je i zwraca tylko
+wynik. Dobre zastosowania to przeszukanie dużego repozytorium, przegląd kodu i analiza logów.
 
-Review all changes in the current branch compared to main.
-Focus on:
-- Security vulnerabilities
-- Performance issues
-- Best practices
-```
-
-Użycie:
-```bash
-claude
-> /review-pr
-```
-
-## Kombinacje Zaawansowanych Technik
-
-### Plan Mode + Extended Thinking
-
-Możesz łączyć Plan Mode z Extended Thinking:
-
-1. Naciśnij **Shift+Tab dwa razy** aby aktywować Plan Mode
-2. W swoim promptcie użyj słów kluczowych aktywujących myślenie: "think deeply", "ultrathink", itp.
-
-```
-> Think deeply and plan the migration from Redux to Zustand
-```
-
-Najlepiej sprawdza się to przy:
-- Dużych refaktoryzacjach
-- Decyzje architektoniczne
-- Planowaniu migracji
-
-### Extended Thinking + własne komendy
-
-Własne komendy slash mogą sugerować użycie Extended Thinking w opisie:
+Własnego subagenta tworzysz poleceniem `/agents` albo plikiem w `.claude/agents/`, na przykład
+`.claude/agents/recenzent.md`:
 
 ```markdown
-# W .claude/commands/architect.md
 ---
-name: architect
-description: Deep architectural analysis (uses extended thinking)
+name: recenzent
+description: Przegląd kodu po większej zmianie. Używaj po zakończeniu funkcji.
+tools: Read, Grep, Glob, Bash
 ---
 
-Think deeply about the system architecture and recommend:
-- Design patterns
-- Scalability improvements
-- Security enhancements
+Jesteś recenzentem kodu w tym projekcie. Sprawdź ostatnie zmiany (git diff),
+uruchom testy i wypisz problemy od najpoważniejszych. Niczego nie edytuj.
 ```
 
-## Wskazówki dotyczące pracy
+Pole `tools` ogranicza, czego subagent może używać. Recenzent bez narzędzi edycji nie zmieni
+kodu, nawet jeśli uzna, że powinien.
 
-### 1. Używaj Pojedynczej Sesji
+## 6. Kontekst długiej sesji
 
-Claude zachowuje kontekst w ramach sesji, więc warto to wykorzystać:
+- `/context` pokazuje, ile kontekstu zajmują rozmowa, pliki i narzędzia.
+- `/compact` streszcza rozmowę. Możesz dodać, co zachować: `/compact zachowaj decyzje o schemacie
+  bazy`.
+- `/clear` zaczyna od zera. To najlepszy wybór przy przejściu do innego zadania.
+
+Jedno zadanie na rozmowę daje zwykle lepszy wynik niż jedna długa sesja na cały dzień.
+
+## 7. Claude Code bez interakcji: claude -p
+
+Flaga `-p` uruchamia jedno polecenie, wypisuje wynik i kończy pracę. Tak Claude Code działa w
+skryptach i w CI:
 
 ```bash
-# Źle - wielokrotne uruchomienia
-claude
-> Fix bug in auth.js
-# Zamknij
-claude
-> Fix bug in user.js
-# Zamknij
-
-# Dobrze - jedna sesja, wspólny kontekst
-claude
-> Fix bug in auth.js
-> Fix bug in user.js
-> Continue with related tasks
+git diff main...HEAD | claude -p "Wypisz ryzykowne zmiany w tym diffie, maksymalnie 5 punktów"
 ```
 
-### 2. Zmiany Etapowe
+W trybie bez interakcji nikt nie zatwierdza akcji, więc ustaw ograniczone uprawnienia, na
+przykład tylko narzędzia do odczytu, zanim użyjesz go w automatyzacji.
 
-```bash
-# Zamiast dużych zmian na raz:
-claude
-> Refactor entire app to TypeScript
+## Od czego zacząć
 
-# Lepiej etapowo:
-claude
-> Convert utils.js to TypeScript
-# Po zakończeniu:
-> Now convert types.js to TypeScript
-# Po zakończeniu:
-> Continue with remaining files
-```
+Nie wdrażaj wszystkiego naraz. Rozsądna kolejność:
 
-### 3. Precyzyjne zadania
+1. Plan Mode przy najbliższej większej zmianie.
+2. Jeden skill dla procedury, którą tłumaczysz agentowi najczęściej.
+3. Jeden hook `PostToolUse` z formatowaniem albo linterem.
+4. Subagenty i `claude -p`, gdy poprzednie kroki działają.
 
-```bash
-# Zbyt szerokie zadanie:
-claude
-> Find all bugs
+## Co dalej
 
-# Precyzyjne i osiągalne:
-claude
-> Analyze the auth middleware in src/api/auth.js for security issues
-```
+- [Plan Mode i Extended Thinking przy refaktoryzacji](/blog/plan-mode-extended-thinking-refaktoryzacja/).
+- [Własne pluginy do Claude Code](/blog/custom-plugins-claude-code/) - jak spakować skille, hooki i
+  agentów dla zespołu.
+- Oficjalna dokumentacja: [skille](https://docs.anthropic.com/en/docs/claude-code/skills),
+  [hooki](https://docs.anthropic.com/en/docs/claude-code/hooks),
+  [subagenty](https://docs.anthropic.com/en/docs/claude-code/sub-agents).
 
-## Rozwiązywanie Problemów
-
-### Problem: Nieprawidłowe Sugestie
-
-Jeśli Claude generuje nieprawidłowy kod:
-
-1. **Użyj Plan Mode** - Naciśnij Shift+Tab dwa razy, aby najpierw zaplanować zmiany bez ich wykonywania
-2. **Przejrzyj plan** i zatwierdź lub odrzuć
-3. **Wyjdź z Plan Mode** (Shift+Tab) i wykonaj zatwierdzone zmiany
-
-### Problem: Wolne Odpowiedzi
-
-Ogranicz zakres pracy Claude:
-
-```bash
-claude
-> Analyze only the auth middleware in src/api/auth.js for security issues
-```
-
-Zamiast:
-```bash
-> Find all bugs in the entire codebase  # Zbyt szerokie
-```
-
-## Dokumentacja i zasoby
-
-### Oficjalna Dokumentacja
-- [Claude Code - Plan Mode](https://docs.anthropic.com/en/docs/claude-code/plan-mode)
-- [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
-- [Claude Code - Slash Commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands)
-- [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
-
-### Powiązane Artykuły
-- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja/)
-- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code/)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
-
-## Podsumowanie
-
-Najważniejsze zaawansowane techniki w Claude Code sprowadzają się do czterech obszarów: planowania, głębszej analizy, automatyzacji powtarzalnych działań i lepszego wykorzystania kontekstu sesji. To właśnie one najbardziej wpływają na jakość pracy przy większych zadaniach.
-
-Jeśli chcesz zacząć rozsądnie, najpierw przetestuj Plan Mode przy refaktoryzacji jednego modułu, potem dodaj jedną własną komendę slash, a dopiero na końcu buduj automatyzację z hookami i integracją z CI/CD. Taka kolejność daje najlepszy efekt bez zbędnego chaosu.
+Skille, hooki i subagentów dla Twojego repozytorium budujemy na
+[warsztacie Claude Code](https://claudecodelab.pl/kurs). Możesz też
+[umówić 30 minut rozmowy](https://calendly.com/kamil-spartcom/30min).
