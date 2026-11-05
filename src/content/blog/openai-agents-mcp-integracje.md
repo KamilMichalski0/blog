@@ -107,6 +107,6 @@ Z tą konfiguracją agent AI zyskuje wgląd w realne systemy firmowe i może odp
 - [MCP Servers Repository](https://github.com/modelcontextprotocol/servers)
 
 ### Powiązane Artykuły
-- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
-- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
-- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy)
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol/)
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja/)
+- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy/)

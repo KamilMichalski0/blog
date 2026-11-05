@@ -309,9 +309,9 @@ Po wdrożeniu tych praktyk, Twoja aplikacja Astro będzie:
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code/)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
 
 ## Podsumowanie
 

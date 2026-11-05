@@ -133,5 +133,5 @@ Taki zestaw hooków zamienia Claude Code w narzędzie Continuous Integration lig
 - [Astro Documentation](https://docs.astro.build/)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)

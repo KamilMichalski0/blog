@@ -452,9 +452,9 @@ async function fetchMetrics(): Promise<Metrics> {
 - [Playwright Testing](https://playwright.dev/)
 
 ### Powiązane Artykuły
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
 
 ## Podsumowanie
 

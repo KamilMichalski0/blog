@@ -148,8 +148,8 @@ W ten sposób tworzysz pełny zespół agentów: triage filtruje zgłoszenia i p
 - [OpenAI Agents - Guardrails](https://openai.github.io/openai-agents-js/concepts/guardrails)
 
 ### Powiązane Artykuły
-- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
-- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje)
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja/)
+- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje/)
 
 ## 5. Dalsze rekomendacje
 

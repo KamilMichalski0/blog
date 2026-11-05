@@ -140,5 +140,5 @@ Rezultat to wielopoziomowy system moderacji, który automatycznie odrzuca niepo�
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
 ### Powiązane Artykuły
-- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
-- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja/)
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol/)

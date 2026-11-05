@@ -767,9 +767,9 @@ database-tools/
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
 ### Powiązane Artykuły
-- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
 
 ## Podsumowanie
 

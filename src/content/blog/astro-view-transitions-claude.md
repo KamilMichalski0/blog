@@ -115,5 +115,5 @@ Takie połączenie Astro i Claude Code daje CI pipeline, w którym AI nie tylko 
 - [Astro Documentation](https://docs.astro.build/)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)

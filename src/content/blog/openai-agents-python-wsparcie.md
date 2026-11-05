@@ -148,9 +148,9 @@ asyncio.run(main())
 - [Pydantic Documentation](https://docs.pydantic.dev/)
 
 ### Powiązane Artykuły
-- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja)
-- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy)
-- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje)
+- [OpenAI Agents JS - Orkiestracja](/blog/openai-agents-js-orkiestracja/)
+- [OpenAI Agents JS - Zespół Pomocowy](/blog/openai-agents-js-zespol-pomocowy/)
+- [OpenAI Agents MCP - Integracje](/blog/openai-agents-mcp-integracje/)
 
 ### Dobre praktyki z dokumentacji
 

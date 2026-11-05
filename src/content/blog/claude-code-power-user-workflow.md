@@ -114,5 +114,5 @@ Z takim zestawem narzędzi Claude Code staje się platformą dla power userów: 
 - [Astro Documentation](https://docs.astro.build/)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)

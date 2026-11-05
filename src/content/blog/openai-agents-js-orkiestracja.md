@@ -182,7 +182,7 @@ if (result.interruptions?.length) {
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
 ### Powiązane Artykuły
-- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol)
+- [MCP (Model Context Protocol)](/blog/mcp-model-context-protocol/)
 
 ## Podsumowanie
 

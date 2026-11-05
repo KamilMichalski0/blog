@@ -105,9 +105,9 @@ Plan Mode: summarize the last build and test outputs from the hook logs.
 - [Astro Documentation](https://docs.astro.build/)
 
 ### Powiązane Artykuły
-- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
 
 ## 6. Co dalej?
 

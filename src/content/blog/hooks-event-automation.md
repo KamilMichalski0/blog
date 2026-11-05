@@ -834,9 +834,9 @@ Następnie wybierz "Reload hooks" aby zaaplikować nową konfigurację.
 - [Hook Event Types](https://docs.anthropic.com/en/docs/claude-code/hooks#event-types)
 
 ### Powiązane Artykuły
-- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
-- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude)
-- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow)
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code/)
+- [Automatyzacja Workflow z Claude](/blog/automatyzacja-workflow-z-claude/)
+- [Integracja Claude Code z Workflow](/blog/integracja-claude-code-workflow/)
 
 ## Podsumowanie
 

@@ -90,9 +90,9 @@ Dzięki temu zyskasz listę działań utrzymaniowych (aktualizacja README, zmian
 - [Claude Code - Extended Thinking](https://docs.anthropic.com/en/docs/claude-code/extended-thinking)
 
 ### Powiązane Artykuły
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
 
 ## Podsumowanie
 
