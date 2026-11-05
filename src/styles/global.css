@@ -300,7 +300,7 @@
 
   /* Section spacing - perfect vertical rhythm */
   .section {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-16 md:py-20 lg:py-24;
   }
 
   /* Gradient text effect */
