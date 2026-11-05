@@ -1,6 +1,7 @@
 ---
 title: "Claude Code: wprowadzenie do pracy z AI"
-description: Odkryj, jak Claude Code wspiera programistów w tworzeniu aplikacji, automatyzacji zadań i rozwiązywaniu problemów technicznych.
+seoTitle: "Czym jest Claude Code? Co potrafi i jak z niego korzystać"
+description: "Claude Code to agent AI od Anthropic, który działa w terminalu: czyta projekt, edytuje pliki i uruchamia polecenia. Możliwości, przykład i dobre praktyki."
 pubDate: 2025-01-15
 heroImage: ../../assets/blog/heroes/wprowadzenie-do-claude-code.jpg
 tags: ["Claude Code","AI","Programowanie","Tutorial"]
@@ -130,9 +131,9 @@ Claude Code nie tylko rozwiązuje problemy - wyjaśnia też dlaczego dane rozwi�
 - [Anthropic Console](https://console.anthropic.com/)
 
 ### Powiązane Artykuły
-- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
 
 ## Rozpocznij Swoją Przygodę
 

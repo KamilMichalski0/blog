@@ -1,6 +1,7 @@
 ---
 title: "Claude Code: Plan Mode i Extended Thinking"
-description: "Poznaj zaawansowane funkcje Claude Code: Plan Mode do bezpiecznego planowania, Extended Thinking i pracę z narzędziami w terminalu."
+seoTitle: "Claude Code: Extended Thinking, slash commands i hooki"
+description: "Extended Thinking (think, ultrathink), własne polecenia slash w .claude/commands, hooki i łączenie ich z Plan Mode - z przykładami poleceń."
 pubDate: Jul 22 2022
 heroImage: ../../assets/blog/heroes/zaawansowane-techniki-claude-code.jpg
 tags: ['Claude Code', 'Zaawansowane', 'Plan Mode', 'Extended Thinking']
@@ -480,10 +481,10 @@ Zamiast:
 - [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
 
 ### Powiązane Artykuły
-- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
-- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja/)
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
 
 ## Podsumowanie
 

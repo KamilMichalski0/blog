@@ -1,6 +1,7 @@
 ---
 title: "7 zastosowań Claude Code w codziennej pracy"
-description: "Poznaj 7 praktycznych zastosowań Claude Code: od analizy projektu i naprawy błędów po refaktoryzację, testy i automatyzację pracy."
+seoTitle: "Do czego służy Claude Code? 7 zastosowań z przykładami"
+description: "Poznanie nowego projektu, naprawa błędów, refaktoryzacja, testy, pull requesty, mockupy i dokumentacja - 7 zastosowań Claude Code z poleceniami."
 pubDate: Jul 15 2022
 heroImage: ../../assets/blog/heroes/7-scenariuszy-uzycia-claude-code.jpg
 tags: ['Claude Code', 'Automatyzacja pracy', 'Dobre praktyki', 'Produktywność']
@@ -345,7 +346,7 @@ Claude Code oferuje [system hooków](https://docs.anthropic.com/en/docs/claude-c
 }
 ```
 
-Więcej o automatyzacji z hooks w [dedykowanym artykule](/blog/hooks-event-automation)!
+Więcej o automatyzacji z hooks w [dedykowanym artykule](/blog/hooks-event-automation/)!
 
 ## 📚 Dokumentacja i Zasoby
 
@@ -356,10 +357,10 @@ Więcej o automatyzacji z hooks w [dedykowanym artykule](/blog/hooks-event-autom
 - [Hooks System](https://docs.anthropic.com/en/docs/claude-code/hooks)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
-- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
+- [Pierwsze Kroki z Claude Code](/blog/pierwsze-kroki-z-claude-code/)
 
 ## Podsumowanie
 

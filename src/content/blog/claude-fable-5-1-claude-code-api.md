@@ -1,7 +1,7 @@
 ---
 title: "Claude Fable 5.1: co nowego w Claude Code i API?"
-seoTitle: "Claude Fable 5.1: możliwości, ceny i Claude Code"
-description: "Claude Fable 5.1 to model Anthropic do długich zadań agentowych. Sprawdź możliwości, ceny, kontekst 1 mln oraz zastosowania w Claude Code i API w praktyce."
+seoTitle: "Claude Fable 5.1 w API i Claude Code: ceny i możliwości"
+description: "Claude Fable 5.1: ceny w API (10/50 USD za 1 mln tokenów), kontekst 1 mln, praca w Claude Code i różnice względem Fable 5. Kiedy warto go używać."
 pubDate: 2026-09-11
 heroImage: ../../assets/blog/heroes/claude-fable-5-1.png
 heroImageAlt: "Claude Fable 5.1 jako wieloetapowy agent programistyczny pracujący nad kodem, researchem i testami"

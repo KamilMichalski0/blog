@@ -1,6 +1,7 @@
 ---
 title: "MCP w Claude Code: integracje zewnętrznych danych"
-description: Poznaj Model Context Protocol i zobacz, jak połączyć Claude Code z GitHubem, bazami danych, Notion, Stripe i innymi źródłami danych.
+seoTitle: "MCP w Claude Code: co to jest i jak dodać serwer"
+description: "Czym jest Model Context Protocol i jak dodać serwer poleceniem claude mcp add (HTTP, SSE, stdio). Zakresy konfiguracji, plik .mcp.json, GitHub, Notion."
 pubDate: Oct 24 2024
 heroImage: ../../assets/blog/heroes/mcp-model-context-protocol.jpg
 tags: ['Claude Code', 'MCP', 'Integracja', 'API', 'Zaawansowane']
@@ -460,9 +461,9 @@ https://modelcontextprotocol.io/
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 
 ### Powiązane Artykuły
-- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
+- [Custom Plugins dla Claude Code](/blog/custom-plugins-claude-code/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
 
 ## Podsumowanie
 

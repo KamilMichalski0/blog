@@ -1,6 +1,7 @@
 ---
 title: "Claude Code: pierwsze kroki i instalacja"
-description: Dowiedz się, jak zainstalować i skonfigurować Claude Code oraz jak rozpocząć pierwszą pracę z tym narzędziem w terminalu.
+seoTitle: "Pierwsze kroki z Claude Code: logowanie, komendy, projekt"
+description: "Jak uruchomić Claude Code w terminalu, zalogować się, poznać projekt pierwszym poleceniem i wprowadzić pierwszą zmianę. Komendy CLI i dobre praktyki."
 pubDate: Jul 08 2022
 heroImage: ../../assets/blog/heroes/pierwsze-kroki-z-claude-code.jpg
 tags: ['Claude Code', 'Tutorial', 'Instalacja', 'Początkujący']
@@ -178,11 +179,11 @@ claude
 - [Claude Code - Main Documentation](https://docs.anthropic.com/en/docs/claude-code/)
 
 ### Powiązane Artykuły
-- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code)
-- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
-- [Automatyzacja pracy z Claude](/blog/automatyzacja-workflow-z-claude)
-- [Budowanie Aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude)
+- [Wprowadzenie do Claude Code](/blog/wprowadzenie-do-claude-code/)
+- [7 Scenariuszy Użycia Claude Code](/blog/7-scenariuszy-uzycia-claude-code/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
+- [Automatyzacja pracy z Claude](/blog/automatyzacja-workflow-z-claude/)
+- [Budowanie Aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude/)
 
 ## Co Dalej?
 
@@ -190,8 +191,8 @@ Teraz, gdy masz zainstalowane i skonfigurowane Claude Code, możesz:
 
 - Eksperymentować z różnymi promptami
 - Sprawdzić dokumentację zaawansowanych funkcji
-- Przeczytać o [automatyzacji pracy z Claude](/blog/automatyzacja-workflow-z-claude)
-- Poznać [budowanie aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude)
+- Przeczytać o [automatyzacji pracy z Claude](/blog/automatyzacja-workflow-z-claude/)
+- Poznać [budowanie aplikacji Astro z Claude](/blog/budowanie-aplikacji-astro-z-claude/)
 
 ## Podsumowanie
 

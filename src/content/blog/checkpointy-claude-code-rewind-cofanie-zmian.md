@@ -1,7 +1,7 @@
 ---
 title: "Checkpointy w Claude Code: jak cofnąć zmiany agenta przez /rewind"
-description: "Jak działają checkpointy w Claude Code, jak cofnąć kod i rozmowę klawiszem Esc Esc albo poleceniem /rewind, co oznacza każda opcja menu i których zmian checkpoint nie cofnie."
-seoTitle: "Checkpointy w Claude Code: cofanie zmian /rewind"
+description: "Esc Esc albo /rewind cofa kod, rozmowę lub jedno i drugie. Co robi każda opcja menu i czego checkpoint nie cofnie, np. plików zmienionych skryptem."
+seoTitle: "Jak cofnąć zmiany w Claude Code: checkpointy i /rewind"
 pubDate: Oct 26 2026
 tags: ['Claude Code', 'Checkpointy', 'Rewind', 'Workflow']
 category: guide

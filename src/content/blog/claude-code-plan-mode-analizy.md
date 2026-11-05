@@ -1,6 +1,7 @@
 ---
 title: "Analiza kodu w Claude Code: Plan Mode i hooki"
-description: Jak połączyć tryb tylko do odczytu, rozszerzone myślenie i hook PostToolUse, aby zaplanować refaktoryzację i zebrać metryki testów.
+seoTitle: "Plan Mode w Claude Code: analiza kodu przed refaktoryzacją"
+description: "Jak w Plan Mode przeanalizować repozytorium bez zmian w plikach, rozpisać refaktoryzację na kroki i hookiem PostToolUse zbierać wyniki testów."
 pubDate: 2025-10-21
 heroImage: ../../assets/blog/heroes/claude-code-plan-mode-analizy.jpg
 tags: ["Claude Code","Plan Mode","Extended Thinking","Automation"]
@@ -112,10 +113,10 @@ Otrzymasz listę działań pokontrolnych (aktualizacja README, usunięcie paczek
 - [Claude Code - Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)
 
 ### Powiązane Artykuły
-- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja)
-- [Hooks i Event-Driven Automation](/blog/hooks-event-automation)
-- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code)
-- [AI w pipeline frontendu](/blog/claude-code-frontend-pipeline-ai)
+- [Plan Mode + Extended Thinking](/blog/plan-mode-extended-thinking-refaktoryzacja/)
+- [Hooks i Event-Driven Automation](/blog/hooks-event-automation/)
+- [Zaawansowane Techniki Claude Code](/blog/zaawansowane-techniki-claude-code/)
+- [AI w pipeline frontendu](/blog/claude-code-frontend-pipeline-ai/)
 
 ## 6. Najlepsze praktyki
 

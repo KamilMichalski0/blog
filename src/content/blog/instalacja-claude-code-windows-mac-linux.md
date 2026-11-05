@@ -1,7 +1,7 @@
 ---
 title: "Instalacja Claude Code: Windows, macOS i Linux krok po kroku"
-description: "Jak zainstalować Claude Code na Windows (natywnie lub w WSL), macOS i Linux. Polecenia instalacyjne, wymagania, logowanie, aktualizacje i najczęstsze błędy po instalacji."
-seoTitle: "Instalacja Claude Code na Windows, macOS i Linux"
+description: "Polecenie instalacji dla każdego systemu, Windows natywnie czy przez WSL, logowanie, sprawdzenie przez claude doctor i najczęstsze błędy - krok po kroku."
+seoTitle: "Jak zainstalować Claude Code: Windows, macOS, Linux (2026)"
 pubDate: Oct 14 2026
 tags: ['Claude Code', 'Instalacja', 'Windows', 'WSL', 'macOS', 'Linux']
 category: guide

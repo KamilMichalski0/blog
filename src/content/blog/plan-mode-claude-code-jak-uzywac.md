@@ -1,7 +1,7 @@
 ---
 title: "Plan Mode w Claude Code: jak planować zmiany, zanim agent ruszy kod"
-description: "Czym jest Plan Mode w Claude Code, jak go włączyć (Shift+Tab, /plan, --permission-mode plan), jak zatwierdzić lub poprawić plan i kiedy warto z niego korzystać."
-seoTitle: "Plan Mode w Claude Code: jak go używać"
+description: "Plan Mode włączasz przez Shift+Tab, /plan lub --permission-mode plan. Co Claude może w tym trybie, jak zatwierdzić albo poprawić plan i kiedy go używać."
+seoTitle: "Plan Mode w Claude Code: jak włączyć i zatwierdzić plan"
 pubDate: Oct 14 2026
 tags: ['Claude Code', 'Plan Mode', 'Tryby uprawnień', 'Workflow']
 category: guide
